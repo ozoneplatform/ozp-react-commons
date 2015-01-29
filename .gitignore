@@ -1,0 +1,11 @@
+.idea
+.*.swp
+
+node_modules
+bower_components
+
+dist
+
+npm-debug.log
+
+app/images/marketplace-logo.psd
