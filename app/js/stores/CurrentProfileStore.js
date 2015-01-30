@@ -4,7 +4,7 @@ var Reflux = require('reflux');
 var _ = require('../utils/_');
 
 var ProfileActions = require('../actions/ProfileActions');
-var ProfileApi = require('../webapi/Profile');
+var ProfileApi = require('../api/Profile');
 
 /**
  * A store for information about the profile that is currently

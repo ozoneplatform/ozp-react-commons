@@ -5,7 +5,7 @@ var Reflux = require('reflux');
 var { State, Link, Navigation } = require('react-router');
 var ActiveStateMixin = require('../../mixins/ActiveStateMixin');
 
-var Modal = require('../shared/Modal');
+var Modal = require('../Modal');
 
 var CurrentProfileStore = require('../../stores/CurrentProfileStore');
 var ProfileActions = require('../../actions/ProfileActions');
