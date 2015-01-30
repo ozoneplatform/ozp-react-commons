@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/ozone-development/ozp-react-commons",
   "dependencies": {
-    "bootstrap-sass": "file:../../../../tmp/npm-27767-07e84631/1422566799752-0.6318387074861676/186f952ae39568c6318335c37a6f6e667682ee9b",
+    "bootstrap-sass": "git://github.com/ozone-development/bootstrap-sass#314905a9aa6cf0efb98806d6998a31b8f9532a97",
     "react": "^0.12.2",
     "react-router": "^0.11.6",
     "reflux": "^0.1.15"
