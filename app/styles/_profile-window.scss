@@ -4,7 +4,6 @@ $profile-header-height: 42px;
 .profile-window {
     .modal-body {
         background-color: $modal-content-bg;
-        color: $gray-darkest;
 
         box-sizing: content-box;
 
@@ -22,7 +21,7 @@ $profile-header-height: 42px;
             }
 
             > .close {
-                color: $gray-darkest;
+                color: $close-color;
                 margin-top: 0; //override default -10 margin
             }
 
@@ -39,16 +38,11 @@ $profile-header-height: 42px;
 
 .profile-info {
     background-color: $modal-body-bg;
-    color: $gray-dark;
 
     height: $profile-window-height - $profile-header-height;
     padding: 10px;
 
     overflow-y: auto;
-
-    a {
-        color: $blue-dark;
-    }
 
     dd, dt {
         display: inline;
@@ -84,6 +78,8 @@ $profile-header-height: 42px;
 
         img {
             margin-right: 10px;
+            max-height: 32px;
+            max-width: 32px;
         }
     }
 }

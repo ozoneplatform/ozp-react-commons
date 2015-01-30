@@ -2,8 +2,7 @@
 
 var React = require('react');
 var Reflux = require('reflux');
-var { State, Link, Navigation } = require('react-router');
-var ActiveStateMixin = require('../../mixins/ActiveStateMixin');
+var { State, Navigation } = require('react-router');
 
 var Modal = require('../Modal');
 
@@ -11,32 +10,20 @@ var CurrentProfileStore = require('../../stores/CurrentProfileStore');
 var ProfileActions = require('../../actions/ProfileActions');
 
 var ListingRow = React.createClass({
-    mixins: [ActiveStateMixin],
 
     propTypes: {
-        listing: React.PropTypes.object.isRequired
-    },
-
-    getInitialState: function() {
-        return {
-            activeRoute: this.getActiveRoute(),
-            routeParams: this.getParams()
-        };
+        listing: React.PropTypes.object.isRequired,
+        linkEl: React.PropTypes.func.isRequired
     },
 
     render: function() {
         var listing = this.props.listing,
-            queryParams = {
-                listing: listing.id,
-                action: 'view',
-                tab: 'overview'
-            };
+            Link = this.props.linkEl;
 
         /* jshint ignore:start */
         return (
-            <li key={listing.id} className="listing">
-                <Link to={this.state.activeRoute.name} params={this.state.routeParams}
-                        query={queryParams}>
+            <li className="listing">
+                <Link listingId={listing.id}>
                     <img src={listing.imageMediumUrl} />
                     {listing.title}
                 </Link>
@@ -48,6 +35,14 @@ var ListingRow = React.createClass({
 
 var ProfileInfo = React.createClass({
     mixins: [Reflux.connect(CurrentProfileStore)],
+
+    propTypes: {
+        profileId: React.PropTypes.oneOfType([
+            React.PropTypes.number,
+            React.PropTypes.string
+        ]),
+        listingLinkEl: React.PropTypes.func.isRequired
+    },
 
     getInitialState: function() {
         return {profile: null, ownedListings: []};
@@ -61,7 +56,10 @@ var ProfileInfo = React.createClass({
     render: function() {
         /* jshint ignore:start */
         var profile = this.state.profile,
-            listings = this.state.ownedListings.map(l => <ListingRow listing={l} />);
+            linkEl = this.props.listingLinkEl,
+            listings = this.state.ownedListings.map(
+                l => <ListingRow key={l.id} linkEl={linkEl} listing={l} />
+            );
 
         if (profile) {
             return (
@@ -94,7 +92,11 @@ var ProfileWindow = React.createClass({
     mixins: [Navigation],
 
     propTypes: {
-        profileId: React.PropTypes.number
+        profileId: React.PropTypes.oneOfType([
+            React.PropTypes.number,
+            React.PropTypes.string
+        ]),
+        listingLinkEl: React.PropTypes.func.isRequired
     },
 
     render: function() {
@@ -105,7 +107,8 @@ var ProfileWindow = React.createClass({
                     <h3>Profile</h3>
                     <button className="close" onClick={this.close}>×</button>
                 </header>
-                <ProfileInfo profileId={this.props.profileId} />
+                <ProfileInfo profileId={this.props.profileId}
+                    listingLinkEl={this.props.listingLinkEl} />
             </Modal>
         );
         /* jshint ignore:end */
