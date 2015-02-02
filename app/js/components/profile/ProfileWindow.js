@@ -6,7 +6,6 @@ var Reflux = require('reflux');
 var Modal = require('../Modal');
 
 var { Navigation, History } = require('react-router');
-var ActiveStateMixin = require('../../mixins/ActiveStateMixin');
 
 var CurrentProfileStore = require('../../stores/CurrentProfileStore');
 var ProfileActions = require('../../actions/ProfileActions');
@@ -91,14 +90,22 @@ var ProfileInfo = React.createClass({
 });
 
 var ProfileWindow = React.createClass({
-    mixins: [ActiveStateMixin, Navigation],
+    mixins: [Navigation],
 
     propTypes: {
         profileId: React.PropTypes.oneOfType([
             React.PropTypes.number,
             React.PropTypes.string
         ]),
-        listingLinkEl: React.PropTypes.func.isRequired
+        listingLinkEl: React.PropTypes.func.isRequired,
+
+        //the route that should be set when the window is closed.
+        //Can also be a function that changes the route
+        //(this allows "goBack" to be used instead of an explicit route)
+        backRoute: React.PropTypes.oneOfType([
+            React.PropTypes.string.isRequired,
+            React.PropTypes.func.isRequired
+        ])
     },
 
     render: function() {
@@ -117,15 +124,15 @@ var ProfileWindow = React.createClass({
     },
 
     close: function() {
+        var backRoute = this.props.backRoute;
+
         this.refs.modal.close();
 
-        //if the page was initially opened to the profile window, goBack won't
-        //work right and we should just close the modal instead
-        if (History.length > 1) {
-            this.goBack();
+        if (typeof backRoute === 'function') {
+            backRoute();
         }
         else {
-            this.transitionTo(this.getActiveRoutePath(), this.getParams());
+            this.transitionTo(this.props.backRoute);
         }
     }
 });
