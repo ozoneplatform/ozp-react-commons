@@ -2,9 +2,11 @@
 
 var React = require('react');
 var Reflux = require('reflux');
-var { State, Navigation } = require('react-router');
 
 var Modal = require('../Modal');
+
+var { Navigation, History } = require('react-router');
+var ActiveStateMixin = require('../../mixins/ActiveStateMixin');
 
 var CurrentProfileStore = require('../../stores/CurrentProfileStore');
 var ProfileActions = require('../../actions/ProfileActions');
@@ -89,7 +91,7 @@ var ProfileInfo = React.createClass({
 });
 
 var ProfileWindow = React.createClass({
-    mixins: [Navigation],
+    mixins: [ActiveStateMixin, Navigation],
 
     propTypes: {
         profileId: React.PropTypes.oneOfType([
@@ -116,7 +118,15 @@ var ProfileWindow = React.createClass({
 
     close: function() {
         this.refs.modal.close();
-        this.goBack();
+
+        //if the page was initially opened to the profile window, goBack won't
+        //work right and we should just close the modal instead
+        if (History.length > 1) {
+            this.goBack();
+        }
+        else {
+            this.transitionTo(this.getActiveRoutePath(), this.getParams());
+        }
     }
 });
 
