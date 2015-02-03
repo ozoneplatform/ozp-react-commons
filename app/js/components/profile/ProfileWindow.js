@@ -5,7 +5,7 @@ var Reflux = require('reflux');
 
 var Modal = require('../Modal');
 
-var { Navigation, History } = require('react-router');
+var { Navigation } = require('react-router');
 
 var CurrentProfileStore = require('../../stores/CurrentProfileStore');
 var ProfileActions = require('../../actions/ProfileActions');
