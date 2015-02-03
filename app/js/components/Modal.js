@@ -2,6 +2,8 @@
 
 var React = require('react');
 
+require('bootstrap');
+
 var BootstrapModal = React.createClass({
 
     propTypes: {
