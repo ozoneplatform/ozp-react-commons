@@ -44,11 +44,10 @@ var BootstrapModal = React.createClass({
     render: function () {
         var buttons = this.props.buttons;
 
-        /*jshint ignore:start */
         if (!buttons) {
             if (this.props.cancel) {
                 buttons = [(
-                    <a href="javascript:;" role="button" className="btn btn-link" onClick={this.handleCancel}>
+                    <a role="button" className="btn btn-link" onClick={this.handleCancel}>
                         {this.props.cancel}
                     </a>
                 )];
@@ -56,7 +55,7 @@ var BootstrapModal = React.createClass({
 
             if (this.props.confirm) {
                 buttons.push(
-                    <a href="javascript:;" role="button" className="btn btn-info" onClick={this.handleConfirm}>
+                    <a role="button" className="btn btn-info" onClick={this.handleConfirm}>
                         {this.props.confirm}
                     </a>
                 );
@@ -96,7 +95,6 @@ var BootstrapModal = React.createClass({
                 </div>
             </div>
         );
-        /*jshint ignore:end */
     },
 
     handleCancel: function () {
