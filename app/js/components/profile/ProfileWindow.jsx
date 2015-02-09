@@ -3,7 +3,7 @@
 var React = require('react');
 var Reflux = require('reflux');
 
-var Modal = require('../Modal');
+var Modal = require('../Modal.jsx');
 
 var { Navigation } = require('react-router');
 

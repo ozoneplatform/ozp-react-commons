@@ -9,6 +9,7 @@ var sinon = require('sinon');
 
 var TestUtils = require('react').addons.TestUtils;
 
+/* global describe, it */
 describe('ProfileWindow', function() {
     it('fetches the profile and owned listings when mounted', function() {
         var fetchProfileSpy = sinon.spy(),
@@ -16,7 +17,7 @@ describe('ProfileWindow', function() {
 
         var profileId = 1;
 
-        var profileWindowLoader = require('inject?../../actions/ProfileActions&reflux&../../stores/CurrentProfileStore&react-router!../ProfileWindow');
+        var profileWindowLoader = require('inject?../../actions/ProfileActions&reflux&../../stores/CurrentProfileStore&react-router!../ProfileWindow.jsx');
         var ProfileWindow = profileWindowLoader({
             '../../stores/CurrentProfileStore': null,
             reflux: {
@@ -31,14 +32,12 @@ describe('ProfileWindow', function() {
             }
         });
 
-        /* jshint ignore:start */
         TestUtils.renderIntoDocument(
             <ProfileWindow
                 profileId={profileId}
                 listingLinkEl={() => undefined}
                 backRoute={''} />
         );
-        /* jshint ignore:end */
 
         expect(fetchProfileSpy.calledOnce).to.be.true();
         expect(fetchProfileSpy.calledWith(profileId)).to.be.true();
@@ -52,7 +51,7 @@ describe('ProfileWindow', function() {
 
         var profileId = 1;
 
-        var profileWindowLoader = require('inject?../../actions/ProfileActions&../../stores/CurrentProfileStore&react-router!../ProfileWindow');
+        var profileWindowLoader = require('inject?../../actions/ProfileActions&../../stores/CurrentProfileStore&react-router!../ProfileWindow.jsx');
         var ProfileWindow = profileWindowLoader({
             '../../stores/CurrentProfileStore': CurrentProfileStoreMock,
             '../../actions/ProfileActions': {
@@ -66,22 +65,18 @@ describe('ProfileWindow', function() {
 
         var LinkMock = React.createClass({
             render: function() {
-                /* jshint ignore:start */
                 return (
                     <a href={this.props.listingId}>{this.props.children}</a>
                 );
-                /* jshint ignore:end */
             }
         });
 
-        /* jshint ignore:start */
         var element = TestUtils.renderIntoDocument(
             <ProfileWindow
                 profileId={profileId}
                 listingLinkEl={LinkMock}
                 backRoute={''} />
         );
-        /* jshint ignore:end */
 
         var storeData = {
             profile: {
@@ -126,7 +121,7 @@ describe('ProfileWindow', function() {
 
         var profileId = 1;
 
-        var profileWindowLoader = require('inject?../../actions/ProfileActions&../../stores/CurrentProfileStore&react-router!../ProfileWindow');
+        var profileWindowLoader = require('inject?../../actions/ProfileActions&../../stores/CurrentProfileStore&react-router!../ProfileWindow.jsx');
         var ProfileWindow = profileWindowLoader({
             '../../stores/CurrentProfileStore': CurrentProfileStoreMock,
             '../../actions/ProfileActions': {
@@ -138,14 +133,12 @@ describe('ProfileWindow', function() {
             }
         });
 
-        /* jshint ignore:start */
         var element = TestUtils.renderIntoDocument(
             <ProfileWindow
                 profileId={profileId}
                 listingLinkEl={() => undefined}
                 backRoute={''} />
         );
-        /* jshint ignore:end */
 
         expect($(element.getDOMNode()).find('.loading')).to.be.ok();
 
@@ -159,7 +152,7 @@ describe('ProfileWindow', function() {
 
         var profileId = 1;
 
-        var profileWindowLoader = require('inject?../../actions/ProfileActions&../../stores/CurrentProfileStore&react-router!../ProfileWindow');
+        var profileWindowLoader = require('inject?../../actions/ProfileActions&../../stores/CurrentProfileStore&react-router!../ProfileWindow.jsx');
         var ProfileWindow = profileWindowLoader({
             '../../stores/CurrentProfileStore': CurrentProfileStoreMock,
             '../../actions/ProfileActions': {
@@ -175,22 +168,18 @@ describe('ProfileWindow', function() {
             render: function() {
                 expect(this.props.children).to.be.ok();
 
-                /* jshint ignore:start */
                 return (
                     <a className="link-mock" href={this.props.listingId}></a>
                 );
-                /* jshint ignore:end */
             }
         });
 
-        /* jshint ignore:start */
         var element = TestUtils.renderIntoDocument(
             <ProfileWindow
                 profileId={profileId}
                 listingLinkEl={LinkMock}
                 backRoute={''} />
         );
-        /* jshint ignore:end */
 
         var storeData = {
             profile: {
@@ -222,7 +211,7 @@ describe('ProfileWindow', function() {
         var backRoute = '#backRoute';
         var transitionToSpy = sinon.spy();
 
-        var profileWindowLoader = require('inject?../../actions/ProfileActions&../../stores/CurrentProfileStore&react-router!../ProfileWindow');
+        var profileWindowLoader = require('inject?../../actions/ProfileActions&../../stores/CurrentProfileStore&react-router!../ProfileWindow.jsx');
         var ProfileWindow = profileWindowLoader({
             '../../stores/CurrentProfileStore': CurrentProfileStoreMock,
             '../../actions/ProfileActions': {
@@ -236,14 +225,12 @@ describe('ProfileWindow', function() {
             }
         });
 
-        /* jshint ignore:start */
         var element = TestUtils.renderIntoDocument(
             <ProfileWindow
                 profileId={profileId}
                 listingLinkEl={() => undefined}
                 backRoute={backRoute} />
         );
-        /* jshint ignore:end */
 
         var closeBtn = $(element.getDOMNode()).find('.close')[0];
 
@@ -259,7 +246,7 @@ describe('ProfileWindow', function() {
         var profileId = 1;
         var backRoute = sinon.spy();
 
-        var profileWindowLoader = require('inject?../../actions/ProfileActions&../../stores/CurrentProfileStore&react-router!../ProfileWindow');
+        var profileWindowLoader = require('inject?../../actions/ProfileActions&../../stores/CurrentProfileStore&react-router!../ProfileWindow.jsx');
         var ProfileWindow = profileWindowLoader({
             '../../stores/CurrentProfileStore': CurrentProfileStoreMock,
             '../../actions/ProfileActions': {
@@ -271,14 +258,12 @@ describe('ProfileWindow', function() {
             }
         });
 
-        /* jshint ignore:start */
         var element = TestUtils.renderIntoDocument(
             <ProfileWindow
                 profileId={profileId}
                 listingLinkEl={() => undefined}
                 backRoute={backRoute} />
         );
-        /* jshint ignore:end */
 
         var closeBtn = $(element.getDOMNode()).find('.close')[0];
 

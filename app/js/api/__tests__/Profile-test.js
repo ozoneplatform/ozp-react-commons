@@ -5,6 +5,7 @@ var $ = require('jquery');
 var sinon = require('sinon');
 var expect = require('chai').expect;
 
+/* global describe, it */
 describe('ProfileApi', function() {
     describe('getOwnedListings', function() {
         it('properly constructs the URL', function() {
@@ -56,10 +57,13 @@ describe('ProfileApi', function() {
 
             var promise = ProfileApi.getOwnedListings(profileId);
 
-            expect(promise.state()).to.equal("pending");
+            expect(promise.state()).to.equal('pending');
 
             promise.done(function(data) {
-                expect(data).to.equal(items);
+                expect(data.length).to.equal(2);
+                expect(data[0].title).to.equal(items[0].title);
+                expect(data[1].title).to.equal(items[1].title);
+
                 done();
             });
 
@@ -146,7 +150,7 @@ describe('ProfileApi', function() {
 
             var promise = ProfileApi.getProfile(profileId);
 
-            expect(promise.state()).to.equal("pending");
+            expect(promise.state()).to.equal('pending');
 
             promise.done(function(data) {
                 expect(data).to.equal(serverResponseBody);

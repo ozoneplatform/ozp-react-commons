@@ -7,6 +7,7 @@ var $ = require('jquery');
 
 var ProfileActions = require('../../actions/ProfileActions');
 
+/* global describe, it */
 describe('CurrentProfileStore', function() {
 
     it('defaults to a null profile and empty array of ownedListings', function() {

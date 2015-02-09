@@ -10,5 +10,5 @@ require('bootstrap');
 
 //require all tests
 //This snippet was pulled from the karma-webpack README
-var testsContext = require.context("..", true, /-test$/);
+var testsContext = require.context('..', true, /-test$/);
 testsContext.keys().forEach(testsContext);
