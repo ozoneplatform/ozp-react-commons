@@ -62,10 +62,11 @@ var SelfStore = Reflux.createStore({
     },
 
     onUpdateLaunchPreference: function(launchInWebtop) {
-        var me = this;
+        var me = this,
+            profile = me.currentUser;
 
-        this.handleProfileChange(ProfileApi.updateProfile(this.profile.id,
-                Object.assign({}, this.profile, {launchInWebtop: launchInWebtop})));
+        this.handleProfileChange(ProfileApi.updateProfile(profile.id,
+                Object.assign({}, profile, {launchInWebtop: launchInWebtop})));
     },
 
     onAddToLibrary: function (listing) {

@@ -3,25 +3,36 @@
 var React = require('react');
 var Reflux = require('reflux');
 
+var { Navigation } = require('react-router');
+
 var SelfStore = require('../../stores/SelfStore');
 var ProfileActions = require('../../actions/ProfileActions');
 
 var Modal = require('../Modal.jsx');
 
 var SettingsWindow = React.createClass({
-    mixins: [Reflux.connect('SelfStore')],
+    mixins: [Reflux.listenTo(SelfStore, 'onStoreChange'), Navigation],
+
+    propsTypes: {
+        backRoute: React.PropTypes.string.isRequired
+    },
 
     getInitialState: function() {
-        return {currentUser: { launchInWebtop: false }};
+        return this._getState(SelfStore.getDefaultData());
+    },
+
+    _getState: function(profileData) {
+        var profile = profileData.currentUser,
+            launchInWebtop = profile ? profile.launchInWebtop : undefined;
+
+        return {launchInWebtop: launchInWebtop};
     },
 
     render: function() {
-        var launchInWebtop = this.state.currentUser.launchInWebtop;
-
         return (
             <Modal ref="modal" className="settings-window" title="Settings"
                     cancel="Cancel" confirm="Save"
-                    handleCancel={this.close} handleConfirm={this.save}>
+                    onCancel={this.close} onConfirm={this.save}>
                 <dl>
                     <dt>
                         Default Application Launch
@@ -32,7 +43,8 @@ var SettingsWindow = React.createClass({
                     </dt>
                     <dd>
                         <label>
-                            <input ref="launchInWebtop" type="checkbox" value={launchInWebtop}/>
+                            <input type="checkbox" onChange={this.onLaunchInWebtopChange}
+                                checked={this.state.launchInWebtop}/>
                             Open in Webtop
                         </label>
                     </dd>
@@ -45,14 +57,20 @@ var SettingsWindow = React.createClass({
         return newState.launchInWebtop !== this.state.launchInWebtop;
     },
 
+    onStoreChange: function(profileData) {
+        this.setState(this._getState(profileData));
+    },
+
+    onLaunchInWebtopChange: function(e) {
+        this.setState({launchInWebtop: e.target.checked});
+    },
+
     close: function() {
-        this.refs.modal.close();
+        this.transitionTo(this.props.backRoute);
     },
 
     save: function() {
-        var newLaunchInWebtop = this.refs.launchInWebtop.getDOMNode().value;
-
-        ProfileActions.updateLaunchPreference(newLaunchInWebtop);
+        ProfileActions.updateLaunchPreference(this.state.launchInWebtop);
         this.close();
     }
 });
