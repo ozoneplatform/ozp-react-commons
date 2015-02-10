@@ -10,6 +10,24 @@ var ProfileActions = require('../../actions/ProfileActions');
 
 var Modal = require('../Modal.jsx');
 
+var Toggle = React.createClass({
+    propTypes: {
+        checked: React.PropTypes.bool,
+        onChange: React.PropTypes.func.isRequired
+    },
+
+    render: function() {
+        return (
+            <label className="switch">
+                <input type="checkbox" className="ios"
+                    onChange={this.props.onChange} checked={this.props.checked} />
+                <div className="track"><div className="knob"/></div>
+                {this.props.children}
+            </label>
+        );
+    }
+});
+
 var SettingsWindow = React.createClass({
     mixins: [Reflux.listenTo(SelfStore, 'onStoreChange'), Navigation],
 
@@ -42,11 +60,10 @@ var SettingsWindow = React.createClass({
                         </small>
                     </dt>
                     <dd>
-                        <label>
-                            <input type="checkbox" onChange={this.onLaunchInWebtopChange}
-                                checked={this.state.launchInWebtop}/>
+                        <Toggle onChange={this.onLaunchInWebtopChange}
+                                checked={this.state.launchInWebtop}>
                             Open in Webtop
-                        </label>
+                        </Toggle>
                     </dd>
                 </dl>
             </Modal>

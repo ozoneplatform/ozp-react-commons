@@ -1,0 +1,41 @@
+.settings-window {
+    .modal-body {
+        padding: 30px;
+    }
+
+    dl {
+        width: 650px;
+        margin: 0 auto;
+    }
+
+    dt, dd {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    dt {
+        width: 30%;
+
+        font-weight: normal;
+
+        > small {
+            display: block;
+
+            margin-top: 3px;
+        }
+    }
+
+    dd {
+        width: 59%; //not 60 to combat IE rounding errors
+        margin-left: 10%;
+
+        .track {
+            display: inline-block;
+            margin-right: 15px;
+        }
+    }
+
+    small, dd {
+        font-size: 12px;
+    }
+}
