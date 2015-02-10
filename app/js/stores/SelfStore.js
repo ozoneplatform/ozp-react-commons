@@ -32,7 +32,7 @@ var SelfStore = Reflux.createStore({
 
     listenables: ProfileActions,
 
-    doTriggger: function() {
+    doTrigger: function() {
         this.trigger(this.getDefaultData());
     },
 
@@ -45,7 +45,7 @@ var SelfStore = Reflux.createStore({
         }, function() {
             me.currentUserError = true;
             me.currentUser = null;
-        }).then(me.doTrigger);
+        }).then(me.doTrigger.bind(me));
     },
 
     onFetchLibrary: function () {
