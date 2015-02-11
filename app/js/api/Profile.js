@@ -17,7 +17,7 @@ var ProfileApi = {
     addToLibrary: function (listing) {
         var libraryEntryJson = {
             listing: { id: listing.id }
-        }
+        };
 
         return $.ajax({
             url: `${API_URL}/api/profile/self/library`,
