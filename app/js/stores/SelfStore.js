@@ -1,5 +1,7 @@
 'use strict';
 
+require('object-assign');
+
 var Reflux = require('reflux');
 var _ = require('../utils/_');
 var ProfileActions = require('../actions/ProfileActions');
