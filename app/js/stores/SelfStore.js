@@ -37,7 +37,8 @@ var SelfStore = Reflux.createStore({
     },
 
     handleProfileChange: function(promise) {
-        var me = this;
+        var me = this,
+            trigger = me.doTrigger.bind(me);
 
         promise.then(function(profile) {
             me.currentUserError = false;
@@ -45,7 +46,7 @@ var SelfStore = Reflux.createStore({
         }, function() {
             me.currentUserError = true;
             me.currentUser = null;
-        }).then(me.doTrigger.bind(me));
+        }).then(trigger, trigger);
     },
 
     onFetchLibrary: function () {
