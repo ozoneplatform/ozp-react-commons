@@ -44,11 +44,11 @@ var BootstrapModal = React.createClass({
     render: function () {
         var buttons = this.props.buttons;
 
-        /*jshint ignore:start */
         if (!buttons) {
             if (this.props.cancel) {
                 buttons = [(
-                    <a href="javascript:;" role="button" className="btn btn-link" onClick={this.handleCancel}>
+                    <a key="cancel" role="button"
+                            className="btn btn-link" onClick={this.handleCancel}>
                         {this.props.cancel}
                     </a>
                 )];
@@ -56,7 +56,8 @@ var BootstrapModal = React.createClass({
 
             if (this.props.confirm) {
                 buttons.push(
-                    <a href="javascript:;" role="button" className="btn btn-info" onClick={this.handleConfirm}>
+                    <a key="confirm" role="button"
+                            className="btn btn-info" onClick={this.handleConfirm}>
                         {this.props.confirm}
                     </a>
                 );
@@ -76,8 +77,10 @@ var BootstrapModal = React.createClass({
                         {
                             this.props.title && (
                                 <div className="modal-header">
-                                    <button type="button" className="close" onClick={ this.handleCancel }>
-                                        <span aria-hidden="true">&times;</span><span className="sr-only">Close</span>
+                                    <button type="button" className="close"
+                                            onClick={ this.handleCancel }>
+                                        <span aria-hidden="true">&times;</span>
+                                        <span className="sr-only">Close</span>
                                     </button>
                                     <h4 className="modal-title">{this.props.title}</h4>
                                 </div>
@@ -96,7 +99,6 @@ var BootstrapModal = React.createClass({
                 </div>
             </div>
         );
-        /*jshint ignore:end */
     },
 
     handleCancel: function () {

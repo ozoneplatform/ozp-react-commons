@@ -2,4 +2,10 @@
 
 var Reflux = require('reflux');
 
-module.exports = Reflux.createActions(['fetchProfile', 'fetchOwnedListings']);
+module.exports = Reflux.createActions([
+    'fetchProfile',
+    'fetchSelf',
+    'fetchLibrary',
+    'fetchOwnedListings',
+    'updateLaunchPreference'
+]);

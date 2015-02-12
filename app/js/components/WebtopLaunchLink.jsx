@@ -18,8 +18,7 @@ var WebtopLaunchLink = React.createClass({
     propTypes: {
         listing: React.PropTypes.object.isRequired,
         newTab: React.PropTypes.bool,
-        onClick: React.PropTypes.func,
-        className: React.PropTypes.string
+        onClick: React.PropTypes.func
     },
 
     getDefaultProps: function() {
@@ -27,16 +26,15 @@ var WebtopLaunchLink = React.createClass({
     },
 
     render: function() {
-        /* jshint ignore:start */
+        var { newTab, listing, children, ...otherProps } = this.props;
+
         return (
-            <a href={getLink(this.props.listing)}
-                    className={this.props.className}
-                    onClick={this.props.onClick}
-                    target={this.props.newTab ? '_blank' : '_self'}>
-                {this.props.children}
+            <a href={getLink(listing)}
+                    target={newTab ? '_blank' : '_self'}
+                    {...otherProps}>
+                {children}
             </a>
         );
-        /* jshint ignore:end */
     }
 });
 

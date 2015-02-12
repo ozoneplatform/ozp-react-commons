@@ -21,7 +21,6 @@ var ListingRow = React.createClass({
         var listing = this.props.listing,
             Link = this.props.linkEl;
 
-        /* jshint ignore:start */
         return (
             <li className="listing">
                 <Link listingId={listing.id}>
@@ -30,7 +29,6 @@ var ListingRow = React.createClass({
                 </Link>
             </li>
         );
-        /* jshint ignore:end */
     }
 });
 
@@ -55,7 +53,6 @@ var ProfileInfo = React.createClass({
     },
 
     render: function() {
-        /* jshint ignore:start */
         var profile = this.state.profile,
             linkEl = this.props.listingLinkEl,
             listings = this.state.ownedListings.map(
@@ -85,7 +82,6 @@ var ProfileInfo = React.createClass({
                 <span className="loading">Loading profile information…</span>
             );
         }
-        /* jshint ignore:end */
     }
 });
 
@@ -109,7 +105,6 @@ var ProfileWindow = React.createClass({
     },
 
     render: function() {
-        /* jshint ignore:start */
         return (
             <Modal ref="modal" className="profile-window" size="small">
                 <header>
@@ -120,7 +115,6 @@ var ProfileWindow = React.createClass({
                     listingLinkEl={this.props.listingLinkEl} />
             </Modal>
         );
-        /* jshint ignore:end */
     },
 
     close: function() {

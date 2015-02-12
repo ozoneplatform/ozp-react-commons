@@ -4,5 +4,6 @@
 **/
 module.exports = {
     pick: require('lodash-amd/modern/objects/pick'),
-    last: require('lodash-amd/modern/arrays/last'),
+    omit: require('lodash-amd/modern/objects/omit'),
+    last: require('lodash-amd/modern/arrays/last')
 };
