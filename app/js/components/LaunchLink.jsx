@@ -2,9 +2,9 @@
 
 var React = require('react');
 var Reflux = require('reflux');
-var _ = require('../utils/_');
 
 var WebtopLaunchLink = require('./WebtopLaunchLink.jsx');
+var TabLaunchLink = require('./TabLaunchLink.jsx');
 
 var SelfStore = require('../stores/SelfStore');
 
@@ -24,7 +24,15 @@ var LaunchLink = React.createClass({
 
     propTypes: {
         listing: React.PropTypes.object.isRequired,
-        newTab: React.PropTypes.bool
+
+        //newTab can either be a boolean or an object.  If it is an object
+        //it should have the boolean properties 'webtop' and 'tab' indicating whether to open a
+        //new tab in the case of launching to webtop, or launching directly into a browsing
+        //context, respectively
+        newTab: React.PropTypes.oneOfType([
+            React.PropTypes.bool,
+            React.PropTypes.object
+        ])
     },
 
     getInitialState: function() {
@@ -37,23 +45,23 @@ var LaunchLink = React.createClass({
 
     render: function() {
         var launchInWebtop = this.state.launchInWebtop,
-            linkChildren = <span className="icon-open"></span>,
             { children, newTab, ...otherProps } = this.props,
-            anchorOtherProps = _.omit(otherProps, 'href', 'target');
+            Component,
+            openInNewTab;
+
+        if (launchInWebtop) {
+            Component = WebtopLaunchLink;
+            openInNewTab = typeof newTab === 'object' ? newTab.webtop : newTab;
+        }
+        else {
+            Component = TabLaunchLink;
+            openInNewTab = typeof newTab === 'object' ? newTab.tab : newTab;
+        }
 
         return (
-            launchInWebtop ?
-                <WebtopLaunchLink {...otherProps}
-                        newTab={newTab}
-                        listing={this.props.listing} >
-                    {children}
-                </WebtopLaunchLink>
-                :
-                <a {...anchorOtherProps}
-                        href={this.props.listing.launchUrl}
-                        target={newTab ? '_blank' : '_self'}>
-                    {children}
-                </a>
+            <Component newTab={openInNewTab} {...otherProps}>
+                {children}
+            </Component>
         );
     }
 });
