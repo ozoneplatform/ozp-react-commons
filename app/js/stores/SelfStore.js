@@ -28,7 +28,6 @@ var profileFunctions = {
 };
 
 var SelfStore = Reflux.createStore({
-    library: null,
     currentUser: null,
     currentUserError: false,
 
@@ -51,15 +50,6 @@ var SelfStore = Reflux.createStore({
         }).then(trigger, trigger);
     },
 
-    onFetchLibrary: function () {
-        var me = this;
-
-        ProfileApi.getLibrary().then(function(library) {
-            me.library = library;
-            me.doTrigger();
-        });
-    },
-
     onFetchSelf: function () {
         this.handleProfileChange(ProfileApi.getProfile('self'));
     },
@@ -72,31 +62,8 @@ var SelfStore = Reflux.createStore({
                 Object.assign({}, profile, {launchInWebtop: launchInWebtop})));
     },
 
-    onAddToLibrary: function (listing) {
-        var me = this;
-
-        ProfileApi.addListingToLibrary(listing).then(function(libraryEntry) {
-            me.library = me.library.concat(libraryEntry);
-            me.doTrigger();
-        });
-    },
-
-    onRemoveFromLibrary: function (listing) {
-        var me = this;
-
-        ProfileApi.removeListingFromLibrary(listing).then(function() {
-            var toRemove = _.find(me.library, {
-                listing: {
-                    id: listing.id
-                }
-            });
-            me.library = _.without(me.library, toRemove);
-            me.doTrigger();
-        });
-    },
-
     getDefaultData: function () {
-        return _.pick(this, 'currentUser', 'currentUserError', 'library');
+        return _.pick(this, 'currentUser', 'currentUserError');
     }
 });
 
