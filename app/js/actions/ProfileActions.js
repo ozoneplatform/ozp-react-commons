@@ -7,7 +7,5 @@ module.exports = Reflux.createActions([
     'fetchSelf',
     'fetchLibrary',
     'fetchOwnedListings',
-    'addToLibrary',
-    'removeFromLibrary',
     'updateLaunchPreference'
 ]);
