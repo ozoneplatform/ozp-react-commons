@@ -30,6 +30,7 @@ var profileFunctions = {
 var SelfStore = Reflux.createStore({
     currentUser: null,
     currentUserError: false,
+    notifications: null,
 
     listenables: ProfileActions,
 
@@ -63,7 +64,17 @@ var SelfStore = Reflux.createStore({
     },
 
     getDefaultData: function () {
-        return _.pick(this, 'currentUser', 'currentUserError');
+        return _.pick(this, 'currentUser', 'currentUserError', 'notifications');
+    },
+
+    onFetchNotificationsCompleted: function (notifications) {
+        this.notifications = notifications.getItemAsList();
+        this.doTrigger();
+    },
+
+    onDismissNotificationCompleted: function (notification) {
+        _.remove(this.notifications, notification);
+        this.doTrigger();
     }
 });
 

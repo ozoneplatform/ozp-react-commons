@@ -1,0 +1,24 @@
+.UserNotification {
+    > a {
+        padding: 0 10px !important;
+        .close {
+            color: $gray-lighter;
+            &:hover, &:focus {
+                color: $white;
+            }
+        }
+
+        .created-by {
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .message {
+            margin-top: 5px;
+        }
+
+        .Time {
+            margin-left: 5px;
+        }
+    }
+}
