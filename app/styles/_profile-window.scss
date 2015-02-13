@@ -1,49 +1,13 @@
-$profile-window-height: 400px;
-$profile-header-height: 42px;
+$profile-body-height: 350px;
 
 .profile-window {
     .modal-body {
-        background-color: $modal-content-bg;
-
-        box-sizing: content-box;
-
-        padding: 4px;
-        height: $profile-window-height;
-
-        position: relative;
-
-        > header {
-            padding: 0 15px;
-
-            > h3 {
-                display: inline-block;
-                margin: 0;
-            }
-
-            > .close {
-                color: $close-color;
-                margin-top: 0; //override default -10 margin
-            }
-
-            > * {
-                line-height: $profile-header-height;
-            }
-        }
-    }
-
-    .modal-content {
-        border: 0;
+        overflow-y: auto;
+        height: $profile-body-height;
     }
 }
 
 .profile-info {
-    background-color: $modal-body-bg;
-
-    height: $profile-window-height - $profile-header-height;
-    padding: 10px;
-
-    overflow-y: auto;
-
     dd, dt {
         display: inline;
     }

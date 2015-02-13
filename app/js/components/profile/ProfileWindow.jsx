@@ -106,11 +106,9 @@ var ProfileWindow = React.createClass({
 
     render: function() {
         return (
-            <Modal ref="modal" className="profile-window" size="small">
-                <header>
-                    <h3>Profile</h3>
-                    <button className="close" onClick={this.close}>×</button>
-                </header>
+            <Modal title="Profile" ref="modal"
+                    className="profile-window" size="small"
+                    onCancel={this.close}>
                 <ProfileInfo profileId={this.props.profileId}
                     listingLinkEl={this.props.listingLinkEl} />
             </Modal>
@@ -119,8 +117,6 @@ var ProfileWindow = React.createClass({
 
     close: function() {
         var backRoute = this.props.backRoute;
-
-        this.refs.modal.close();
 
         if (typeof backRoute === 'function') {
             backRoute();
