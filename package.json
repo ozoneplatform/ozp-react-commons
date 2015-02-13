@@ -22,7 +22,8 @@
     "lodash-amd": "2.4.1",
     "react": "^0.12.2",
     "react-router": "^0.11.6",
-    "reflux": "^0.1.15"
+    "reflux": "^0.1.15",
+    "object-assign": "1.0.0"
   },
   "devDependencies": {
     "karma": "0.12.31",

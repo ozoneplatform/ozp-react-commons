@@ -28,6 +28,19 @@ var Toggle = React.createClass({
     }
 });
 
+function getStoreState(profileData) {
+    var profile = profileData.currentUser,
+        launchInWebtop = profile ? profile.launchInWebtop : undefined;
+
+    return {
+        initialLaunchInWebtop: launchInWebtop,
+        launchInWebtop: launchInWebtop
+    };
+}
+
+/**
+ * A modal window that allows the user to update their preferences
+ */
 var SettingsWindow = React.createClass({
     mixins: [Reflux.listenTo(SelfStore, 'onStoreChange'), Navigation],
 
@@ -36,14 +49,7 @@ var SettingsWindow = React.createClass({
     },
 
     getInitialState: function() {
-        return this._getState(SelfStore.getDefaultData());
-    },
-
-    _getState: function(profileData) {
-        var profile = profileData.currentUser,
-            launchInWebtop = profile ? profile.launchInWebtop : undefined;
-
-        return {launchInWebtop: launchInWebtop};
+        return getStoreState(SelfStore.getDefaultData());
     },
 
     render: function() {
@@ -60,7 +66,8 @@ var SettingsWindow = React.createClass({
                         </small>
                     </dt>
                     <dd>
-                        <Toggle onChange={this.onLaunchInWebtopChange}
+                        <Toggle ref="launchInWebtop"
+                                onChange={this.onLaunchInWebtopChange}
                                 checked={this.state.launchInWebtop}>
                             Open in Webtop
                         </Toggle>
@@ -71,11 +78,12 @@ var SettingsWindow = React.createClass({
     },
 
     shouldComponentUpdate: function(newProps, newState) {
-        return newState.launchInWebtop !== this.state.launchInWebtop;
+        return newState.launchInWebtop !== this.state.launchInWebtop ||
+            newState.initialLaunchInWebtop !== this.state.initialLaunchInWebtop;
     },
 
     onStoreChange: function(profileData) {
-        this.setState(this._getState(profileData));
+        this.setState(getStoreState(profileData));
     },
 
     onLaunchInWebtopChange: function(e) {
@@ -87,7 +95,11 @@ var SettingsWindow = React.createClass({
     },
 
     save: function() {
-        ProfileActions.updateLaunchPreference(this.state.launchInWebtop);
+        //if the checkbox is not in the state it started in
+        if (this.state.launchInWebtop !== this.state.initialLaunchInWebtop) {
+            ProfileActions.updateLaunchPreference(this.state.launchInWebtop);
+        }
+
         this.close();
     }
 });
