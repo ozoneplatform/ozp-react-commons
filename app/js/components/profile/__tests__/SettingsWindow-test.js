@@ -3,6 +3,7 @@
 var React = require('react');
 var Reflux = require('reflux');
 var TestUtils = React.addons.TestUtils;
+var $ = require('jquery');
 
 var expect = require('chai').expect;
 var sinon = require('sinon');
