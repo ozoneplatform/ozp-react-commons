@@ -32,7 +32,7 @@ var UserNotification = React.createClass({
                         <_Date date={expiresDate} />
                         <Time date={expiresDate} />
                     </i>
-                    <p className="message">{message}</p>
+                    <p className="message small">{message}</p>
                 </a>
             </li>
         );
