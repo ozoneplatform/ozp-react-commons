@@ -7,6 +7,7 @@ var _ = require('../utils/_');
 var ProfileActions = require('../actions/ProfileActions');
 var ProfileApi = require('../api/Profile');
 var { UserRole } = require('../constants');
+var OzpError = require('../utils/OzpError');
 var { ORG_STEWARD, ADMIN } = UserRole;
 
 //functions to mix in to the currentUser object
@@ -46,7 +47,7 @@ var SelfStore = Reflux.createStore({
             me.currentUserError = false;
             me.currentUser = Object.assign({}, profile, profileFunctions);
         }, function() {
-            me.currentUserError = true;
+            me.currentUserError = OzpError.apply(null, arguments);
             me.currentUser = null;
         }).then(trigger, trigger);
     },

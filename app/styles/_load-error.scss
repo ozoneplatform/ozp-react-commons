@@ -1,0 +1,29 @@
+.load-error {
+    margin-top: 20px;
+
+    font-weight: normal;
+
+    > p {
+        font-size: 1.2em;
+    }
+
+    .error-details {
+        margin-left: 20px;
+    }
+
+    p > label {
+        margin-bottom: 0;
+
+        &::after {
+            content: ':';
+        }
+    }
+
+    h4 {
+        font-weight: bold;
+    }
+
+    h5 {
+        font-weight: bolder;
+    }
+}
