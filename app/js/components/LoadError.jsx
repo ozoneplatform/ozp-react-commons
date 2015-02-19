@@ -17,15 +17,9 @@ var LoadError = React.createClass({
                 <p>There was a problem completing your request.</p>
                 <div className="error-details">
                     <h4>{errorMessages.shortDescription}</h4>
-                    {
-                        errorMessages.code &&
-                            <p><label>Error code</label> {errorMessages.code}</p>
-                    }
+                    <p><label>Error code</label> {errorMessages.code || "None"}</p>
                     <p>{errorMessages.longDescription}</p>
-                    {
-                        errorMessages.serverMessage &&
-                            <p><label>Server Message</label> {errorMessages.serverMessage}</p>
-                    }
+                    <p><label>Server Message</label> {errorMessages.serverMessage || "None"}</p>
                     <section className="recommended-action">
                         <h5>What should I do?</h5>
                         <p>{errorMessages.recommendedAction}</p>
