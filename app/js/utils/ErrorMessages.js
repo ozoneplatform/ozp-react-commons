@@ -1,5 +1,7 @@
 'use strict';
 
+var assign = require('object-assign');
+
 var f = Object.freeze;
 
 /* jshint multistr:true */
@@ -28,8 +30,8 @@ var messages = f({
     }),
     404: f({
         shortDescription: "Not Found",
-        longDescription: "The requested item was not found at the specified location. The address \
-            may be incorrect or it may have moved or been deleted.",
+        longDescription: "The requested item was not found at the specified location. The \
+            address may be incorrect or it may have moved or been deleted.",
         recommendedAction: "Please contact your system administrator."
     }),
     405: f({
@@ -56,8 +58,8 @@ var messages = f({
     408: f({
         shortDescription: "Request Timeout",
         longDescription: "The response was not provided to the server in time.",
-        recommendedAction: "Please try again. If you receive this message multiple times, contact \
-            your system administrator."
+        recommendedAction: "Please try again. If you receive this message multiple times, \
+            contact your system administrator."
     }),
     409: f({
         shortDescription: "Conflict",
@@ -102,8 +104,8 @@ var messages = f({
     }),
     416: f({
         shortDescription: "Requested Range Not Satisfiable",
-        longDescription: "The range of values specified in the request cannot be satisfied by the \
-            server.",
+        longDescription: "The range of values specified in the request cannot be satisfied by \
+            the server.",
         recommendedAction: "Please contact your system administrator."
     }),
     417: f({
@@ -144,8 +146,8 @@ var messages = f({
         shortDescription: "Gateway Timeout",
         longDescription: "The server did not receive a timely response from another server and \
             could not complete your request.",
-        recommendedAction: "Please try again. If you receive this message multiple times, contact \
-            your system administrator."
+        recommendedAction: "Please try again. If you receive this message multiple times, \
+            contact your system administrator."
     }),
     505: f({
         shortDescription: "HTTP Version Not Supported",
@@ -167,7 +169,7 @@ function messagesForError(err) {
     var { httpStatusCode, message } = err,
         cannedMessages = httpStatusCode ? messages[httpStatusCode] : unknownErrorMessage;
 
-    return Object.assign({serverMessage: message, code: httpStatusCode}, cannedMessages);
+    return assign({serverMessage: message, code: httpStatusCode}, cannedMessages);
 }
 
 module.exports = messagesForError;
