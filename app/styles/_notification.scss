@@ -5,7 +5,7 @@
 
     padding: 0;
     max-height: ($notification-height + $divider-height) * $notifications-visible - $divider-height;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .UserNotification {
