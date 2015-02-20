@@ -1,5 +1,17 @@
+.UserNotifications {
+    $notification-height: 71px;
+    $divider-height: (9px * 2) + 1px;
+    $notifications-visible: 3;
+
+    padding: 0;
+    max-height: ($notification-height + $divider-height) * $notifications-visible - $divider-height;
+    overflow-y: scroll;
+}
+
 .UserNotification {
-    > a {
+    padding: 7px;
+
+    > {
         padding: 0 10px !important;
         .close {
             color: $gray-lighter;
@@ -15,6 +27,7 @@
 
         .message {
             margin-top: 5px;
+            margin-bottom: 0;
         }
 
         .Time {
