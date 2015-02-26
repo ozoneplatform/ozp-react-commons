@@ -51,4 +51,10 @@ window.OzoneConfig = {
     // @ifndef DEVELOPER_RESOURCES_URL
     "DEVELOPER_RESOURCES_URL": "#",
     // @endif
+    // @ifdef APP_TITLE
+    "APP_TITLE": '/* @echo APP_TITLE */',
+    // @endif
+    // @ifndef APP_TITLE
+    "APP_TITLE": "OZONE",
+    // @endif
 };
