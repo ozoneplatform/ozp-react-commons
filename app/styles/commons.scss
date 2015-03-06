@@ -13,6 +13,14 @@ $icons: (
     icon-question-grayLightest: icon-question-white,
     icon-menu-grayLightest: icon-menu-white,
     icon-bell-grayLightest: icon-bell-white,
-    icon-cross-grayLightest: icon-cross-white
+    icon-cross-grayLightest: icon-cross-white,
+    icon-ribbon-grayLightest: icon-ribbon-white,
+    icon-head-grayLightest: icon-head-white,
+    icon-cog-grayLightest: icon-cog-white,
+    icon-square-plus-grayLightest: icon-square-plus-white,
+    icon-cloud-grayLightest: icon-cloud-white,
+    icon-layers-grayLightest: icon-layers-white,
+    icon-shopping-settings-grayLightest: icon-shopping-settings-white,
+    icon-bar-graph-2-grayLightest: icon-bar-graph-2-white
 );
 @include sprite-icons($icons);
