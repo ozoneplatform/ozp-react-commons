@@ -31,8 +31,8 @@ var UserNotificationDropdown = React.createClass({
         var notifications = this.state.notifications;
         var hasNotifications = notifications && notifications.length > 0;
         var bellClassNames = cx({
-            'icon-bell-filled': true,
-            activeIcon: hasNotifications
+            'icon-bell-grayLightest': !hasNotifications,
+            'icon-bell-filled-blue': hasNotifications,
         });
 
         return (

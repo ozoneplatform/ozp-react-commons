@@ -1,7 +1,18 @@
 @import "variables";
 
+@import "mixins";
 @import "switches";
 @import "notification";
 @import "profile-window";
 @import "settings-window";
 @import "load-error";
+
+$icons: (
+    icon-shopping-grayLightest: icon-shopping-white,
+    icon-layout-grayLightest: icon-layout-white,
+    icon-question-grayLightest: icon-question-white,
+    icon-menu-grayLightest: icon-menu-white,
+    icon-bell-grayLightest: icon-bell-white,
+    icon-cross-grayLightest: icon-cross-white
+);
+@include sprite-icons($icons);
