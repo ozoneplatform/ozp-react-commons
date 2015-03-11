@@ -14,8 +14,8 @@ var UserNotification = React.createClass({
     },
 
     onDismiss(event) {
-        if($("#notifcation-dropdown").find('.UserNotification').length > 1){
-            $("#notifcation-dropdown").addClass('open');
+        if($("#notification-dropdown").find('.UserNotification').length > 1){
+            $("#notification-dropdown").addClass('open');
         }
         event.preventDefault();
         event.stopPropagation();
