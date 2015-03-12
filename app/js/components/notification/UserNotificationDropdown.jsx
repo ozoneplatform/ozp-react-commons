@@ -23,6 +23,12 @@ var UserNotificationDropdown = React.createClass({
         };
     },
 
+    openDropdown() {
+        if($(this.getDOMNode()).find('.UserNotification').length > 1) {
+            $(this.getDOMNode()).addClass('open');
+        }
+    },
+
     componentDidMount() {
         ProfileActions.fetchNotifications();
     },
@@ -43,7 +49,7 @@ var UserNotificationDropdown = React.createClass({
                 </a>
                 {
                     hasNotifications &&
-                        <UserNotifications notifications={notifications} />
+                        <UserNotifications notifications={notifications} openDropdown={this.openDropdown} />
                 }
             </li>
         );

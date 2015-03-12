@@ -6,18 +6,20 @@ var UserNotification = require('./UserNotification.jsx');
 
 var UserNotifications = React.createClass({
 
-    _renderNotification(notification) {
+    _renderNotification(notification, openDropdown) {
         return <UserNotification
             key={notification.id}
-            notification={notification} />;
+            notification={notification}
+            openDropdown={openDropdown} />;
     },
 
     _renderNotifications() {
         var notifications = this.props.notifications;
         var length = notifications.length;
+        var openDropdown = this.props.openDropdown;
 
         return notifications.map((notification, index) => {
-            var notificationComponent = this._renderNotification(notification);
+            var notificationComponent = this._renderNotification(notification, openDropdown);
             return index === length - 1 ?
                 notificationComponent :
                 [notificationComponent, <li className="divider"></li>];
@@ -29,7 +31,7 @@ var UserNotifications = React.createClass({
         if (notifications && notifications.length > 0) {
             return (
                 <ul className="dropdown-menu UserNotifications">
-                    { this._renderNotifications() }
+                    { this._renderNotifications(this.props.func) }
                 </ul>
             );
         }
