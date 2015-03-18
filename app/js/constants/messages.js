@@ -44,7 +44,7 @@ var listingMessages = {
     'description.descriptionShort': 'Brief summary of the full description. Appears in the mouseover listing view.',
     'description.description': 'Overview describing the listing, the available features and its purpose. Appears in the detailed listing view.',
     'description.smallIcon': 'Must be at least 16px wide x 16px tall.',
-    'description.largeIcon': 'Must be 32px wide x 32px tall.',
+    'description.largeIcon': 'Must be at least 32px wide x 32px tall.',
     'description.bannerIcon': 'Must be at least 220px wide x 137px tall.',
     'description.featuredBannerIcon': 'Must be at least 600px wide x 376px tall.',
     'description.versionName': 'Numerical identification of which release version is being submitted.',
