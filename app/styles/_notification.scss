@@ -14,14 +14,16 @@
     > {
         padding: 0 10px !important;
 
-        .close:hover, .close:focus {
+        .close {
 
-                > .icon-cross-14-grayLightest {
+            &:hover, &:focus {
 
-                    @extend .icon-cross-14-blue;
+                    > .icon-cross-14-grayLightest {
 
-                    cursor: pointer;
-                }
+                        @extend .icon-cross-14-blue;
+
+                        cursor: pointer;
+                    }
             }
         }
 
