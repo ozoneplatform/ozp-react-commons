@@ -8,6 +8,7 @@
 @import "load-error";
 
 $icons: (
+    icon-home-grayLightest: icon-home-white,
     icon-shopping-grayLightest: icon-shopping-white,
     icon-layout-grayLightest: icon-layout-white,
     icon-question-grayLightest: icon-question-white,
@@ -24,3 +25,21 @@ $icons: (
     icon-bar-graph-2-grayLightest: icon-bar-graph-2-white
 );
 @include sprite-icons($icons);
+
+li.active {
+
+	> a:hover, > a:focus {
+
+		> .icon-shopping-grayLightest.activeIcon {
+
+			@extend .icon-shopping-blue;
+
+		}
+
+        > .icon-home-grayLightest.activeIcon {
+
+			@extend .icon-home-blue;
+
+		}
+	}
+}
