@@ -13,10 +13,15 @@
 
     > {
         padding: 0 10px !important;
-        .close {
-            color: $gray-lighter;
-            &:hover, &:focus {
-                color: $white;
+
+        .close:hover, .close:focus {
+
+                > .icon-cross-14-grayLightest {
+
+                    @extend .icon-cross-14-blue;
+
+                    cursor: pointer;
+                }
             }
         }
 
