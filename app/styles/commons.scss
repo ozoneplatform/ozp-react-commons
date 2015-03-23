@@ -26,6 +26,16 @@ $icons: (
 );
 @include sprite-icons($icons);
 
+.activeIcon.icon-shopping-grayLightest {
+	@extend .icon-shopping-blue;
+}
+.activeIcon.icon-home-grayLightest {
+	@extend .icon-shopping-blue;
+}
+.activeIcon.icon-layout-grayLightest {
+	@extend .icon-shopping-blue;
+}
+
 li.active {
 
 	> a:hover, > a:focus {
@@ -41,5 +51,11 @@ li.active {
 			@extend .icon-home-blue;
 
 		}
+
+        > .icon-layout-grayLightest.activeIcon {
+
+            @extend .icon-layout-blue;
+
+        }
 	}
 }
