@@ -64,19 +64,19 @@ button.close {
 
     &:hover, &:focus, &:active{
 
-        > i.icon-cross-10-grayDark{
+        > .icon-cross-10-grayDark{
             @extend .icon-cross-10-blueDark;
         }
 
-        > i.icon-cross-14-grayDark{
+        > .icon-cross-14-grayDark{
             @extend .icon-cross-14-blueDark;
         }
 
-        > i.icon-cross-16-grayDark{
+        > .icon-cross-16-grayDark{
             @extend .icon-cross-16-blueDark;
         }
 
-        > i.icon-cross-18-grayDark{
+        > .icon-cross-18-grayDark{
             @extend .icon-cross-18-blueDark;
         }
 
