@@ -94,5 +94,5 @@ var listingMessages = {
 
 module.exports = {
     listingMessages: listingMessages,
-    systemHigh: 'Warning: Data entered must NOT be above System High!'
+    systemHigh: 'Data entered must NOT be above System High!'
 };
