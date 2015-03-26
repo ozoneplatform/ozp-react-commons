@@ -47,8 +47,13 @@
             width: 225px;
         }
 
-        > .Time {
-            padding-left: 5px;
+        .created-at {
+            @extend .small;
+            font-style: italic;
+
+                > span.Time {
+                    padding-left: 5px;
+                }
         }
 
     }
