@@ -16,12 +16,16 @@
 
         .close {
 
+            > .icon-cross-14 {
+
+                @extend .icon-cross-14-grayLightest;
+            }
+
             &:hover, &:focus {
 
-                    > .icon-cross-14-grayLightest {
+                    > .icon-cross-14 {
 
                         @extend .icon-cross-14-blue;
-
                         cursor: pointer;
                     }
             }
@@ -30,15 +34,21 @@
         .created-by {
             margin: 0;
             font-weight: 500;
+            color: $white;
         }
 
         .message {
             margin-top: 5px;
             margin-bottom: 0;
+            color: $white;
         }
 
         .Time {
-            margin-left: 5px;
+            margin-left: 8px;
+        }
+
+        .date {
+            margin-right: 5px;
         }
     }
 }
