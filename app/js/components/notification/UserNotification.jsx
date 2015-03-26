@@ -24,7 +24,7 @@ var UserNotification = React.createClass({
         var { expiresDate, message } = this.props.notification;
         return (
             <li className="UserNotification">
-                <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16-grayLightest"></i></button>
+                <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16"></i></button>
                 <h5 className="created-by">OZONE</h5>
                 <i className="small">
                     <_Date date={expiresDate} />

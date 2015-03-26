@@ -16,16 +16,16 @@
 
         .close {
 
-            > .icon-cross-14 {
+            > .icon-cross-16 {
 
-                @extend .icon-cross-14-grayLightest;
+                @extend .icon-cross-16-grayLightest;
             }
 
             &:hover, &:focus {
 
-                    > .icon-cross-14 {
+                    > .icon-cross-16 {
 
-                        @extend .icon-cross-14-blue;
+                        @extend .icon-cross-16-blue;
                         cursor: pointer;
                     }
             }
