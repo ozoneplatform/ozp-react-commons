@@ -26,10 +26,10 @@ var UserNotification = React.createClass({
             <li className="UserNotification">
                 <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16"></i></button>
                 <h5 className="created-by">OZONE</h5>
-                <i className="small">
+                <div className="small">
                     <_Date date={expiresDate} />
                     <Time date={expiresDate} />
-                </i>
+                </div>
                 <p className="message small">{message}</p>
             </li>
         );
