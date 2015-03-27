@@ -22,7 +22,8 @@ $icons: (
     icon-cloud-grayLightest: icon-cloud-white,
     icon-layers-grayLightest: icon-layers-white,
     icon-shopping-settings-grayLightest: icon-shopping-settings-white,
-    icon-bar-graph-2-grayLightest: icon-bar-graph-2-white
+    icon-bar-graph-2-grayLightest: icon-bar-graph-2-white,
+    icon-mail-grayLightest: icon-mail-white
 );
 @include sprite-icons($icons);
 
