@@ -57,4 +57,11 @@ window.OzoneConfig = {
     // @ifndef APP_TITLE
     "APP_TITLE": "OZONE",
     // @endif
+    // @ifdef WEBTOP_URL
+    "FEEDBACK_ADDRESS": '/* @echo FEEDBACK_ADDRESS */',
+    // @endif
+    // @ifndef WEBTOP_URL
+    "FEEDBACK_ADDRESS": "person@address.com",
+    // @endif
+
 };
