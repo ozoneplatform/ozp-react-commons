@@ -62,7 +62,7 @@ var listingMessages = {
     'description.screenshots.largeImage': 'Must be at least 960px wide x 600px tall.',
     'description.screenshots.smallImage': 'Must be at least 600px wide x 376px tall.',
     'description.docUrls': 'Documentation, tutorials, or other tools for users to help them better interact with this listing.',
-    'description.docUrls.name': 'Type of information available (e.g. Troubleshooting Tips) or the common name of the resource (e.g. User Manual, FAQs, or Wikipedia).',
+    'description.docUrls.name': 'Type of information or resource (e.g. Wiki, Forum, User Guide, etc.)',
     'description.docUrls.url': ' URL where the resource can be accessed by listing users.',
 
     'help.title': 'May contain letters, numbers or symbols and must be 60 characters long or less.',
