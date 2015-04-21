@@ -21,14 +21,15 @@ var UserNotification = React.createClass({
     },
 
     render() {
-        var { expiresDate, message } = this.props.notification;
+        var { createdDate, message } = this.props.notification;
+        createdDate = new Date(createdDate);
         return (
             <li className="UserNotification">
                 <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16"></i></button>
                 <h5 className="created-by">OZONE</h5>
                 <div className="created-at">
-                    <_Date date={expiresDate} />
-                    <Time date={expiresDate} />
+                    <_Date date={createdDate} />
+                    <Time date={createdDate} />
                 </div>
                 <p className="message small">{message}</p>
             </li>
