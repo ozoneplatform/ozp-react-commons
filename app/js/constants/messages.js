@@ -76,7 +76,7 @@ var listingMessages = {
     'help.whatIsNew': 'May contain letters, numbers or symbols and must be 255 characters long or less.',
     'help.requirements': 'May contain letters, numbers or symbols and must be 1000 characters long or less.',
     'help.agency': 'Associated organization is required.',
-    'help.screenshots': 'At least one screenshot is required.',
+    'help.screenshots': 'At least one screenshot is required and each screenshot requires two images, a preview and a full-size screenshot.',
     'help.owners': 'At least one owner is required.',
     'help.tags': 'May contain letters, numbers or symbols and must be 16 characters long or less.',
     'help.launchUrl': 'Must be a valid URL.',
