@@ -67,6 +67,6 @@ window.OzoneConfig = {
     "FEEDBACK_ADDRESS": '/* @echo FEEDBACK_ADDRESS */',
     // @endif
     // @ifndef FEEDBACK_ADDRESS
-    "FEEDBACK_ADDRESS": "person@address.com",
+    "FEEDBACK_ADDRESS": "mailto:person@address.com",
     // @endif
 };
