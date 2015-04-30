@@ -79,7 +79,7 @@ var BootstrapModal = React.createClass({
                                 <div className="modal-header">
                                     <button type="button" className="close"
                                             onClick={ this.handleCancel }>
-                                        <span aria-hidden="true">&times;</span>
+                                        <span aria-hidden="true"><i className="icon-cross-16"></i></span>
                                         <span className="sr-only">Close</span>
                                     </button>
                                     <h4 className="modal-title">{this.props.title}</h4>

@@ -16,13 +16,13 @@
   },
   "homepage": "https://github.com/ozone-development/ozp-react-commons",
   "dependencies": {
-    "bootstrap-sass": "git://github.com/ozone-development/bootstrap-sass#355fe2df4cdd0e4d77beb491b056a24edd5973e8",
+    "bootstrap-sass": "git://github.com/ozone-development/bootstrap-sass#e1952acb7f248a1e2813d4c16af01a0bb5cdaa24",
     "es5-shim": "^4.0.6",
     "jquery": "^2.1.1",
     "lodash-amd": "2.4.1",
     "object-assign": "2.0.0",
     "react": "^0.12.2",
-    "react-router": "^0.11.6",
+    "react-router": "0.12.4",
     "reflux": "^0.1.15",
     "object-assign": "1.0.0"
   },

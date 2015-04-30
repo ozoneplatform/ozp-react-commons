@@ -23,6 +23,12 @@ var UserNotificationDropdown = React.createClass({
         };
     },
 
+    openDropdown() {
+        if($(this.getDOMNode()).find('.UserNotification').length > 1) {
+            $(this.getDOMNode()).addClass('open');
+        }
+    },
+
     componentDidMount() {
         ProfileActions.fetchNotifications();
     },
@@ -31,18 +37,19 @@ var UserNotificationDropdown = React.createClass({
         var notifications = this.state.notifications;
         var hasNotifications = notifications && notifications.length > 0;
         var bellClassNames = cx({
-            'icon-bell-grayLightest': !hasNotifications,
             'icon-bell-filled-blue': hasNotifications,
+            'icon-bell-grayLightest': !hasNotifications,
+            activeIcon: hasNotifications
         });
 
         return (
-            <li className="dropdown">
+            <li className="dropdown" id="notification-dropdown">
                 <a href="#" data-toggle="dropdown">
                     <i className={bellClassNames}></i>
                 </a>
                 {
                     hasNotifications &&
-                        <UserNotifications notifications={notifications} />
+                        <UserNotifications notifications={notifications} openDropdown={this.openDropdown} />
                 }
             </li>
         );

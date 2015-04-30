@@ -45,6 +45,12 @@ window.OzoneConfig = {
     // @ifndef WEBTOP_URL
     "WEBTOP_URL": "http://localhost:9000/",
     // @endif
+    // @ifdef IWC_URL
+    "IWC_URL": '/* @echo IWC_URL */',
+    // @endif
+    // @ifndef IWC_URL
+    "IWC_URL": "https://ozone-development.github.io/iwc",
+    // @endif
     // @ifdef DEVELOPER_RESOURCES_URL
     "DEVELOPER_RESOURCES_URL": '/* @echo DEVELOPER_RESOURCES_URL */',
     // @endif
@@ -56,5 +62,11 @@ window.OzoneConfig = {
     // @endif
     // @ifndef APP_TITLE
     "APP_TITLE": "OZONE",
+    // @endif
+    // @ifdef FEEDBACK_ADDRESS
+    "FEEDBACK_ADDRESS": '/* @echo FEEDBACK_ADDRESS */',
+    // @endif
+    // @ifndef FEEDBACK_ADDRESS
+    "FEEDBACK_ADDRESS": "mailto:person@address.com",
     // @endif
 };

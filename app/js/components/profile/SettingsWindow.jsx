@@ -53,6 +53,8 @@ var SettingsWindow = React.createClass({
     },
 
     render: function() {
+        var launchText = this.state.launchInWebtop ? "Open in Webtop" : "Open in New Tab";
+    
         return (
             <Modal ref="modal" className="settings-window" title="Settings"
                     cancel="Cancel" confirm="Save"
@@ -69,7 +71,7 @@ var SettingsWindow = React.createClass({
                         <Toggle ref="launchInWebtop"
                                 onChange={this.onLaunchInWebtopChange}
                                 checked={this.state.launchInWebtop}>
-                            Open in Webtop
+                            {launchText}
                         </Toggle>
                     </dd>
                 </dl>
