@@ -55,6 +55,7 @@ var listingMessages = {
     'description.owners': 'Person(s) responsible for this listing.',
     'description.contacts': 'Points of contact are people or groups that users can contact via the information provided here.',
     'description.intents': 'Intents are special instructions used for communicating between applications. If this application uses intents, list them here.',
+    'description.singleton': 'Most applications can be added to a Webtop multiple times. If this listing is or contains an application that can only support one instance open at a time, please indicate that this listing is a singleton.',
     'description.contacts.email': 'Email address where the contact can be reached',
     'description.contacts.organization': ' Organization associated with the individual, position, or group being contacted.',
     'description.contacts.name': 'Name of the individual, position, or group being contacted.',
