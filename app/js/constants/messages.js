@@ -10,6 +10,7 @@ var listingMessages = {
     'label.featuredBannerIcon': 'Large Banner',
     'label.versionName': 'Version Number',
     'label.intents': 'Intents',
+    'label.singleton': 'Singleton',
     'label.contacts': 'Contacts',
     'label.whatIsNew': 'What\'s New',
     'label.requirements': 'Usage Requirements',
