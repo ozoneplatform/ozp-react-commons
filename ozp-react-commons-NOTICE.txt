@@ -1,0 +1,116 @@
+ozp-react-commons Copyright (c) 2015 
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+This product bundles the following software, which is available under the
+license listed with the software description below:
+
+Dependencies
+bootstrap-sass
+https://github.com/ozone-development/ozp-bootstrap-sass/blob/master/LICENSE
+Copyright (c) 2013 Twitter, Inc
+License: MIT Licesnse
+
+es5-shim
+https://github.com/es-shims/es5-shim
+License: MIT License
+Copyright (C) 2009-2014 Kristopher Michael Kowal and contributors
+
+Jquery
+https://github.com/jquery/jquery
+License: MIT License
+Copyright jQuery Foundation and other contributors, https://jquery.org/
+
+lodash-amd
+https://github.com/lodash/lodash
+License: MIT License
+Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+Based on Underscore.js, copyright 2009-2015 Jeremy Ashkenas,
+DocumentCloud and Investigative Reporters & Editors <http://underscorejs.org/>
+   
+object-assign
+https://github.com/sindresorhus/object-assign
+License: MIT License
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+
+react
+https://github.com/facebook/react/blob/master/LICENSE
+Copyright (c) 2013-2015, Facebook, Inc.
+License: BSD License
+
+react-router
+https://github.com/rackt/react-router/blob/master/LICENSE
+Copyright (c) 2015 Ryan Florence, Michael Jackson
+License: MIT License
+
+reflux
+https://github.com/spoike/refluxjs/blob/master/LICENSE.md
+Copyright (c) 2014, Mikael Brassman All rights reserved.
+License: BSD 3-Clause License
+
+object-assign
+https://github.com/sindresorhus/object-assign/blob/master/license
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+License: MIT License
+
+devDependencies
+
+chai
+https://github.com/chaijs/chai
+License: MIT License
+Copyright (c) 2011-2015 Jake Luer jake@alogicalparadox.com
+
+FS
+https://www.nuget.org/packages/FS/0.0.2
+License: Apache 2.0
+refractalize, Author Tim Macfarlane © 2013
+
+inject-loader
+https://github.com/plasticine/inject-loader
+License: MIT License
+Copyright (c) 2014 Justin Morris
+
+jsx-loader
+https://github.com/petehunt/jsx-loader
+License: Apache 2
+Pete Hunt
+
+jsxhint-loader
+https://github.com/petehunt/jsx-loader
+License: BSD 2-Clause
+Pete Hunt
+
+Karma
+https://github.com/karma-runner/karma
+License: MIT License
+Copyright © 2011-2014 Google, Inc. 
+
+Karma Mocha
+https://github.com/karma-runner/karma-mocha
+License: MIT License
+Copyright © 2011-2013 Google, Inc. 
+
+Karma Phantomjs Launcher
+https://github.com/karma-runner/karma-phantomjs-launcher
+License: MIT License
+Copyright © 2011-2013 Google, Inc. 
+
+Karma Webpack
+https://github.com/webpack/karma-webpack
+License: MIT License
+Copyright 2014-2015 Tobias Koppers
+
+Sinon
+https://github.com/cjohansen/Sinon.JS/blob/master/LICENSE
+BSD 3-Clause
+Copyright (c) 2010-2014, Christian Johansen, christian@cjohansen.no All rights reserved.
