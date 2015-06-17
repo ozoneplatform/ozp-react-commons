@@ -43,7 +43,7 @@ var UserNotificationDropdown = React.createClass({
         });
 
         return (
-            <li className="dropdown" id="notification-dropdown">
+            <li data-toggle="tooltip" data-placement="bottom" title="Notifications" className="dropdown tooltiped" id="notification-dropdown">
                 <a href="#" data-toggle="dropdown">
                     <i className={bellClassNames}></i>
                 </a>
