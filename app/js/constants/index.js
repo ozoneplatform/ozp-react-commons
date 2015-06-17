@@ -48,7 +48,7 @@ module.exports = {
     approvalStatus: {
         IN_PROGRESS: 'Draft',
         PENDING: 'Pending, Organization',
-        APPROVED_ORG: 'Pending, Marketplace',
+        APPROVED_ORG: 'Pending, Center',
         APPROVED: 'Published',
         REJECTED: 'Returned to Owner'
     },

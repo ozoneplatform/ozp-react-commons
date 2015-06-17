@@ -70,7 +70,7 @@ var ProfileInfo = React.createClass({
                     <section className="owned-listings">
                         <header>
                             <h4>{profile.displayName}'s Listings</h4>
-                            <small>A list of the Marketplace listings that this user owns</small>
+                            <small>A list of the Center listings that this user owns</small>
                         </header>
                         <ul>{listings}</ul>
                     </section>
