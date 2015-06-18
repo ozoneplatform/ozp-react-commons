@@ -30,7 +30,7 @@ var UserNotifications = React.createClass({
         var notifications = this.props.notifications;
         if (notifications && notifications.length > 0) {
             return (
-                <ul className="dropdown-menu UserNotifications">
+                <ul style={{'z-index: 10000000'}} className="dropdown-menu UserNotifications">
                     { this._renderNotifications(this.props.func) }
                 </ul>
             );
