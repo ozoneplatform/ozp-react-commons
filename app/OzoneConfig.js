@@ -61,7 +61,7 @@ window.OzoneConfig = {
     "APP_TITLE": '/* @echo APP_TITLE */',
     // @endif
     // @ifndef APP_TITLE
-    "APP_TITLE": "OZONE",
+    "APP_TITLE": "AppsMall",
     // @endif
     // @ifdef FEEDBACK_ADDRESS
     "FEEDBACK_ADDRESS": '/* @echo FEEDBACK_ADDRESS */',
