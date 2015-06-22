@@ -42,8 +42,10 @@ var UserNotificationDropdown = React.createClass({
             activeIcon: hasNotifications
         });
 
+        var tooltip = (hasNotifications) ? (notifications.length > 1) ? `${notifications.length} new notifications` : `${notifications.length} new notification` : 'No new notifications';
+
         return (
-            <li className="dropdown" id="notification-dropdown">
+            <li data-toggle="tooltip" data-placement="bottom" data-original-title={tooltip} className="dropdown tooltiped" id="notification-dropdown">
                 <a href="#" data-toggle="dropdown">
                     <i className={bellClassNames}></i>
                 </a>

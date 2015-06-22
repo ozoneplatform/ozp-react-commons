@@ -29,8 +29,10 @@ var UserNotifications = React.createClass({
     render() {
         var notifications = this.props.notifications;
         if (notifications && notifications.length > 0) {
+            // HACK: this is a hotfix to fix for the next release, adding a new
+            // issue to toggle the tooltip off when the dropdown is visible.
             return (
-                <ul className="dropdown-menu UserNotifications">
+                <ul style={{'zIndex': '10000000'}} className="dropdown-menu UserNotifications">
                     { this._renderNotifications(this.props.func) }
                 </ul>
             );
