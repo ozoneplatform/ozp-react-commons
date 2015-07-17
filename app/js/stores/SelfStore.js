@@ -53,15 +53,15 @@ var SelfStore = Reflux.createStore({
     },
 
     onFetchSelf: function () {
-        this.handleProfileChange(ProfileApi.getProfile('self'));
+        this.handleProfileChange(ProfileApi.getProfile());
     },
 
     onUpdateLaunchPreference: function(launchInWebtop) {
         var me = this,
             profile = me.currentUser;
 
-        this.handleProfileChange(ProfileApi.updateProfile(profile.id,
-                Object.assign({}, profile, {launchInWebtop: launchInWebtop})));
+        this.handleProfileChange(ProfileApi.updateProfile(
+            Object.assign({}, profile, {launchInWebtop: launchInWebtop})));
     },
 
     getDefaultData: function () {
@@ -69,7 +69,7 @@ var SelfStore = Reflux.createStore({
     },
 
     onFetchNotificationsCompleted: function (notifications) {
-        this.notifications = notifications.getItemAsList();
+        this.notifications = notifications.getResponse();
         this.doTrigger();
     },
 

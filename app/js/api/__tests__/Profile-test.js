@@ -10,7 +10,6 @@ describe('ProfileApi', function() {
     describe('getOwnedListings', function() {
         it('properly constructs the URL', function() {
             var apiUrl = 'https://widgethome:8443/marketplace',
-                profileId = 2,
                 getJSONSpy = sinon.spy(function() {
                     return $.Deferred().promise();
                 });
@@ -21,17 +20,11 @@ describe('ProfileApi', function() {
                 jquery: { getJSON: getJSONSpy }
             });
 
-            ProfileApi.getOwnedListings(profileId);
+            ProfileApi.getOwnedListings();
 
             expect(getJSONSpy.calledOnce).to.be.true();
             expect(getJSONSpy.calledWith(
-                'https://widgethome:8443/marketplace/api/profile/2/listing')).to.be.true();
-
-            profileId = '1/2/3';
-            ProfileApi.getOwnedListings(profileId);
-            expect(getJSONSpy.calledWith(
-                'https://widgethome:8443/marketplace/api/profile/1%2F2%2F3/listing')
-            ).to.be.true();
+                'https://widgethome:8443/marketplace/api/listing/')).to.be.true();
         });
 
         it('returns a promise wrapping the list of listings', function(done) {
@@ -107,7 +100,6 @@ describe('ProfileApi', function() {
     describe('getProfile', function() {
         it('properly constructs the URL', function() {
             var apiUrl = 'https://widgethome:8443/marketplace',
-                profileId = 2,
                 getJSONSpy = sinon.spy(function() {
                     return $.Deferred().promise();
                 });
@@ -118,17 +110,11 @@ describe('ProfileApi', function() {
                 jquery: { getJSON: getJSONSpy }
             });
 
-            ProfileApi.getProfile(profileId);
+            ProfileApi.getProfile();
 
             expect(getJSONSpy.calledOnce).to.be.true();
             expect(getJSONSpy.calledWith(
-                'https://widgethome:8443/marketplace/api/profile/2')).to.be.true();
-
-            profileId = '1/2/3';
-            ProfileApi.getProfile(profileId);
-            expect(getJSONSpy.calledWith(
-                'https://widgethome:8443/marketplace/api/profile/1%2F2%2F3')
-            ).to.be.true();
+                'https://widgethome:8443/marketplace/api/self/profile/')).to.be.true();
         });
 
         it('returns a promise wrapping the profile data', function(done) {
