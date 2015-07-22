@@ -24,10 +24,10 @@ describe('TabLaunchLink', function() {
         expect(cmp.getDOMNode().innerText).to.equal('Test child text');
     });
 
-    it('uses the listing launchUrl as the href', function() {
+    it('uses the listing launch_url as the href', function() {
         var url = 'https://widgethome/widget',
             listing = {
-                launchUrl: url
+                launch_url: url
             };
 
         var cmp = TestUtils.renderIntoDocument(
