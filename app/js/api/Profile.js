@@ -6,18 +6,20 @@ var Response = require('./responses/Response');
 var { API_URL } = require('../OzoneConfig');
 
 var ProfileApi = {
-    getOwnedListings: function (profileId) {
-        return $.getJSON(`${API_URL}/api/profile/${encodeURIComponent(profileId)}/listing`)
+    getOwnedListings: function () {
+        // TODO: De-hateosify this
+        // Old url: ${API_URL}/api/profile/${encodeURIComponent(profileId)}/listing
+        return $.getJSON(`${API_URL}/api/listing/FIXME`)
             .then(resp => [].concat((resp._embedded ? resp._embedded.item : null) || []));
     },
 
-    getProfile: function (profileId) {
-        return $.getJSON(`${API_URL}/api/profile/${encodeURIComponent(profileId)}`);
+    getProfile: function () {
+        return $.getJSON(`${API_URL}/api/self/profile/`);
     },
 
-    updateProfile: function (profileId, profileData) {
+    updateProfile: function (profileData) {
         return $.ajax({
-            url: `${API_URL}/api/profile/${encodeURIComponent(profileId)}`,
+            url: `${API_URL}/api/self/profile/`,
             type: 'put',
             dataType: 'json',
             contentType: 'application/json',
@@ -26,7 +28,7 @@ var ProfileApi = {
     },
 
     fetchNotifications: function () {
-        return $.getJSON(API_URL + '/api/profile/self/notification').then(function (response) {
+        return $.getJSON(API_URL + '/api/self/notification/').then(function (response) {
             return new Response(response, function (json) {
                 json.expiresDate = new Date(json.expiresDate.replace('+0000', 'Z'));
                 return json;
@@ -36,7 +38,7 @@ var ProfileApi = {
 
     dismissNotification: function (notificationId) {
         return $.ajax({
-            url: `${API_URL}/api/profile/self/notification/${notificationId}`,
+            url: `${API_URL}/api/self/notification/${notificationId}`,
             type: 'delete'
         });
     }

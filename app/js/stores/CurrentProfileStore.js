@@ -25,17 +25,17 @@ var CurrentProfileStore = Reflux.createStore({
         this.trigger(this.getDefaultData());
     },
 
-    onFetchOwnedListings: function(profileId) {
+    onFetchOwnedListings: function() {
         var me = this;
-        ProfileApi.getOwnedListings(profileId).then(function(listings) {
+        ProfileApi.getOwnedListings().then(function(listings) {
             me.ownedListings = listings;
             me.doTrigger();
         });
     },
 
-    onFetchProfile: function(profileId) {
+    onFetchProfile: function() {
         var me = this;
-        ProfileApi.getProfile(profileId).then(function(profile) {
+        ProfileApi.getProfile().then(function(profile) {
             me.profile = profile;
             me.doTrigger();
         });
