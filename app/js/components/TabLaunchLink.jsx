@@ -13,7 +13,7 @@ var TabLaunchLink = React.createClass({
 
         return (
             <a {...otherProps}
-                    href={listing.launchUrl}
+                    href={listing.launch_url}
                     target={newTab ? '_blank' : '_self'}>
                 {children}
             </a>
