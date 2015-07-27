@@ -38,7 +38,7 @@ var ProfileApi = {
 
     dismissNotification: function (notificationId) {
         return $.ajax({
-            url: `${API_URL}/api/self/notification/${notificationId}`,
+            url: `${API_URL}/api/self/notification/${notificationId}/`,
             type: 'delete'
         });
     }
