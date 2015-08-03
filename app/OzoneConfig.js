@@ -69,9 +69,15 @@ window.OzoneConfig = {
     // @ifndef FEEDBACK_ADDRESS
     "FEEDBACK_ADDRESS": "mailto:person@address.com",
     // @endif
+    // @ifdef FEEDBACK_ADDRESS
+    "HELPDESK_ADDRESS": '/* @echo FEEDBACK_ADDRESS */',
+    // @endif
+    // @ifndef FEEDBACK_ADDRESS
+    "HELPDESK_ADDRESS": "mailto:helpdesk@address.com",
+    // @endif
     // @ifndef HELP_DOCS
     'HELP_DOCS': {
-        'Help doc 1': '/path/to/document', 
+        'Help doc 1': '/path/to/document',
         'Help doc 2': '/path/to/document',
         'Help doc 3': '/path/to/document',
         'Help doc 4': '/path/to/document',
@@ -80,7 +86,7 @@ window.OzoneConfig = {
     // @endif
     // @ifndef HELP_VIDEOS
     'HELP_VIDEOS': {
-        'Video 1': '/path/to/video', 
+        'Video 1': '/path/to/video',
         'Video 2': '/path/to/video',
         'Video 3': '/path/to/video',
         'Video 4': '/path/to/video',
