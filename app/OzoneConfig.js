@@ -70,7 +70,7 @@ window.OzoneConfig = {
     "FEEDBACK_ADDRESS": "mailto:person@address.com",
     // @endif
     // @ifdef FEEDBACK_ADDRESS
-    "HELPDESK_ADDRESS": '/* @echo FEEDBACK_ADDRESS */',
+    "HELPDESK_ADDRESS": '/* @echo HELPDESK_ADDRESS */',
     // @endif
     // @ifndef FEEDBACK_ADDRESS
     "HELPDESK_ADDRESS": "mailto:helpdesk@address.com",
