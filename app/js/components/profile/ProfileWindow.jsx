@@ -9,6 +9,7 @@ var { Navigation } = require('react-router');
 
 var CurrentProfileStore = require('../../stores/CurrentProfileStore');
 var ProfileActions = require('../../actions/ProfileActions');
+var { API_URL } = require('ozp-react-commons/OzoneConfig');
 
 var ListingRow = React.createClass({
 
@@ -19,12 +20,13 @@ var ListingRow = React.createClass({
 
     render: function() {
         var listing = this.props.listing,
-            Link = this.props.linkEl;
+            Link = this.props.linkEl,
+            imageUrl = API_URL + '/api/image/' + listing.large_icon.id + '/';
 
         return (
             <li className="listing">
                 <Link listingId={listing.id}>
-                    <img src={listing.imageMediumUrl} />
+                    <img src={imageUrl} />
                     {listing.title}
                 </Link>
             </li>
@@ -63,13 +65,13 @@ var ProfileInfo = React.createClass({
             return (
                 <section className="profile-info">
                     <dl>
-                        <dt>Name</dt><dd>{profile.displayName}</dd>
-                        <dt>Username</dt><dd>{profile.username}</dd>
-                        <dt>Email</dt><dd>{profile.email || 'none available'}</dd>
+                    <dt>Name</dt><dd>{profile.display_name}</dd>
+                        <dt>Username</dt><dd>{profile.user.username}</dd>
+                        <dt>Email</dt><dd>{profile.user.email || 'none available'}</dd>
                     </dl>
                     <section className="owned-listings">
                         <header>
-                            <h4>{profile.displayName}'s Listings</h4>
+                            <h4>{profile.display_name}'s Listings</h4>
                             <small>A list of the Center listings that this user owns</small>
                         </header>
                         <ul>{listings}</ul>
