@@ -7,10 +7,7 @@ var { API_URL } = require('../OzoneConfig');
 
 var ProfileApi = {
     getOwnedListings: function () {
-        // TODO: De-hateosify this
-        // Old url: ${API_URL}/api/profile/${encodeURIComponent(profileId)}/listing
-        return $.getJSON(`${API_URL}/api/listing/FIXME`)
-            .then(resp => [].concat((resp._embedded ? resp._embedded.item : null) || []));
+        return $.getJSON(`${API_URL}/api/self/listing/`);
     },
 
     getProfile: function () {
