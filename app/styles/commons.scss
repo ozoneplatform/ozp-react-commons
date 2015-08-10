@@ -22,7 +22,10 @@ $icons: (
     icon-layers-grayLightest: icon-layers-white,
     icon-shopping-settings-grayLightest: icon-shopping-settings-white,
     icon-bar-graph-2-grayLightest: icon-bar-graph-2-white,
-    icon-mail-grayLightest: icon-mail-white
+    icon-mail-grayLightest: icon-mail-white,
+    icon-lightbulb-grayLightest: icon-lightbulb-white,
+    icon-help-bubble-grayLightest: icon-help-bubble-white,
+    icon-speech-bubble-grayLightest: icon-speech-bubble-white
 );
 @include sprite-icons($icons);
 
