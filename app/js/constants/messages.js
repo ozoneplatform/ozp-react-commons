@@ -68,7 +68,7 @@ var listingMessages = {
     'description.docUrls.url': ' URL where the resource can be accessed by listing users.',
 
     'help.title': 'May contain letters, numbers or symbols and must be 60 characters long or less.',
-    'help.type': 'One category is required.',
+    'help.type': 'A listing type is required.',
     'help.description': 'May contain letters, numbers or symbols and must be 4000 characters long or less.',
     'help.descriptionShort': 'May contain letters, numbers or symbols and must be 100 characters long or less.',
     'help.smallIcon': 'Must be a .png, .jpg, or .gif file and must be smaller than 1MB.',
