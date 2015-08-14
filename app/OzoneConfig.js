@@ -27,6 +27,18 @@ window.OzoneConfig = {
     // @ifndef METRICS_URL
     "METRICS_URL": "https://www.owfgoss.org:10443/dev/metrics/",
     // @endif
+    // @ifdef METRICS_HUD_SITE_ID
+    "METRICS_HUD_SITE_ID": '/* @echo METRICS_HUD_SITE_ID */',
+    // @endif
+    // @ifndef METRICS_HUD_SITE_ID
+    "METRICS_HUD_SITE_ID": 3,
+    // @endif
+    // @ifdef METRICS_WEBTOP_SITE_ID
+    "METRICS_WEBTOP_SITE_ID": '/* @echo METRICS_WEBTOP_SITE_ID */',
+    // @endif
+    // @ifndef METRICS_WEBTOP_SITE_ID
+    "METRICS_WEBTOP_SITE_ID": 2,
+    // @endif
     // @ifdef CENTER_URL
     "CENTER_URL": '/* @echo CENTER_URL */',
     // @endif
