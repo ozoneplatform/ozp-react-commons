@@ -93,6 +93,10 @@ var SettingsWindow = React.createClass({
     },
 
     close: function() {
+        // HACK: This fixes the issue, however more investigation is needed
+        // to understand why canceling the modal works, but confirming doesnt.
+        $('body').removeClass('modal-open');
+
         this.transitionTo(this.props.backRoute);
     },
 
