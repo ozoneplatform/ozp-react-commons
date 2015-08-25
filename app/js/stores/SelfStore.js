@@ -16,11 +16,10 @@ var profileFunctions = {
         return UserRole[this.highestRole] >= ADMIN;
     },
     isOwner: function(listing) {
-       return listing.owners.some(u => u.username === this.username);
+        return listing.owners.some(u => u.user.username === this.user.username);
     },
     isOrgSteward: function(org) {
-        return UserRole[this.highestRole] >= ORG_STEWARD &&
-            this.stewardedOrganizations.some(o => o === org);
+        return this.stewardedOrganizations.some(o => o.shortName == org.shortName);
     },
     canEdit: function(listing) {
         return listing &&
