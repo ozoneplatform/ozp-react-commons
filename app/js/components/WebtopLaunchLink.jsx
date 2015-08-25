@@ -7,7 +7,7 @@ var { WEBTOP_URL } = require('../OzoneConfig');
 function getLink(listing) {
     var uuid = listing.uuid;
 
-    return `${WEBTOP_URL}#/launchApp/${encodeURIComponent(uuid)}`;
+    return `${WEBTOP_URL}/#/launchApp/${encodeURIComponent(uuid)}`;
 }
 
 /**
