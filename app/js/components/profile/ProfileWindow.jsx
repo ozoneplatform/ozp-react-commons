@@ -21,7 +21,7 @@ var ListingRow = React.createClass({
     render: function() {
         var listing = this.props.listing,
             Link = this.props.linkEl,
-            imageUrl = API_URL + '/api/image/' + listing.large_icon.id + '/';
+            imageUrl = API_URL + '/api/image/' + listing.largeIcon.id + '/';
 
         return (
             <li className="listing">
@@ -65,13 +65,13 @@ var ProfileInfo = React.createClass({
             return (
                 <section className="profile-info">
                     <dl>
-                    <dt>Name</dt><dd>{profile.display_name}</dd>
+                    <dt>Name</dt><dd>{profile.displayName}</dd>
                         <dt>Username</dt><dd>{profile.user.username}</dd>
                         <dt>Email</dt><dd>{profile.user.email || 'none available'}</dd>
                     </dl>
                     <section className="owned-listings">
                         <header>
-                            <h4>{profile.display_name}'s Listings</h4>
+                            <h4>{profile.displayName}'s Listings</h4>
                             <small>A list of the Center listings that this user owns</small>
                         </header>
                         <ul>{listings}</ul>

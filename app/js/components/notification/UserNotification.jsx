@@ -26,16 +26,16 @@ var UserNotification = React.createClass({
     },
 
     render() {
-        var { created_date, message } = this.props.notification;
-        created_date = this.convertDateFromISO(created_date);
+        var { createdDate, message } = this.props.notification;
+        createdDate = this.convertDateFromISO(createdDate);
 
         return (
             <li className="UserNotification">
                 <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16"></i></button>
                 <h5 className="created-by">AppsMall</h5>
                 <div className="created-at">
-                    <_Date date={created_date} />
-                    <Time date={created_date} />
+                    <_Date date={createdDate} />
+                    <Time date={createdDate} />
                 </div>
                 <p className="message small">{message}</p>
             </li>
