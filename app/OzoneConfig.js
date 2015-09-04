@@ -87,6 +87,36 @@ window.OzoneConfig = {
     // @ifndef FEEDBACK_ADDRESS
     "HELPDESK_ADDRESS": "mailto:helpdesk@address.com",
     // @endif
+    // @ifdef REQUEST_ADDRESS
+    "REQUEST_ADDRESS": '/* @echo REQUEST_ADDRESS */',
+    // @endif
+    // @ifndef REQUEST_ADDRESS
+    "REQUEST_ADDRESS": "mailto:request@address.com",
+    // @endif
+    // @ifdef SOCIAL_CHIRP_ADDRESS
+    "SOCIAL_CHIRP_ADDRESS": '/* @echo SOCIAL_CHIRP_ADDRESS */',
+    // @endif
+    // @ifndef SOCIAL_CHIRP_ADDRESS
+    "SOCIAL_CHIRP_ADDRESS": "http://localhost:8000/dist",
+    // @endif
+    // @ifdef SOCIAL_PIN_ADDRESS
+    "SOCIAL_PIN_ADDRESS": '/* @echo SOCIAL_PIN_ADDRESS */',
+    // @endif
+    // @ifndef SOCIAL_PIN_ADDRESS
+    "SOCIAL_PIN_ADDRESS": "http://localhost:8000/dist",
+    // @endif
+    // @ifdef SOCIAL_CHAT_ADDRESS
+    "SOCIAL_CHAT_ADDRESS": '/* @echo SOCIAL_CHAT_ADDRESS */',
+    // @endif
+    // @ifndef SOCIAL_CHAT_ADDRESS
+    "SOCIAL_CHAT_ADDRESS": "http://localhost:8000/dist",
+    // @endif
+    // @ifdef SOCIAL_BLOG_ADDRESS
+    "SOCIAL_BLOG_ADDRESS": '/* @echo SOCIAL_BLOG_ADDRESS */',
+    // @endif
+    // @ifndef SOCIAL_BLOG_ADDRESS
+    "SOCIAL_BLOG_ADDRESS": "http://localhost:8000/dist",
+    // @endif
     // @ifndef HELP_DOCS
     'HELP_DOCS': {
         'Help doc 1': '/path/to/document',
@@ -106,3 +136,4 @@ window.OzoneConfig = {
     }
     // @endif
 };
+
