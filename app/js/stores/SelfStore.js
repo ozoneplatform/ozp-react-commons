@@ -16,7 +16,7 @@ var profileFunctions = {
         return UserRole[this.highestRole] >= ADMIN;
     },
     isOwner: function(listing) {
-        return listing.owners.some(u => u.username === this.user.username);
+        return listing.owners.some(u => u.username === this.username);
     },
     isOrgSteward: function(org) {
         return this.stewardedOrganizations.some(o => o.shortName == org.shortName);
