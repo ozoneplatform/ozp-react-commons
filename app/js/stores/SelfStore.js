@@ -8,12 +8,12 @@ var ProfileActions = require('../actions/ProfileActions');
 var ProfileApi = require('../api/Profile');
 var { UserRole } = require('../constants');
 var OzpError = require('../utils/OzpError');
-var { ORG_STEWARD, ADMIN } = UserRole;
+var { ORG_STEWARD, APPS_MALL_STEWARD } = UserRole;
 
 //functions to mix in to the currentUser object
 var profileFunctions = {
     isAdmin: function() {
-        return UserRole[this.highestRole] >= ADMIN;
+        return UserRole[this.highestRole] >= APPS_MALL_STEWARD;
     },
     isOwner: function(listing) {
         return listing.owners.some(u => u.username === this.user.username);
