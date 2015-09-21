@@ -3,10 +3,13 @@
 var $ = require('jquery');
 var Response = require('./responses/Response');
 var humps = require('humps');
+var _ = require('../utils/_');
 
 var { API_URL } = require('../OzoneConfig');
 
 var ProfileApi = {
+
+    // Isn't converted to Center format
     getOwnedListings: function () {
         return $.getJSON(`${API_URL}/api/self/listing/`).then(
             (resp) => humps.camelizeKeys(resp));
@@ -14,7 +17,15 @@ var ProfileApi = {
 
     getProfile: function () {
         return $.getJSON(`${API_URL}/api/self/profile/`).then(
-            (resp) => humps.camelizeKeys(resp));
+            (resp) => {
+                resp = humps.camelizeKeys(resp);
+                resp.username = resp.user.username;
+                resp.email = resp.user.email;
+                delete resp.user;
+                resp.organizations = _.map(resp.organizations, 'shortName');
+                resp.stewardedOrganizations = _.map(resp.stewardedOrganizations, 'shortName');
+                return resp;
+            });
     },
 
     updateProfile: function (profileData) {
