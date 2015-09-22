@@ -15,8 +15,16 @@ var ProfileApi = {
             (resp) => humps.camelizeKeys(resp));
     },
 
-    getProfile: function () {
-        return $.getJSON(`${API_URL}/api/self/profile/`).then(
+    getProfile: function (profileId) {
+        var url;
+
+        if (profileId && profileId !== 'self') {
+            url = API_URL + '/api/profile/' + profileId + '/';
+        } else {
+            url = API_URL + '/api/self/profile/';
+        }
+
+        return $.getJSON(url).then(
             (resp) => {
                 resp = humps.camelizeKeys(resp);
                 resp.username = resp.user.username;

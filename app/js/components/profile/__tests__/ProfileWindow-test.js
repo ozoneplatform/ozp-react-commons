@@ -86,11 +86,23 @@ describe('ProfileWindow', function() {
             },
             ownedListings: [{
                 id: 1,
-                imageMediumUrl: 'https://example.com/1.png',
+                "largeIcon": {
+                    "url": "http://localhost:8181/api/image/7/",
+                    "id": 7,
+                    "accessControl": {
+                        "title": "UNCLASSIFIED"
+                    }
+                },
                 title: 'Listing 1'
             }, {
                 id: 2,
-                imageMediumUrl: 'https://example.com/2.png',
+                "largeIcon": {
+                    "url": "http://localhost:8181/api/image/7/",
+                    "id": 7,
+                    "accessControl": {
+                        "title": "UNCLASSIFIED"
+                    }
+                },
                 title: 'Listing 2'
             }]
         };
@@ -189,11 +201,23 @@ describe('ProfileWindow', function() {
             },
             ownedListings: [{
                 id: 1,
-                imageMediumUrl: 'https://example.com/1.png',
+                "largeIcon": {
+                    "url": "http://localhost:8181/api/image/7/",
+                    "id": 7,
+                    "accessControl": {
+                        "title": "UNCLASSIFIED"
+                    }
+                },
                 title: 'Listing 1'
             }, {
                 id: 2,
-                imageMediumUrl: 'https://example.com/2.png',
+                "largeIcon": {
+                    "url": "http://localhost:8181/api/image/7/",
+                    "id": 7,
+                    "accessControl": {
+                        "title": "UNCLASSIFIED"
+                    }
+                },
                 title: 'Listing 2'
             }]
         };
