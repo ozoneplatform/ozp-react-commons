@@ -33,9 +33,9 @@ var CurrentProfileStore = Reflux.createStore({
         });
     },
 
-    onFetchProfile: function() {
+    onFetchProfile: function(profileId) {
         var me = this;
-        ProfileApi.getProfile().then(function(profile) {
+        ProfileApi.getProfile(profileId).then(function(profile) {
             me.profile = profile;
             me.doTrigger();
         });

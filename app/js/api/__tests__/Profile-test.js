@@ -8,8 +8,8 @@ var expect = require('chai').expect;
 var { apiListing } = require('./test-listing-data');
 var { apiProfile, centerProfile } = require('./test-profile-data');
 
-/* global describe, it */
-describe.only('ProfileApi', function() {
+/* global describe, it, beforeEach */
+describe('ProfileApi', function() {
     describe('getOwnedListings', function() {
         it('properly constructs the URL', function() {
             var apiUrl = 'https://widgethome:8443/marketplace',
@@ -57,24 +57,47 @@ describe.only('ProfileApi', function() {
         });
     });
 
-    describe('getProfile', function() {
-        it('properly constructs the URL', function() {
-            var apiUrl = 'https://widgethome:8443/marketplace',
-                getJSONSpy = sinon.spy(function() {
-                    return $.Deferred().promise();
-                });
+    describe.only('getProfile', function() {
 
-            var profileApiLoader = require('inject?../OzoneConfig&jquery!../Profile');
-            var ProfileApi = profileApiLoader({
-                '../OzoneConfig': { API_URL: apiUrl },
-                jquery: { getJSON: getJSONSpy }
+        describe('url construction', function () {
+
+            beforeEach(function () {
+                var apiUrl = 'https://widgethome:8443/marketplace',
+                    getJSONSpy = this.getJSONSpy = sinon.spy(function() {
+                        return $.Deferred().promise();
+                    });
+
+                var profileApiLoader = require('inject?../OzoneConfig&jquery!../Profile');
+                this.ProfileApi = profileApiLoader({
+                    '../OzoneConfig': { API_URL: apiUrl },
+                    jquery: { getJSON: getJSONSpy }
+                });
             });
 
-            ProfileApi.getProfile();
+            it('properly constructs the URL when called with nothing', function() {
+                this.ProfileApi.getProfile();
 
-            expect(getJSONSpy.calledOnce).to.be.true();
-            expect(getJSONSpy.calledWith(
-                'https://widgethome:8443/marketplace/api/self/profile/')).to.be.true();
+                expect(this.getJSONSpy.calledOnce).to.be.true();
+                expect(this.getJSONSpy.calledWith(
+                    'https://widgethome:8443/marketplace/api/self/profile/')).to.be.true();
+            });
+
+            it('properly constructs the URL when called with a profile id', function() {
+                this.ProfileApi.getProfile('4');
+
+                expect(this.getJSONSpy.calledOnce).to.be.true();
+                expect(this.getJSONSpy.calledWith(
+                    'https://widgethome:8443/marketplace/api/profile/4/')).to.be.true();
+            });
+
+            it("properly constructs the URL when called with 'self'", function() {
+                this.ProfileApi.getProfile('self');
+
+                expect(this.getJSONSpy.calledOnce).to.be.true();
+                expect(this.getJSONSpy.calledWith(
+                    'https://widgethome:8443/marketplace/api/self/profile/')).to.be.true();
+            });
+
         });
 
         it('returns a promise wrapping the profile data', function(done) {

@@ -9,7 +9,7 @@ var { Navigation } = require('react-router');
 
 var CurrentProfileStore = require('../../stores/CurrentProfileStore');
 var ProfileActions = require('../../actions/ProfileActions');
-var { API_URL } = require('ozp-react-commons/OzoneConfig');
+var { API_URL } = require('../../OzoneConfig');
 
 var ListingRow = React.createClass({
 
