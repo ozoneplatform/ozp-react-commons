@@ -57,7 +57,7 @@ describe('ProfileApi', function() {
         });
     });
 
-    describe.only('getProfile', function() {
+    describe('getProfile', function() {
 
         describe('url construction', function () {
 
