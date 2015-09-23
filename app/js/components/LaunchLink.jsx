@@ -32,7 +32,11 @@ var LaunchLink = React.createClass({
         newTab: React.PropTypes.oneOfType([
             React.PropTypes.bool,
             React.PropTypes.object
-        ])
+        ]),
+
+        // Callback called on click, passing information about whether a WebtopLaunchLink or TabLaunchLink
+        // was created
+        afterClick: React.PropTypes.func
     },
 
     getInitialState: function() {
@@ -45,7 +49,7 @@ var LaunchLink = React.createClass({
 
     render: function() {
         var launchInWebtop = this.state.launchInWebtop,
-            { children, newTab, ...otherProps } = this.props,
+            { children, newTab, afterClick, ...otherProps } = this.props,
             Component,
             openInNewTab;
 
@@ -59,7 +63,11 @@ var LaunchLink = React.createClass({
         }
 
         return (
-            <Component newTab={openInNewTab} {...otherProps}>
+            <Component newTab={openInNewTab} {...otherProps} onClick={()=>{
+                if(afterClick !== undefined) {
+                    afterClick(launchInWebtop);
+                }
+            }}>
                 {children}
             </Component>
         );
