@@ -30,7 +30,7 @@ var ContactInfo = React.createClass({
                             <h3>Need Help?</h3>
                             <p>Check out our
                                 <a href={HELP_URL} target={this.getTarget(HELP_URL)}> Help Center </a> 
-                                for tips and instructions on using the AppsMall platform, or contact
+                                for tips and instructions on using the platform, or contact
                                  the help desk for dedicated support.
                             </p>
                             <a className="btn btn-primary btn-block" href={HELPDESK_ADDRESS} target={this.getTarget(HELPDESK_ADDRESS)}>Contact Help Desk</a>
@@ -54,7 +54,7 @@ var ContactInfo = React.createClass({
                         </div>
                         <div className="col-md-9">
                             <h3>Have Feedback?</h3>
-                            <p>The microphone is yours. We would love to hear how AppsMall works for you! Email us any feedback, comments, and critique.</p>
+                            <p>The microphone is yours. We would love to hear your feedback! Email us any comments and critique.</p>
                             <a className="btn btn-primary btn-block" href={FEEDBACK_ADDRESS} target={this.getTarget(FEEDBACK_ADDRESS)}>Give Feedback</a>
                         </div>
                     </div>
@@ -64,7 +64,7 @@ var ContactInfo = React.createClass({
                         </div>
                         <div className="col-md-9">
                             <h3>Connect With Us</h3>
-                            <p>Want to know the latest? Stay up to date with AppsMall through any of our social networks. We'll keep you in the loop.</p>
+                            <p>Want to know the latest? Stay up to date with us through any of our social networks. We'll keep you in the loop.</p>
                             <span className="btn-row">
                                 <a className="btn btn-primary" href={SOCIAL_CHIRP_ADDRESS} target={this.getTarget(SOCIAL_CHIRP_ADDRESS)}>Chirp</a>
                                 <a className="btn btn-primary" href={SOCIAL_PIN_ADDRESS} target={this.getTarget(SOCIAL_PIN_ADDRESS)}>Pin</a>
