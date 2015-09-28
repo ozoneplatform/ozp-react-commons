@@ -10,6 +10,7 @@ var { Navigation } = require('react-router');
 var CurrentProfileStore = require('../../stores/CurrentProfileStore');
 var ProfileActions = require('../../actions/ProfileActions');
 var { API_URL } = require('../../OzoneConfig');
+var DEFAULT_ICON = 1  // TODO: Replace with something other than Android icon
 
 var ListingRow = React.createClass({
 
@@ -21,7 +22,8 @@ var ListingRow = React.createClass({
     render: function() {
         var listing = this.props.listing,
             Link = this.props.linkEl,
-            imageUrl = API_URL + '/api/image/' + listing.largeIcon.id + '/';
+            iconId = listing.largeIcon ? listing.largeIcon.id : DEFAULT_ICON,
+            imageUrl = API_URL + '/api/image/' + iconId + '/';
 
         return (
             <li className="listing">
