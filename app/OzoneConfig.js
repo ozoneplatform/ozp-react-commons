@@ -19,7 +19,7 @@ window.OzoneConfig = {
     "HELP_URL": '/* @echo HELP_URL */',
     // @endif
     // @ifndef HELP_URL
-    "HELP_URL": "https://localhost:8088/dist/assets/PlaceholderUserGuide.pdf",
+    "HELP_URL": "http://localhost:8888/#/",
     // @endif
     // @ifdef METRICS_URL
     "METRICS_URL": '/* @echo METRICS_URL */',
@@ -136,4 +136,3 @@ window.OzoneConfig = {
     }
     // @endif
 };
-
