@@ -45,6 +45,12 @@ window.OzoneConfig = {
     // @ifndef CENTER_URL
     "CENTER_URL": "http://localhost:8000/dist",
     // @endif
+    // @ifdef CENTER_REVIEWS_CHAR_LIMIT
+    "CENTER_REVIEWS_CHAR_LIMIT": '/* @echo CENTER_REVIEWS_CHAR_LIMIT */',
+    // @endif
+    // @ifndef CENTER_REVIEWS_CHAR_LIMIT
+    "CENTER_REVIEWS_CHAR_LIMIT": 20,
+    // @endif
     // @ifdef HUD_URL
     "HUD_URL": '/* @echo HUD_URL */',
     // @endif
@@ -136,4 +142,3 @@ window.OzoneConfig = {
     }
     // @endif
 };
-
