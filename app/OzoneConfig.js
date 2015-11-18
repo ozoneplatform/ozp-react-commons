@@ -19,7 +19,7 @@ window.OzoneConfig = {
     "HELP_URL": '/* @echo HELP_URL */',
     // @endif
     // @ifndef HELP_URL
-    "HELP_URL": "https://localhost:8088/dist/assets/PlaceholderUserGuide.pdf",
+    "HELP_URL": "http://localhost:8888/#/",
     // @endif
     // @ifdef METRICS_URL
     "METRICS_URL": '/* @echo METRICS_URL */',
@@ -44,6 +44,12 @@ window.OzoneConfig = {
     // @endif
     // @ifndef CENTER_URL
     "CENTER_URL": "http://localhost:8000/dist",
+    // @endif
+    // @ifdef CENTER_REVIEWS_CHAR_LIMIT
+    "CENTER_REVIEWS_CHAR_LIMIT": '/* @echo CENTER_REVIEWS_CHAR_LIMIT */',
+    // @endif
+    // @ifndef CENTER_REVIEWS_CHAR_LIMIT
+    "CENTER_REVIEWS_CHAR_LIMIT": 20,
     // @endif
     // @ifdef HUD_URL
     "HUD_URL": '/* @echo HUD_URL */',
@@ -136,4 +142,3 @@ window.OzoneConfig = {
     }
     // @endif
 };
-
