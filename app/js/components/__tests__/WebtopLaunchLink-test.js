@@ -10,7 +10,7 @@ describe('WebtopLaunchLink', function() {
     var webtopLaunchLinkFactory = require('inject?../OzoneConfig!../WebtopLaunchLink.jsx'),
         WebtopLaunchLink = webtopLaunchLinkFactory({
             '../OzoneConfig': {
-                WEBTOP_URL: 'https://widgethome/webtop/'
+                WEBTOP_URL: 'https://widgethome/webtop'
             }
         });
 
