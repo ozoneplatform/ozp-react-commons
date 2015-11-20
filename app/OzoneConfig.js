@@ -123,22 +123,19 @@ window.OzoneConfig = {
     // @ifndef SOCIAL_BLOG_ADDRESS
     "SOCIAL_BLOG_ADDRESS": "http://localhost:8000/dist",
     // @endif
-    // @ifndef HELP_DOCS
-    'HELP_DOCS': {
-        'Help doc 1': '/path/to/document',
-        'Help doc 2': '/path/to/document',
-        'Help doc 3': '/path/to/document',
-        'Help doc 4': '/path/to/document',
-        'Help doc 5': '/path/to/document'
-    },
+    // @ifdef HELP_DOCS
+    "HELP_VIDEOS": '/* @echo HELP_VIDEOS */',
     // @endif
-    // @ifndef HELP_VIDEOS
+    // @ifndef HELP_DOCS
     'HELP_VIDEOS': {
-        'Video 1': '/path/to/video',
-        'Video 2': '/path/to/video',
-        'Video 3': '/path/to/video',
-        'Video 4': '/path/to/video',
-        'Video 5': '/path/to/video'
+        'Three Components of AppsMall': '/path/to/document',
+        'HUD | Heads Up Display': '/path/to/document',
+        'Search for Apps': '/path/to/document',
+        'Use Apps': '/path/to/document',
+        'How to Submit an App': '/path/to/document',
+        'Favorite, Rate & Review Apps': '/path/to/document',
+        'Toolbar': '/path/to/document',
+        'Dashboard Set Up': '/path/to/document'
     }
     // @endif
 };
