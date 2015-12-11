@@ -1,4 +1,5 @@
 var listingMessages = {
+    'label.securityMarking': 'Security Marking',
     'label.title': 'Name',
     'label.type': 'Listing Type',
     'label.description': 'Full Description',
@@ -13,6 +14,7 @@ var listingMessages = {
     'label.singleton': 'Singleton',
     'label.contacts': 'Contacts',
     'label.whatIsNew': 'What\'s New',
+    'label.isPrivate': 'Private Listing',
     'label.requirements': 'Usage Requirements',
     'label.agency': 'Associated Organization',
     'label.screenshots': 'Screenshots',
@@ -38,6 +40,7 @@ var listingMessages = {
     'placeholder.type': 'Select a Type',
     'placeholder.contacts.type': 'Select a Contact Type',
 
+    'description.securityMarking': 'Classification and control marking.',
     'description.title': 'Title of the listing.',
     'description.type': 'Type of listing that is being submitted to the marketplace.',
     'description.categories': 'Category or categories in the marketplace where this listing fits best.',
@@ -50,6 +53,7 @@ var listingMessages = {
     'description.featuredBannerIcon': 'Must be at least 600px wide x 376px tall.',
     'description.versionName': 'Numerical identification of which release version is being submitted.',
     'description.launchUrl': 'URL where this listing can be reached by users.',
+    'description.isPrivate': 'By default, web applications/widgets are visible to all organizations using the platform. If this listing is set to private (only visible to your organization), justification for private use must be included in the Usage Requirements field. A Center Steward will contact you if the justification is not acceptable.',
     'description.requirements': 'Details about what system, security, or other requirements must be met in order to use this listing. If none apply, write "None."',
     'description.whatIsNew': 'Description of what is new or different in this latest version.',
     'description.agency': 'Organization overseeing this listing.',
@@ -66,7 +70,7 @@ var listingMessages = {
     'description.docUrls': 'Documentation, tutorials, or other tools for users to help them better interact with this listing.',
     'description.docUrls.name': 'Type of information or resource (e.g. Wiki, Forum, User Guide, etc.)',
     'description.docUrls.url': ' URL where the resource can be accessed by listing users.',
-
+    'help.securityMarking': 'Follow prompts to generate valid marking.',
     'help.title': 'May contain letters, numbers or symbols and must be 60 characters long or less.',
     'help.type': 'A listing type is required.',
     'help.description': 'May contain letters, numbers or symbols and must be 4000 characters long or less.',
