@@ -22,7 +22,7 @@ var ListingRow = React.createClass({
             Link = this.props.linkEl;
 
         return (
-            <li className="listing">
+            <li className="listing col-md-6">
                 <Link listingId={listing.id}>
                     <img src={listing.imageMediumUrl} />
                     {listing.title}
@@ -61,19 +61,19 @@ var ProfileInfo = React.createClass({
 
         if (profile) {
             return (
-                <section className="profile-info">
-                    <dl>
-                        <dt>Name</dt><dd>{profile.displayName}</dd>
-                        <dt>Username</dt><dd>{profile.username}</dd>
-                        <dt>Email</dt><dd>{profile.email || 'none available'}</dd>
-                    </dl>
-                    <section className="owned-listings">
-                        <header>
-                            <h4>{profile.displayName}'s Listings</h4>
-                            <small>A list of the Center listings that this user owns</small>
-                        </header>
+                <section>
+                    <div className="col-md-4 col-sm-6">
+                        <i className="icon-head-60-grayLighter" />
+                        <h2>{profile.displayName}</h2>
+                        <p><b>{profile.username}</b><br />{profile.email}</p>
+                    </div>
+                    <div className="col-md-8 col-sm-6 owned-listings">
+                        <h4>{profile.displayName}'s Listings</h4>
                         <ul>{listings}</ul>
-                    </section>
+                        { listings.length < 1 &&
+                        <p>You have not created any listings yet. To start, submit a listing from the global menu.</p>
+                        }
+                    </div>
                 </section>
             );
         }
@@ -107,7 +107,7 @@ var ProfileWindow = React.createClass({
     render: function() {
         return (
             <Modal title="Profile" ref="modal"
-                    className="profile-window" size="small"
+                    className="profile-window"
                     onCancel={this.close}>
                 <ProfileInfo profileId={this.props.profileId}
                     listingLinkEl={this.props.listingLinkEl} />
