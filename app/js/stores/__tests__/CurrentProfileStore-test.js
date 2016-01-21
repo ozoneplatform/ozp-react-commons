@@ -28,7 +28,6 @@ describe('CurrentProfileStore', function() {
                 return apiDeferred.promise();
             }),
             storeTriggerSpy = sinon.spy(),
-            profileId = 1,
             ownedListings = [{
                 title: 'Listing 1',
                 id: 1
@@ -48,7 +47,7 @@ describe('CurrentProfileStore', function() {
 
         ProfileActions.fetchOwnedListings.listen(function() {
             expect(getOwnedListingsSpy.calledOnce).to.be.true();
-            expect(getOwnedListingsSpy.calledWith(profileId)).to.be.true();
+            expect(getOwnedListingsSpy.calledWith()).to.be.true();
 
             apiDeferred.resolve(ownedListings);
 
@@ -64,7 +63,7 @@ describe('CurrentProfileStore', function() {
             done();
         });
 
-        ProfileActions.fetchOwnedListings(profileId);
+        ProfileActions.fetchOwnedListings();
     });
 
     it('calls ProfileApi and then triggers on response to fetchProfile', function(done) {
@@ -73,7 +72,6 @@ describe('CurrentProfileStore', function() {
                 return apiDeferred.promise();
             }),
             storeTriggerSpy = sinon.spy(),
-            profileId = 1,
             profile = {
                 username: 'testAdmin1',
                 displayName: 'Test User 1',
@@ -91,7 +89,7 @@ describe('CurrentProfileStore', function() {
 
         ProfileActions.fetchProfile.listen(function() {
             expect(getProfileSpy.calledOnce).to.be.true();
-            expect(getProfileSpy.calledWith(profileId)).to.be.true();
+            expect(getProfileSpy.calledWith()).to.be.true();
 
             apiDeferred.resolve(profile);
 
@@ -107,7 +105,7 @@ describe('CurrentProfileStore', function() {
             done();
         });
 
-        ProfileActions.fetchProfile(profileId);
+        ProfileActions.fetchProfile();
     });
 
     it('always returns the most recently fetched values for both profile and ownedListings',
@@ -121,7 +119,6 @@ describe('CurrentProfileStore', function() {
                 return getOwnedListingsDeferred.promise();
             }),
             storeTriggerSpy = sinon.spy(),
-            profileId = 1,
             profile = {
                 username: 'testAdmin1',
                 displayName: 'Test User 1',
@@ -147,7 +144,7 @@ describe('CurrentProfileStore', function() {
 
         ProfileActions.fetchProfile.listen(function() {
             expect(getProfileSpy.calledOnce).to.be.true();
-            expect(getProfileSpy.calledWith(profileId)).to.be.true();
+            expect(getProfileSpy.calledWith()).to.be.true();
 
             getProfileDeferred.resolve(profile);
 
@@ -159,9 +156,9 @@ describe('CurrentProfileStore', function() {
 
             ProfileActions.fetchOwnedListings.listen(function() {
                 expect(getOwnedListingsSpy.calledOnce).to.be.true();
-                expect(getOwnedListingsSpy.calledWith(profileId)).to.be.true();
+                expect(getOwnedListingsSpy.calledWith()).to.be.true();
                 expect(getProfileSpy.calledOnce).to.be.true();
-                expect(getProfileSpy.calledWith(profileId)).to.be.true();
+                expect(getProfileSpy.calledWith()).to.be.true();
 
                 getOwnedListingsDeferred.resolve(ownedListings);
 
@@ -177,9 +174,9 @@ describe('CurrentProfileStore', function() {
                 done();
             });
 
-            ProfileActions.fetchOwnedListings(profileId);
+            ProfileActions.fetchOwnedListings();
         });
 
-        ProfileActions.fetchProfile(profileId);
+        ProfileActions.fetchProfile();
     });
 });

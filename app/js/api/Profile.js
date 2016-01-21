@@ -2,22 +2,43 @@
 
 var $ = require('jquery');
 var Response = require('./responses/Response');
+var humps = require('humps');
+var _ = require('../utils/_');
 
 var { API_URL } = require('../OzoneConfig');
 
 var ProfileApi = {
-    getOwnedListings: function (profileId) {
-        return $.getJSON(`${API_URL}/api/profile/${encodeURIComponent(profileId)}/listing`)
-            .then(resp => [].concat((resp._embedded ? resp._embedded.item : null) || []));
+
+    // Isn't converted to Center format
+    getOwnedListings: function () {
+        return $.getJSON(`${API_URL}/api/self/listing/`).then(
+            (resp) => humps.camelizeKeys(resp));
     },
 
     getProfile: function (profileId) {
-        return $.getJSON(`${API_URL}/api/profile/${encodeURIComponent(profileId)}`);
+        var url;
+
+        if (profileId && profileId !== 'self') {
+            url = API_URL + '/api/profile/' + profileId + '/';
+        } else {
+            url = API_URL + '/api/self/profile/';
+        }
+
+        return $.getJSON(url).then(
+            (resp) => {
+                resp = humps.camelizeKeys(resp);
+                resp.username = resp.user.username;
+                resp.email = resp.user.email;
+                delete resp.user;
+                resp.organizations = _.map(resp.organizations, 'shortName');
+                resp.stewardedOrganizations = _.map(resp.stewardedOrganizations, 'shortName');
+                return resp;
+            });
     },
 
-    updateProfile: function (profileId, profileData) {
+    updateProfile: function (profileData) {
         return $.ajax({
-            url: `${API_URL}/api/profile/${encodeURIComponent(profileId)}`,
+            url: `${API_URL}/api/self/profile/`,
             type: 'put',
             dataType: 'json',
             contentType: 'application/json',
@@ -26,7 +47,8 @@ var ProfileApi = {
     },
 
     fetchNotifications: function () {
-        return $.getJSON(API_URL + '/api/profile/self/notification').then(function (response) {
+        return $.getJSON(API_URL + '/api/self/notification/').then(function (response) {
+            response = humps.camelizeKeys(response);
             return new Response(response, function (json) {
                 json.expiresDate = new Date(json.expiresDate.replace('+0000', 'Z'));
                 return json;
@@ -36,7 +58,7 @@ var ProfileApi = {
 
     dismissNotification: function (notificationId) {
         return $.ajax({
-            url: `${API_URL}/api/profile/self/notification/${notificationId}`,
+            url: `${API_URL}/api/self/notification/${notificationId}/`,
             type: 'delete'
         });
     }

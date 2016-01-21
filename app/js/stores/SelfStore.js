@@ -8,19 +8,18 @@ var ProfileActions = require('../actions/ProfileActions');
 var ProfileApi = require('../api/Profile');
 var { UserRole } = require('../constants');
 var OzpError = require('../utils/OzpError');
-var { ORG_STEWARD, ADMIN } = UserRole;
+var { ORG_STEWARD, APPS_MALL_STEWARD } = UserRole;
 
 //functions to mix in to the currentUser object
 var profileFunctions = {
     isAdmin: function() {
-        return UserRole[this.highestRole] >= ADMIN;
+        return UserRole[this.highestRole] >= APPS_MALL_STEWARD;
     },
     isOwner: function(listing) {
-       return listing.owners.some(u => u.username === this.username);
+        return listing.owners.some(u => u.username === this.username);
     },
     isOrgSteward: function(org) {
-        return UserRole[this.highestRole] >= ORG_STEWARD &&
-            this.stewardedOrganizations.some(o => o === org);
+        return this.stewardedOrganizations.some(o => o.shortName == org.shortName);
     },
     canEdit: function(listing) {
         return listing &&
@@ -53,15 +52,15 @@ var SelfStore = Reflux.createStore({
     },
 
     onFetchSelf: function () {
-        this.handleProfileChange(ProfileApi.getProfile('self'));
+        this.handleProfileChange(ProfileApi.getProfile());
     },
 
     onUpdateLaunchPreference: function(launchInWebtop) {
         var me = this,
             profile = me.currentUser;
 
-        this.handleProfileChange(ProfileApi.updateProfile(profile.id,
-                Object.assign({}, profile, {launchInWebtop: launchInWebtop})));
+        this.handleProfileChange(ProfileApi.updateProfile(
+            Object.assign({}, profile, {launchInWebtop: launchInWebtop})));
     },
 
     getDefaultData: function () {
@@ -69,7 +68,7 @@ var SelfStore = Reflux.createStore({
     },
 
     onFetchNotificationsCompleted: function (notifications) {
-        this.notifications = notifications.getItemAsList();
+        this.notifications = notifications.getResponse();
         this.doTrigger();
     },
 

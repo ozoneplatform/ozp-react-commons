@@ -28,6 +28,7 @@ var UserNotification = React.createClass({
     render() {
         var { createdDate, message } = this.props.notification;
         createdDate = this.convertDateFromISO(createdDate);
+
         return (
             <li className="UserNotification">
                 <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16"></i></button>

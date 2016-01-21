@@ -12,5 +12,6 @@ module.exports = {
     last: require('lodash-amd/modern/arrays/last'),
     remove: require('lodash-amd/modern/arrays/remove'),
     reduce: require('lodash-amd/modern/collections/reduce'),
+    map: require('lodash-amd/modern/collections/map'),
     isArray: require('lodash-amd/modern/objects/isArray')
 };

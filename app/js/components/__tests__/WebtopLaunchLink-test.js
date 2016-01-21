@@ -17,7 +17,7 @@ describe('WebtopLaunchLink', function() {
     it('renders an anchor with the appropriate children', function() {
         var url = 'https://widgethome/widget',
             listing = {
-                launchUrl: url
+                launch_url: url
             };
 
         var cmp = TestUtils.renderIntoDocument(
@@ -30,9 +30,9 @@ describe('WebtopLaunchLink', function() {
     });
 
     it('constructs a webtop launch URL as the href', function() {
-        var uuid = 'de305d54-75b4-431b-adb2-eb6b9e546013',
+        var unique_name = 'de305d54-75b4-431b-adb2-eb6b9e546013',
             listing = {
-                uuid: uuid
+                unique_name: unique_name
             };
 
         var cmp = TestUtils.renderIntoDocument(
