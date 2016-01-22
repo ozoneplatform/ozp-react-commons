@@ -24,7 +24,9 @@
     "object-assign": "1.0.0",
     "react": "^0.12.2",
     "react-router": "0.12.4",
-    "reflux": "^0.1.15"
+    "reflux": "^0.1.15",
+    "webpack": "1.12.11",
+    "webpack-dev-server": "1.14.1"
   },
   "devDependencies": {
     "chai": "1.10.0",
@@ -33,7 +35,6 @@
     "inject-loader": "1.0.0",
     "jasmine-core": "^2.3.4",
     "jsx-loader": "0.12.2",
-    "jsxhint-loader": "0.2.0",
     "karma": "0.12.31",
     "karma-jasmine": "^0.3.6",
     "karma-mocha": "0.1.10",

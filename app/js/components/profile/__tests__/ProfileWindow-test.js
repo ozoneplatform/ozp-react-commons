@@ -108,8 +108,7 @@ describe('ProfileWindow', function() {
         };
 
         CurrentProfileStoreMock.trigger(storeData);
-
-        var infoText = $(element.getDOMNode()).find('dl').text();
+        var infoText = $(element.getDOMNode()).find('section').text();
         expect(infoText.indexOf(storeData.profile.displayName)).to.not.equal(-1);
         expect(infoText.indexOf(storeData.profile.email)).to.not.equal(-1);
         expect(infoText.indexOf(storeData.profile.username)).to.not.equal(-1);
