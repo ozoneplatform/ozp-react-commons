@@ -27,16 +27,12 @@ module.exports = function (config) {
                 modulesDirectories: ['./node_modules']
             },
             module: {
-                preLoaders: [{
-                    test: /\.jsx?$/,
-                    loader: "jsxhint-loader",
-                    exclude: /node_modules|bower_components|gulp|dist/
-                }],
-                loaders: [{
-                    test: /\.jsx?$/,
-                    loader: "jsx-loader?harmony=true&insertPragma=React.DOM",
-                    exclude: /node_modules|bower_components|gulp|dist/
-                }],
+                loaders: [
+                    {
+                        test: /\.jsx?$/,
+                        loader: "jsx-loader?harmony=true&insertPragma=React.DOM",
+                        exclude: /node_modules|bower_components|gulp|dist/
+                    }],
                 noParse: /\.min\.js/
             }
         },
