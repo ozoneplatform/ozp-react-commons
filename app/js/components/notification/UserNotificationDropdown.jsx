@@ -54,6 +54,7 @@ var UserNotificationDropdown = React.createClass({
             <li data-toggle="tooltip" data-placement="bottom" data-original-title={tooltip} className={notificationButtonClasses} id="notification-dropdown">
                 <a href="#" data-toggle="dropdown" id="tourstop-notifications">
                     <i className={bellClassNames}></i>
+                    <span className="hidden-span"> notifications, {(this.state.notifications) ? this.state.notifications.length : 0} unread notifications</span>
                 </a>
                 {
                     hasNotifications &&
