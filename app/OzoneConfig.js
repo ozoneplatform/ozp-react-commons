@@ -63,6 +63,12 @@ window.OzoneConfig = {
     // @ifndef WEBTOP_URL
     "WEBTOP_URL": "http://localhost:9000/",
     // @endif
+    // @ifdef IE_REDIRECT_URL
+    "IE_REDIRECT_URL": '/* @echo IE_REDIRECT_URL */',
+    // @endif
+    // @ifndef IE_REDIRECT_URL
+    "IE_REDIRECT_URL": "https://browser-update.org/update.html",
+    // @endif
     // @ifdef IWC_URL
     "IWC_URL": '/* @echo IWC_URL */',
     // @endif
