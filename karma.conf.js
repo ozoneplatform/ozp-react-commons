@@ -8,8 +8,7 @@ module.exports = function (config) {
         frameworks: ['mocha'],
         files: [
             // including es5-shim for PhantomJS
-            // 'node_modules/es5-shim/es5-shim.js',
-            'node_modules/phantomjs-polyfill/bind-polyfill.js',
+            'node_modules/es5-shim/es5-shim.js',
             'app/OzoneConfig.js', //default configs
             'app/js/__tests__/main.js'
         ],
