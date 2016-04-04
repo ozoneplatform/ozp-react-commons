@@ -11,19 +11,25 @@ var ProfileApi = {
 
   // Isn't converted to Center format
   getOwnedListings: function (profileId) {
-    return $.getJSON(`${API_URL}/api/profile/${profileId}/listing/`).then(
+    var url = `${API_URL}/api/profile/${profileId}/listing/`;
+
+    if (!profileId) {
+      url = `${API_URL}/api/profile/self/listing/`;
+    }
+
+    return $.getJSON(url).then(
         (resp) => humps.camelizeKeys(resp));
   },
 
   getProfile: function (profileId) {
-    var url = `${API_URL}/api/profile/${profileId}`;
+    var url = `${API_URL}/api/profile/${profileId}/`;
 
     if (!profileId) {
-      url = `${API_URL}/api/self/profile`;
+      url = `${API_URL}/api/self/profile/`;
     }
 
     if (profileId === 'self') {
-      url = `${API_URL}/api/self/profile`;
+      url = `${API_URL}/api/self/profile/`;
     }
 
     return $.getJSON(url).then(

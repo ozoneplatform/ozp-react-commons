@@ -27,7 +27,7 @@ describe('ProfileApi', function() {
 
             expect(getJSONSpy.calledOnce).to.be.true();
             expect(getJSONSpy.calledWith(
-                'https://widgethome:8443/marketplace/api/self/listing/')).to.be.true();
+                'https://widgethome:8443/marketplace/api/profile/self/listing/')).to.be.true();
         });
 
         it('returns a promise wrapping the list of listings (in API format)', function(done) {
