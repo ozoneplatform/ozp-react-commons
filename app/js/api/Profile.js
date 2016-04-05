@@ -9,32 +9,40 @@ var { API_URL } = require('../OzoneConfig');
 
 var ProfileApi = {
 
-    // Isn't converted to Center format
-    getOwnedListings: function () {
-        return $.getJSON(`${API_URL}/api/self/listing/`).then(
-            (resp) => humps.camelizeKeys(resp));
-    },
+  // Isn't converted to Center format
+  getOwnedListings: function (profileId) {
+    var url = `${API_URL}/api/profile/${profileId}/listing/`;
 
-    getProfile: function (profileId) {
-        var url;
+    if (!profileId) {
+      url = `${API_URL}/api/profile/self/listing/`;
+    }
 
-        if (profileId && profileId !== 'self') {
-            url = API_URL + '/api/profile/' + profileId + '/';
-        } else {
-            url = API_URL + '/api/self/profile/';
-        }
+    return $.getJSON(url).then(
+        (resp) => humps.camelizeKeys(resp));
+  },
 
-        return $.getJSON(url).then(
-            (resp) => {
-                resp = humps.camelizeKeys(resp);
-                resp.username = resp.user.username;
-                resp.email = resp.user.email;
-                delete resp.user;
-                resp.organizations = _.map(resp.organizations, 'shortName');
-                resp.stewardedOrganizations = _.map(resp.stewardedOrganizations, 'shortName');
-                return resp;
-            });
-    },
+  getProfile: function (profileId) {
+    var url = `${API_URL}/api/profile/${profileId}/`;
+
+    if (!profileId) {
+      url = `${API_URL}/api/self/profile/`;
+    }
+
+    if (profileId === 'self') {
+      url = `${API_URL}/api/self/profile/`;
+    }
+
+    return $.getJSON(url).then(
+        (resp) => {
+            resp = humps.camelizeKeys(resp);
+            resp.username = resp.user.username;
+            resp.email = resp.user.email;
+            delete resp.user;
+            resp.organizations = _.map(resp.organizations, 'shortName');
+            resp.stewardedOrganizations = _.map(resp.stewardedOrganizations, 'shortName');
+            return resp;
+        });
+  },
 
     updateProfile: function (profileData) {
         return $.ajax({
