@@ -4,11 +4,11 @@
         max-height: 400px;
     }
 
-    .modal-body:after { 
-       content: "."; 
-       visibility: hidden; 
-       display: block; 
-       height: 0; 
+    .modal-body:after {
+       content: ".";
+       visibility: hidden;
+       display: block;
+       height: 0;
        clear: both;
     }
 }
@@ -23,7 +23,7 @@
 
     .listing {
         margin: 5px 0;
-
+        word-wrap: break-word;
         img {
             margin-right: 10px;
             height: 32px;
