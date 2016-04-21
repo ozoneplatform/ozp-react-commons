@@ -15,7 +15,7 @@ var UserNotifications = React.createClass({
 
     _renderNotifications() {
         var notifications = this.props.notifications;
-        var length = notifications.length;
+        var length = 7;//notifications.length;
         var openDropdown = this.props.openDropdown;
 
         return notifications.map((notification, index) => {
@@ -34,6 +34,9 @@ var UserNotifications = React.createClass({
             return (
                 <ul style={{'zIndex': '10000000'}} className="dropdown-menu UserNotifications">
                     { this._renderNotifications(this.props.func) }
+                    <li>
+                      <button className="btn btn-primary center" onClick={() => this.props.moreNotifications()}>View More</button>
+                    </li>
                 </ul>
             );
         }

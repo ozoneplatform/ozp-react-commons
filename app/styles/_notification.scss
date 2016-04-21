@@ -1,11 +1,18 @@
 .UserNotifications {
     $notification-height: 71px;
     $divider-height: (9px * 2) + 1px;
-    $notifications-visible: 3;
+    $notifications-visible: 7;
 
     padding: 0;
-    max-height: ($notification-height + $divider-height) * $notifications-visible - $divider-height;
+    width: 500px;
+    max-height: ($notification-height + $divider-height) * $notifications-visible;
     overflow-y: auto;
+
+    .center {
+      width: 25%;
+      margin: 1rem 0;
+      margin-left: calc(50% - 12.5%);
+    }
 }
 
 .UserNotification {
@@ -44,7 +51,7 @@
             margin-top: 5px;
             margin-bottom: 0;
             color: $white;
-            width: 225px;
+            width: 490px;
         }
 
         .created-at {
