@@ -6,27 +6,25 @@
     $notifications-visible: 7;
 
     padding: 0;
-    width: 500px;
+    width: 400px;
     max-height: ($notification-height + $divider-height) * $notifications-visible;
-    overflow-y: auto;
 
-    .center {
-      width: 25%;
-      margin: 1rem 0;
-      margin-left: calc(50% - 12.5%);
-    }
+  .btn {
+    margin: 5px 15px 15px 0;
+    float: right;
+  }
 }
 
 .UserNotification {
-    padding: 7px;
+    padding: 15px;
     color: #fff;
     > {
         padding: 0 10px !important;
 
         .close {
 
-            margin-top: 0px;
-            margin-right: 15px;
+            margin-top: 0;
+            margin-right: 0;
 
             > .icon-cross-16 {
 
@@ -44,7 +42,7 @@
         }
 
         .created-by {
-            margin: 0;
+            margin: 10px 0 0 0;
             font-weight: 500;
             color: $white;
         }
@@ -53,7 +51,6 @@
             margin-top: 5px;
             margin-bottom: 0;
             color: $white;
-            width: 490px;
             color: #fff;
         }
 
