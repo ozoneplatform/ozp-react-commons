@@ -1,4 +1,6 @@
 .UserNotifications {
+    color: #fff;
+
     $notification-height: 71px;
     $divider-height: (9px * 2) + 1px;
     $notifications-visible: 7;
@@ -17,7 +19,7 @@
 
 .UserNotification {
     padding: 7px;
-
+    color: #fff;
     > {
         padding: 0 10px !important;
 
@@ -52,6 +54,7 @@
             margin-bottom: 0;
             color: $white;
             width: 490px;
+            color: #fff;
         }
 
         .created-at {

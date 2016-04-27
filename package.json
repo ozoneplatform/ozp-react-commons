@@ -21,6 +21,7 @@
     "humps": "git://github.com/domchristie/humps.git",
     "jquery": "^2.1.1",
     "lodash-amd": "2.4.1",
+    "marked": "^0.3.5",
     "object-assign": "1.0.0",
     "react": "^0.12.2",
     "react-router": "0.12.4",
