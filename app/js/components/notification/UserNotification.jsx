@@ -6,6 +6,34 @@ var _Date = require('../Date.jsx');
 var Time = require('../Time.jsx');
 
 var SelfActions = require('../../actions/ProfileActions.js');
+var emojione = require('emojione');
+var marked = require('marked');
+var renderer = new marked.Renderer();
+
+// Disable heading tags
+renderer.heading = function (text, level) {
+  return '<span>' + text + '</span>';
+};
+
+renderer.link = function (href, title, text) {
+  return `<a href="${href}" target="_blank">${text}</a>`;
+};
+
+renderer.code = function (code, language) {
+  return `<span>${code}</span>`;
+};
+
+renderer.blockquote = function (quote) {
+  return `<span>${quote}</span>`;
+};
+
+renderer.br = function () {
+  return `<span></span>`;
+};
+
+renderer.image = function () {
+  return `<span></span>`;
+};
 
 var UserNotification = React.createClass({
 
@@ -29,6 +57,9 @@ var UserNotification = React.createClass({
         var { createdDate, message } = this.props.notification;
         createdDate = this.convertDateFromISO(createdDate);
 
+        let createNotificationText = function() {
+          return {__html: marked(emojione.toImage(message), { renderer: renderer })};
+        };
         return (
             <li className="UserNotification">
                 <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16"></i></button>
@@ -37,7 +68,7 @@ var UserNotification = React.createClass({
                     <_Date date={createdDate} />
                     <Time date={createdDate} />
                 </div>
-                <p className="message small">{message}</p>
+                <p className="message small" dangerouslySetInnerHTML={createNotificationText()}></p>
             </li>
         );
     }
