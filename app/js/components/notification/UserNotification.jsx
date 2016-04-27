@@ -6,7 +6,6 @@ var _Date = require('../Date.jsx');
 var Time = require('../Time.jsx');
 
 var SelfActions = require('../../actions/ProfileActions.js');
-var emojione = require('emojione');
 var marked = require('marked');
 var renderer = new marked.Renderer();
 
@@ -58,7 +57,7 @@ var UserNotification = React.createClass({
         createdDate = this.convertDateFromISO(createdDate);
 
         let createNotificationText = function() {
-          return {__html: marked(emojione.toImage(message), { renderer: renderer })};
+          return {__html: marked(message, { renderer: renderer })};
         };
         return (
             <li className="UserNotification">
