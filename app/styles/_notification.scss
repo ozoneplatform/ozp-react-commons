@@ -1,6 +1,4 @@
 .UserNotifications {
-    color: #fff;
-
     $notification-height: 71px;
     $divider-height: (9px * 2) + 1px;
     $notifications-visible: 7;
@@ -18,7 +16,8 @@
 
 .UserNotification {
     padding: 15px;
-    color: #fff;
+    color: $gray-lighter;
+    
     > {
         padding: 0 10px !important;
 
@@ -51,8 +50,6 @@
         .message {
             margin-top: 5px;
             margin-bottom: 0;
-            color: $white;
-            color: #fff;
         }
 
         .created-at {
@@ -63,6 +60,10 @@
                 > span.Time {
                     padding-left: 5px;
                 }
+        }
+        
+        a {
+            color: $white;
         }
 
     }
