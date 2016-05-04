@@ -2,6 +2,7 @@ var markingDescription = 'Classification and control marking.';
 var markingHelp = 'Follow prompts to generate valid marking.';
 
 var listingMessages = {
+    'label.basicSecurityMarking': 'Security Marking',
     'label.securityMarking': 'Security Marking',
     'label.title': 'Name',
     'label.type': 'Listing Type',
@@ -49,6 +50,7 @@ var listingMessages = {
     'placeholder.type': 'Select a Type',
     'placeholder.contacts.type': 'Select a Contact Type',
 
+    'description.basicSecurityMarking': 'Classification and control marking for the Listing.',
     'description.securityMarking': markingDescription,
     'description.title': 'Title of the listing.',
     'description.type': 'Type of listing that is being submitted to the marketplace.',
@@ -85,6 +87,7 @@ var listingMessages = {
     'description.docUrls': 'Documentation, tutorials, or other tools for users to help them better interact with this listing.',
     'description.docUrls.name': 'Type of information or resource (e.g. Wiki, Forum, User Guide, etc.)',
     'description.docUrls.url': ' URL where the resource can be accessed by listing users.',
+    'help.basicSecurityMarking': markingHelp,
     'help.securityMarking': markingHelp,
     'help.title': 'May contain letters, numbers or symbols and must be 60 characters long or less.',
     'help.type': 'A listing type is required.',
