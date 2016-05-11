@@ -41,27 +41,27 @@
             }
         }
 
-        .created-by {
-            margin: 10px 0 0 0;
-            font-weight: 500;
-            color: $white;
-        }
+    }
 
-        .message {
-            margin-top: 5px;
-            margin-bottom: 0;
-        }
+    .created-by {
+        margin: 10px 0 0 0;
+        font-weight: 500;
+        color: $white;
+    }
 
-        .created-at {
-            @extend .small;
-            font-style: italic;
-            color: $gray-lighter;
+    .message {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
 
-                > span.Time {
-                    padding-left: 5px;
-                }
-        }
+    .created-at {
+        @extend .small;
+        font-style: italic;
+        color: $gray-lighter;
 
+            > span.Time {
+                padding-left: 5px;
+            }
     }
         
     a {
