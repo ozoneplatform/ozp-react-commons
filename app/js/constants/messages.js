@@ -49,7 +49,7 @@ var listingMessages = {
     'placeholder.type': 'Select a Type',
     'placeholder.contacts.type': 'Select a Contact Type',
 
-    'description.securityMarking': markingDescription,
+    'description.securityMarking': 'Classification and control marking for the Listing.',
     'description.title': 'Title of the listing.',
     'description.type': 'Type of listing that is being submitted to the marketplace.',
     'description.categories': 'Category or categories in the marketplace where this listing fits best.',
