@@ -1,6 +1,4 @@
 .UserNotifications {
-    color: #fff;
-
     $notification-height: 71px;
     $divider-height: (9px * 2) + 1px;
     $notifications-visible: 7;
@@ -18,7 +16,8 @@
 
 .UserNotification {
     padding: 15px;
-    color: #fff;
+    color: $gray-light;
+    
     > {
         padding: 0 10px !important;
 
@@ -42,31 +41,35 @@
             }
         }
 
-        .created-by {
-            margin: 10px 0 0 0;
-            font-weight: 500;
-            color: $white;
-        }
+    }
 
-        .message {
-            margin-top: 5px;
-            margin-bottom: 0;
-            color: $white;
-            color: #fff;
-        }
+    .created-by {
+        margin: 10px 0 0 0;
+        font-weight: 500;
+        color: $white;
+    }
 
-        .created-at {
-            @extend .small;
-            font-style: italic;
-            color: $gray-lighter;
+    .message {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
 
-                > span.Time {
-                    padding-left: 5px;
-                }
-        }
+    .created-at {
+        @extend .small;
+        font-style: italic;
+        color: $gray-lighter;
 
+            > span.Time {
+                padding-left: 5px;
+            }
+    }
+        
+    a {
+        color: $white;
     }
 }
+
+
 /*=======================
 = Accessibility Section=
 =======================*/
