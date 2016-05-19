@@ -15,10 +15,10 @@ var UserNotifications = React.createClass({
 
     _renderNotifications() {
         var notifications = this.props.notifications;
-        var length = 7;//notifications.length;
+        var length = 3;//notifications.length;
         var openDropdown = this.props.openDropdown;
 
-        return notifications.map((notification, index) => {
+        return notifications.slice(0, length).map((notification, index) => {
             var notificationComponent = this._renderNotification(notification, openDropdown);
             return index === length - 1 ?
                 notificationComponent :
