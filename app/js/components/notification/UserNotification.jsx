@@ -55,9 +55,14 @@ var UserNotification = React.createClass({
     render() {
         var { createdDate, message } = this.props.notification;
         createdDate = this.convertDateFromISO(createdDate);
+        const choppedMessage = (message.length > 150) ? () => {
+          return `${message.slice(0, 150)}...`;
+        } : () => {
+          return message;
+        };
 
         let createNotificationText = function() {
-          return {__html: marked(message, { renderer: renderer })};
+          return {__html: marked(choppedMessage(), { renderer: renderer })};
         };
         return (
             <li className="UserNotification">
