@@ -68,7 +68,7 @@ var UserNotification = React.createClass({
             <li className="UserNotification">
                 <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16"></i></button>
                 <h5 className="created-by">
-                  { (listing.title) ? listing.title : 'AppsMall'}
+                  { listing ? listing.title : 'AppsMall'}
                 </h5>
                 <div className="created-at">
                     <_Date date={createdDate} />
