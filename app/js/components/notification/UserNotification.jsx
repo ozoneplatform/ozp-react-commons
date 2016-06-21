@@ -53,7 +53,7 @@ var UserNotification = React.createClass({
     },
 
     render() {
-        var { createdDate, message } = this.props.notification;
+        var { createdDate, message, listing } = this.props.notification;
         createdDate = this.convertDateFromISO(createdDate);
         const choppedMessage = (message.length > 150) ? () => {
           return `${message.slice(0, 150)}...`;
@@ -67,7 +67,9 @@ var UserNotification = React.createClass({
         return (
             <li className="UserNotification">
                 <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16"></i></button>
-                <h5 className="created-by">AppsMall</h5>
+                <h5 className="created-by">
+                  { (listing.title) ? listing.title : 'AppsMall'}
+                </h5>
                 <div className="created-at">
                     <_Date date={createdDate} />
                     <Time date={createdDate} />
