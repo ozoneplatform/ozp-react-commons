@@ -58,7 +58,7 @@ var UserNotificationDropdown = React.createClass({
                 </a>
                 {
                     hasNotifications &&
-                        <UserNotifications notifications={notifications} openDropdown={this.openDropdown} moreNotifications={this.props.moreNotifications}/>
+                        <UserNotifications updateHud={this.props.updateHud} notifications={notifications} openDropdown={this.openDropdown} moreNotifications={this.props.moreNotifications}/>
                 }
             </li>
         );
