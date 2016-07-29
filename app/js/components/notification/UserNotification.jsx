@@ -68,7 +68,7 @@ var UserNotification = React.createClass({
         };
 
         return (
-            <li className="UserNotification">
+            <li className="UserNotification clearfix">
                 <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16"></i></button>
                 <h5 className="created-by">
                   { listing ? listing.title : 'AppsMall'}
@@ -84,10 +84,9 @@ var UserNotification = React.createClass({
                   <div>
                     <p className="message small">{this.props.notification.author.user.username} has shared a the folder <b>{this.props.notification.peer.folderName}</b> with you.</p>
                     <p className="message small">{this.props.notification.message}</p>
-                    <br />
                     <div>
-                      <button className="btn btn-default" onClick={this.onDismiss}>Ignore</button>
-                      <button className="btn btn-success" onClick={() => {
+                      <button className="btn btn-default btn-sm" onClick={this.onDismiss}>Ignore</button>
+                      <button className="btn btn-success btn-sm" onClick={() => {
                           $.ajax({
                               type: 'POST',
                               dataType: 'json',
