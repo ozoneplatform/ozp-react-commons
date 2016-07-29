@@ -8,6 +8,7 @@ var UserNotifications = React.createClass({
 
     _renderNotification(notification, openDropdown) {
         return <UserNotification
+            updateHud={this.props.updateHud}
             key={notification.id}
             notification={notification}
             openDropdown={openDropdown} />;
