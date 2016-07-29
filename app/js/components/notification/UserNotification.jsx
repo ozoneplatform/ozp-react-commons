@@ -96,6 +96,7 @@ var UserNotification = React.createClass({
                                 "bookmark_notification_id": this.props.notification.id
                               })
                           }).done(res => {
+                            this.onDismiss();
                             this.props.updateHud();
                           });
                         }}>Add {this.props.notification.peer.folderName}</button>
