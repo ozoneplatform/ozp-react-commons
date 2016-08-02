@@ -95,8 +95,9 @@ var UserNotification = React.createClass({
                               data: JSON.stringify({
                                 "bookmark_notification_id": this.props.notification.id
                               })
-                          }).done(res => {
-                            this.onDismiss();
+                          }).done(() => {
+                            this.props.openDropdown();
+                            SelfActions.dismissNotification(this.props.notification);
                             this.props.updateHud();
                           });
                         }}>Add {this.props.notification.peer.folderName}</button>
