@@ -73,7 +73,7 @@ window.OzoneConfig = {
     "IWC_URL": '/* @echo IWC_URL */',
     // @endif
     // @ifndef IWC_URL
-    "IWC_URL": "https://ozone-development.github.io/iwc",
+    "IWC_URL": "https://ozoneplatform.github.io/iwc",
     // @endif
     // @ifdef DEVELOPER_RESOURCES_URL
     "DEVELOPER_RESOURCES_URL": '/* @echo DEVELOPER_RESOURCES_URL */',

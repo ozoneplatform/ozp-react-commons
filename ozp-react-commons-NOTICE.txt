@@ -1,4 +1,4 @@
-ozp-react-commons Copyright (c) 2015 
+ozp-react-commons Copyright (c) 2015
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ license listed with the software description below:
 
 Dependencies
 bootstrap-sass
-https://github.com/ozone-development/ozp-bootstrap-sass/blob/master/LICENSE
+https://github.com/ozoneplatform/ozp-bootstrap-sass/blob/master/LICENSE
 Copyright (c) 2013 Twitter, Inc
 License: MIT Licesnse
 
@@ -37,7 +37,7 @@ License: MIT License
 Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
 Based on Underscore.js, copyright 2009-2015 Jeremy Ashkenas,
 DocumentCloud and Investigative Reporters & Editors <http://underscorejs.org/>
-   
+
 object-assign
 https://github.com/sindresorhus/object-assign
 License: MIT License
@@ -93,17 +93,17 @@ Pete Hunt
 Karma
 https://github.com/karma-runner/karma
 License: MIT License
-Copyright © 2011-2014 Google, Inc. 
+Copyright © 2011-2014 Google, Inc.
 
 Karma Mocha
 https://github.com/karma-runner/karma-mocha
 License: MIT License
-Copyright © 2011-2013 Google, Inc. 
+Copyright © 2011-2013 Google, Inc.
 
 Karma Phantomjs Launcher
 https://github.com/karma-runner/karma-phantomjs-launcher
 License: MIT License
-Copyright © 2011-2013 Google, Inc. 
+Copyright © 2011-2013 Google, Inc.
 
 Karma Webpack
 https://github.com/webpack/karma-webpack
