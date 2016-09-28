@@ -122,5 +122,5 @@ var listingMessages = {
 
 module.exports = {
     listingMessages: listingMessages,
-    systemHigh: 'Data entered must NOT be above System High!'
+    reviewWarningMessage: 'Data entered must NOT be above FOUO'
 };
