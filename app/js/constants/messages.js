@@ -104,7 +104,7 @@ var listingMessages = {
     'help.agencyShort': 'Associated organization is required.',
     'help.screenshots': 'At least one screenshot is required. Each screenshot requires two images, a preview and a full-size screenshot.',
     'help.owners': 'At least one owner is required.',
-    'help.tags': 'May contain letters, numbers or symbols and must be 16 characters long or less.',
+    'help.tags': 'May contain letters, numbers or symbols and must be 30 characters long or less.',
     'help.launchUrl': 'Must be a valid URL.',
     'help.categories': 'At least one is required.',
     'help.contacts.name': 'May contain letters, numbers or symbols and must be 100 characters long or less.',
