@@ -78,7 +78,7 @@ var listingMessages = {
     'description.contacts.organization': ' Organization associated with the individual, position, or group being contacted.',
     'description.contacts.name': 'Name of the individual, position, or group being contacted.',
     'description.contacts.type': 'What would a user contact this individual or group of people for?',
-    'description.screenshots.largeImage': 'Must be at least 960px wide xs 600px tall.',
+    'description.screenshots.largeImage': 'Must be at least 960px wide x 600px tall.',
     'description.screenshots.largeImageMarking': markingDescription,
     'description.screenshots.smallImage': 'Must be at least 600px wide x 376px tall.',
     'description.screenshots.smallImageMarking': markingDescription,
