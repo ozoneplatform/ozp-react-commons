@@ -66,7 +66,7 @@ var listingMessages = {
     'description.featuredBannerIconMarking': markingDescription,
     'description.versionName': 'Numerical identification of which release version is being submitted.',
     'description.launchUrl': 'URL where this listing can be reached by users.',
-    'description.isPrivate': 'By default, web applications/widgets are visible to all organizations using the platform. If this listing is set to private (only visible to your organization), justification for private use must be included in the Usage Requirements field. A Center Steward will contact you if the justification is not acceptable.',
+    'description.isPrivate': 'By default, web applications/widgets are visible to all Agencies using Apps Mall. If this listing is set to private (only visible to your Agency), justification for private use must be included in the Usage Requirements field. A Content Steward will contact you if the justification is not acceptable.',
     'description.requirements': 'Details about what system, security, or other requirements must be met in order to use this listing. If none apply, write "None."',
     'description.whatIsNew': 'Description of what is new or different in this latest version.',
     'description.agencyShort': 'Organization overseeing this listing.',
