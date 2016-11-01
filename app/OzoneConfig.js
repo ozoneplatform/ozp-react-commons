@@ -13,7 +13,7 @@ window.OzoneConfig = {
     "API_URL": '/* @echo API_URL */',
     // @endif
     // @ifndef API_URL
-    "API_URL": 'https://localhost:8443/marketplace',
+    "API_URL": 'http://localhost:4440',
     // @endif
     // @ifdef HELP_URL
     "HELP_URL": '/* @echo HELP_URL */',
@@ -43,7 +43,7 @@ window.OzoneConfig = {
     "CENTER_URL": '/* @echo CENTER_URL */',
     // @endif
     // @ifndef CENTER_URL
-    "CENTER_URL": "http://localhost:8000/dist",
+    "CENTER_URL": "http://localhost:8000",
     // @endif
     // @ifdef CENTER_REVIEWS_CHAR_LIMIT
     "CENTER_REVIEWS_CHAR_LIMIT": '/* @echo CENTER_REVIEWS_CHAR_LIMIT */',
@@ -55,7 +55,7 @@ window.OzoneConfig = {
     "HUD_URL": '/* @echo HUD_URL */',
     // @endif
     // @ifndef HUD_URL
-    "HUD_URL": "http://localhost:8088/dist",
+    "HUD_URL": "http://localhost:8088",
     // @endif
     // @ifdef WEBTOP_URL
     "WEBTOP_URL": '/* @echo WEBTOP_URL */',
