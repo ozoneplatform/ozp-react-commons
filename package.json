@@ -1,6 +1,6 @@
 {
   "name": "ozp-react-commons",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "React.js and Reflux.js components which are shared by the center-ui and hud-ui projects.",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start"

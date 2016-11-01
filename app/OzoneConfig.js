@@ -43,7 +43,7 @@ window.OzoneConfig = {
     "CENTER_URL": '/* @echo CENTER_URL */',
     // @endif
     // @ifndef CENTER_URL
-    "CENTER_URL": "http://localhost:8000",
+    "CENTER_URL": "http://localhost:8000/",
     // @endif
     // @ifdef CENTER_REVIEWS_CHAR_LIMIT
     "CENTER_REVIEWS_CHAR_LIMIT": '/* @echo CENTER_REVIEWS_CHAR_LIMIT */',
@@ -55,7 +55,7 @@ window.OzoneConfig = {
     "HUD_URL": '/* @echo HUD_URL */',
     // @endif
     // @ifndef HUD_URL
-    "HUD_URL": "http://localhost:8088",
+    "HUD_URL": "http://localhost:8088/",
     // @endif
     // @ifdef WEBTOP_URL
     "WEBTOP_URL": '/* @echo WEBTOP_URL */',
