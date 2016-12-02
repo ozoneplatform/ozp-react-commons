@@ -64,6 +64,9 @@ window.OzoneConfig = {
     "WEBTOP_URL": "http://localhost:9000/",
     // @endif
     // @ifdef SYSTEM_HIGH_CLASSIFICATION
+    "SYSTEM_HIGH_CLASSIFICATION": '/* @echo SYSTEM_HIGH_CLASSIFICATION */',
+    // @endif
+    // @ifndef SYSTEM_HIGH_CLASSIFICATION
     "SYSTEM_HIGH_CLASSIFICATION": "U",
     // @endif
     // @ifdef IE_REDIRECT_URL
