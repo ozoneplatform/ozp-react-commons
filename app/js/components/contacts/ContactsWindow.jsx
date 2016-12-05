@@ -67,7 +67,7 @@ var ContactInfo = React.createClass({
                             <p>Want to know the latest? Stay up to date with us through any of our social networks. We will keep you in the loop.</p>
                             <span className="btn-row">
                                 <a className="btn btn-primary" href={SOCIAL_CHIRP_ADDRESS} target={this.getTarget(SOCIAL_CHIRP_ADDRESS)}>Chirp</a>
-                                //<a className="btn btn-primary" href={SOCIAL_PIN_ADDRESS} target={this.getTarget(SOCIAL_PIN_ADDRESS)}>Pin</a>
+                                {/*<a className="btn btn-primary" href={SOCIAL_PIN_ADDRESS} target={this.getTarget(SOCIAL_PIN_ADDRESS)}>Pin</a>*/}
                                 <a className="btn btn-primary" href={SOCIAL_CHAT_ADDRESS} target={this.getTarget(SOCIAL_CHAT_ADDRESS)}>Chat</a>
                                 <a className="btn btn-primary" href={SOCIAL_BLOG_ADDRESS} target={this.getTarget(SOCIAL_BLOG_ADDRESS)}>Blog</a>
                             </span>
