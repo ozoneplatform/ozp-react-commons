@@ -7,16 +7,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://dev1.vistronix.com:9080/ozp/ozp-react-commons.git"
+    "url": "https://www.github.com/ozoneplatform/ozp-react-commons.git"
   },
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://www.owfgoss.org/jira/browse/OZF"
   },
-  "homepage": "http://dev1.vistronix.com:9080/ozp/ozp-react-commons",
+  "homepage": "https://www.github.com/ozoneplatform/ozp-react-commons",
   "dependencies": {
-    "bootstrap-sass": "git://github.com/aml-development/ozp-bootstrap-sass#master",
+    "bootstrap-sass": "git://github.com/ozoneplatform/ozp-bootstrap-sass#master",
     "es5-shim": "^4.0.6",
     "humps": "git://github.com/domchristie/humps.git",
     "jquery": "^2.1.1",
