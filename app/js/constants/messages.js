@@ -117,7 +117,10 @@ var listingMessages = {
     'help.screenshots.smallImage': 'Must be a .png, .jpg, or .gif file and must be smaller than 1MB.',
     'help.screenshots.smallImageMarking': markingHelp,
     'help.docUrls.name': 'May contain letters, numbers or symbols and must be 255 characters long or less.',
-    'help.docUrls.url': 'Must be a valid URL.'
+    'help.docUrls.url': 'Must be a valid URL.',
+
+    'recommender.recommended': 'Recommended For You',
+    'recommender.similar': 'Similar Listings'
 };
 
 module.exports = {
