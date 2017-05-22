@@ -12,10 +12,7 @@ var ErrorStore = Reflux.createStore({
     data: {},
 
     onFetchEsStatusFailed: function (payload) {
-        if (payload.status == 503) {
-            this.data.hasErrors = true;
-            this.data.errorMessage = "Search is currently unavailable. Please try again in a few minutes.";
-        }
+        this.data.hasErrors = true;
 
         this.trigger(this.data);
     }
