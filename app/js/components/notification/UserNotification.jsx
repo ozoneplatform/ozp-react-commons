@@ -6,6 +6,7 @@ var _Date = require('../Date.jsx');
 var Time = require('../Time.jsx');
 var $ = require('jquery');
 var { API_URL } = require('../../OzoneConfig');
+var CenterModalLink = require('../CenterModalLink.jsx');
 
 var SelfActions = require('../../actions/ProfileActions.js');
 var marked = require('marked');
@@ -67,11 +68,17 @@ var UserNotification = React.createClass({
           return {__html: marked(choppedMessage(), { renderer: renderer })};
         };
 
+        let listingLink = null;
+        if(listing)
+          listingLink = <CenterModalLink listing={listing}>{listing.title}</CenterModalLink>;
+        else
+          listingLink = 'AppsMall';
+
         return (
             <li className="UserNotification clearfix">
                 <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16"></i></button>
                 <h5 className="created-by">
-                  { listing ? listing.title : 'AppsMall'}
+                  {listingLink}
                 </h5>
                 <div className="created-at">
                     <_Date date={createdDate} />
