@@ -15,7 +15,8 @@
 }
 
 .UserNotification {
-    padding: 15px;
+    padding: 0px 15px;
+    background-color: $gray-darkest;
     color: $gray-light;
     word-wrap: break-word;
 
@@ -72,6 +73,12 @@
 
     a {
         color: $white;
+    }
+}
+
+.unread {
+    .created-by {
+        font-weight: 700;
     }
 }
 
