@@ -18,7 +18,7 @@ var Time = React.createClass({
 
     render() {
         var { date } = this.props;
-        var time = this.formatZero(date.getUTCHours()) + '' + this.formatZero(date.getUTCMinutes()) + ' GMT';
+        var time = this.formatZero(date.getUTCHours()) + '' + this.formatZero(date.getUTCMinutes()) + ' Z';
 
         return (
             <span className="Time">{time}</span>
