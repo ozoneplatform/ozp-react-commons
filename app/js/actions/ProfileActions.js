@@ -20,6 +20,11 @@ var ProfileActions = createActions({
             .fail(function () {
                 ProfileActions.dismissNotificationFailed(notification);
             });
+    },
+
+    updateProfileFlags(data) {
+        ProfileApi.updateProfileFlags(data)
+            .done(ProfileActions.updateProfileFlagsCompleted);
     }
 });
 
