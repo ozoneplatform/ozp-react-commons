@@ -22,10 +22,38 @@ var ProfileActions = createActions({
             });
     },
 
+    acknowledgeAllNotifications(notificationList) {
+        notificationList.forEach(ProfileActions.acknowledgeNotification);
+    },
+
+    acknowledgeNotification(notification) {
+        if(notification.acknowledgedStatus === false) {
+            ProfileApi.updateNotification({id: notification.id, acknowledgedStatus:true})
+                .done(function () {
+                    ProfileActions.acknowledgeNotificationCompleted(notification);
+                })
+                .fail(function () {
+                    ProfileActions.acknowledgeNotificationFailed(notification);
+                });
+        }
+    },
+
+    readNotification(notification) {
+        if(notification.readStatus === false){
+            ProfileApi.updateNotification({id: notification.id, readStatus: true})
+                .done(function () {
+                    ProfileActions.readNotificationCompleted(notification);
+                })
+                .fail(function() {
+                    ProfileActions.readNotificationFailed(notification);
+                });
+        }
+    },
+
     updateProfileFlags(data) {
-        ProfileApi.updateProfileFlags(data)
-            .done(ProfileActions.updateProfileFlagsCompleted);
-    }
+       ProfileApi.updateProfileFlags(data)
+           .done(ProfileActions.updateProfileFlagsCompleted);
+    } 
 });
 
 _.assign(ProfileActions, Reflux.createActions([

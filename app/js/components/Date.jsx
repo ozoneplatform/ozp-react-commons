@@ -12,9 +12,9 @@ var _Date = React.createClass({
 
     render() {
         var { date } = this.props;
-        var day = date.getDate();
-        var month = date.getMonth() + 1;
-        var year = date.getFullYear();
+        var day = date.getUTCDate();
+        var month = date.getUTCMonth() + 1;
+        var year = date.getUTCFullYear();
 
         return (
             <span className="Date">{`${month}/${day}/${year}`}</span>
