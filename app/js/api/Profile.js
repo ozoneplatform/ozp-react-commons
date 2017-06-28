@@ -50,13 +50,13 @@ var ProfileApi = {
             type: 'put',
             dataType: 'json',
             contentType: 'application/json',
-            data: JSON.stringify(data)
+            data: JSON.stringify(profileData)
         });
     },
 
     updateProfileFlags: function(profileData) {
         var data = {"email_notification_flag": profileData.emailNotificationFlag};
-        
+
         return $.ajax({
             url: `${API_URL}/api/self/profile/`,
             type: 'put',
