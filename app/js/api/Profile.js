@@ -54,6 +54,18 @@ var ProfileApi = {
         });
     },
 
+    updateProfileFlags: function(profileData) {
+        var data = {"email_notification_flag": profileData.emailNotificationFlag};
+
+        return $.ajax({
+            url: `${API_URL}/api/self/profile/`,
+            type: 'put',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(data)
+        });
+    },
+
     fetchNotifications: function () {
         return $.getJSON(API_URL + '/api/self/notification/').then(function (response) {
             response = humps.camelizeKeys(response);

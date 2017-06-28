@@ -48,7 +48,12 @@ var ProfileActions = createActions({
                     ProfileActions.readNotificationFailed(notification);
                 });
         }
-    }
+    },
+
+    updateProfileFlags(data) {
+       ProfileApi.updateProfileFlags(data)
+           .done(ProfileActions.updateProfileFlagsCompleted);
+    } 
 });
 
 _.assign(ProfileActions, Reflux.createActions([

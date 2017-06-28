@@ -56,6 +56,15 @@ var ProfileInfo = React.createClass({
         ProfileActions.fetchOwnedListings(this.props.profileId);
     },
 
+    toggleFlags: function(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        var profile = this.state.profile;
+
+        profile.emailNotificationFlag = value;
+        ProfileActions.updateProfileFlags(profile);
+    },
+
     render: function() {
         var profile = this.state.profile,
             linkEl = this.props.listingLinkEl,
@@ -72,6 +81,12 @@ var ProfileInfo = React.createClass({
                         <p><b>{profile.username}</b><br />{profile.email}</p>
                     </div>
                     <div className="col-md-8 col-sm-6 owned-listings">
+                        <h4>Preferences</h4>
+                        <label className="switch">
+                        <input type="checkbox" defaultChecked={profile.emailNotificationFlag} onChange={this.toggleFlags} />
+                        <div className="slider round"></div>
+                        </label>
+                        <h5 className="switch-text">Email Notifications</h5>
                         <h4>{profile.displayName}'s Listings</h4>
                         <ul>{listings}</ul>
                         { listings.length < 1 &&
