@@ -55,7 +55,9 @@ var ProfileApi = {
     },
 
     updateProfileFlags: function(profileData) {
-        var data = {"email_notification_flag": profileData.emailNotificationFlag};
+        var data = {"email_notification_flag": profileData.emailNotificationFlag,
+                     "listing_notification_flag": profileData.listingNotificationFlag,
+                     "subscription_notification_flag": profileData.subscriptionNotificationFlag};
 
         return $.ajax({
             url: `${API_URL}/api/self/profile/`,

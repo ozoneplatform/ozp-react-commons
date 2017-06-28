@@ -61,7 +61,18 @@ var ProfileInfo = React.createClass({
         const value = target.type === 'checkbox' ? target.checked : target.value;
         var profile = this.state.profile;
 
-        profile.emailNotificationFlag = value;
+        switch (target.id) {
+            case 'email':
+                profile.emailNotificationFlag = value;
+                break;
+            case 'listing':
+                profile.listingNotificationFlag = value;
+                break;
+            case 'subscription':
+                profile.subscriptionNotificationFlag = value;
+            default:
+        }
+
         ProfileActions.updateProfileFlags(profile);
     },
 
@@ -82,11 +93,22 @@ var ProfileInfo = React.createClass({
                     </div>
                     <div className="col-md-8 col-sm-6 owned-listings">
                         <h4>Preferences</h4>
+                        <h6 className="notification-tip">You will still receive critical notifications from the system</h6>
                         <label className="switch">
-                        <input type="checkbox" defaultChecked={profile.emailNotificationFlag} onChange={this.toggleFlags} />
+                        <input type="checkbox" id="email" defaultChecked={profile.emailNotificationFlag} onChange={this.toggleFlags} />
                         <div className="slider round"></div>
                         </label>
-                        <h5 className="switch-text">Email Notifications</h5>
+                        <h5 className="switch-text">Email Notifications</h5><br/>
+                        <label className="switch">
+                        <input type="checkbox" id="listing" defaultChecked={profile.listingNotificationFlag} onChange={this.toggleFlags} />
+                        <div className="slider round"></div>
+                        </label>
+                        <h5 className="switch-text">Listing Notifications</h5><br/>
+                        <label className="switch">
+                        <input type="checkbox" id="subscription" defaultChecked={profile.subscriptionNotificationFlag} onChange={this.toggleFlags} />
+                        <div className="slider round"></div>
+                        </label>
+                        <h5 className="switch-text">Subscription Notifications</h5><br/>
                         <h4>{profile.displayName}'s Listings</h4>
                         <ul>{listings}</ul>
                         { listings.length < 1 &&
