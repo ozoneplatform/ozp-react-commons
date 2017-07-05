@@ -63,12 +63,21 @@ var ProfileInfo = React.createClass({
 
         switch (target.id) {
             case 'email':
+                this.setState({
+                    emailNotificationFlag: value
+                });
                 profile.emailNotificationFlag = value;
                 break;
             case 'listing':
+                this.setState({
+                    listingNotificationFlag: value
+                });
                 profile.listingNotificationFlag = value;
                 break;
             case 'subscription':
+                this.setState({
+                    subscriptionNotificationFlag: value
+                });
                 profile.subscriptionNotificationFlag = value;
             default:
         }
@@ -84,6 +93,11 @@ var ProfileInfo = React.createClass({
             );
 
         if (profile) {
+            var notificationTip = null;
+            if (!profile.listingNotificationFlag && !profile.emailNotificationFlag && !profile.subscriptionNotificationFlag) {
+                notificationTip = <h6 className="notification-tip">You will still receive critical notifications from the system</h6>;
+            }
+
             return (
                 <section>
                     <div className="col-md-4 col-sm-6">
@@ -93,7 +107,7 @@ var ProfileInfo = React.createClass({
                     </div>
                     <div className="col-md-8 col-sm-6 owned-listings">
                         <h4>Preferences</h4>
-                        <h6 className="notification-tip">You will still receive critical notifications from the system</h6>
+                        {notificationTip}
                         <label className="switch">
                         <input type="checkbox" id="email" defaultChecked={profile.emailNotificationFlag} onChange={this.toggleFlags} />
                         <div className="slider round"></div>
