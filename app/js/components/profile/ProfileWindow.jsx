@@ -85,6 +85,38 @@ var ProfileInfo = React.createClass({
         ProfileActions.updateProfileFlags(profile);
     },
 
+    renderPreferences: function() {
+        var notificationTip = null,
+            preferences = null,
+            profile = this.state.profile;
+
+        if (!profile.listingNotificationFlag && !profile.emailNotificationFlag && !profile.subscriptionNotificationFlag) {
+            notificationTip = <h6 className="notification-tip">You will still receive critical notifications from the system</h6>;
+        }
+
+        preferences = <div>
+            <h4>Preferences</h4>
+            {notificationTip}
+            <label className="switch">
+            <input type="checkbox" id="email" defaultChecked={profile.emailNotificationFlag} onChange={this.toggleFlags} />
+            <div className="slider round"></div>
+            </label>
+            <h5 className="switch-text">Email Notifications</h5><br/>
+            <label className="switch">
+            <input type="checkbox" id="listing" defaultChecked={profile.listingNotificationFlag} onChange={this.toggleFlags} />
+            <div className="slider round"></div>
+            </label>
+            <h5 className="switch-text">Listing Notifications</h5><br/>
+            <label className="switch">
+            <input type="checkbox" id="subscription" defaultChecked={profile.subscriptionNotificationFlag} onChange={this.toggleFlags} />
+            <div className="slider round"></div>
+            </label>
+            <h5 className="switch-text">Subscription Notifications</h5><br/>
+        </div>;
+
+        return preferences;
+    },
+
     render: function() {
         var profile = this.state.profile,
             linkEl = this.props.listingLinkEl,
@@ -93,10 +125,6 @@ var ProfileInfo = React.createClass({
             );
 
         if (profile) {
-            var notificationTip = null;
-            if (!profile.listingNotificationFlag && !profile.emailNotificationFlag && !profile.subscriptionNotificationFlag) {
-                notificationTip = <h6 className="notification-tip">You will still receive critical notifications from the system</h6>;
-            }
 
             return (
                 <section>
@@ -106,23 +134,7 @@ var ProfileInfo = React.createClass({
                         <p><b>{profile.username}</b><br />{profile.email}</p>
                     </div>
                     <div className="col-md-8 col-sm-6 owned-listings">
-                        <h4>Preferences</h4>
-                        {notificationTip}
-                        <label className="switch">
-                        <input type="checkbox" id="email" defaultChecked={profile.emailNotificationFlag} onChange={this.toggleFlags} />
-                        <div className="slider round"></div>
-                        </label>
-                        <h5 className="switch-text">Email Notifications</h5><br/>
-                        <label className="switch">
-                        <input type="checkbox" id="listing" defaultChecked={profile.listingNotificationFlag} onChange={this.toggleFlags} />
-                        <div className="slider round"></div>
-                        </label>
-                        <h5 className="switch-text">Listing Notifications</h5><br/>
-                        <label className="switch">
-                        <input type="checkbox" id="subscription" defaultChecked={profile.subscriptionNotificationFlag} onChange={this.toggleFlags} />
-                        <div className="slider round"></div>
-                        </label>
-                        <h5 className="switch-text">Subscription Notifications</h5><br/>
+                        {CurrentProfileStore.isSelf ? this.renderPreferences() : null}
                         <h4>{profile.displayName}'s Listings</h4>
                         <ul>{listings}</ul>
                         { listings.length < 1 &&
