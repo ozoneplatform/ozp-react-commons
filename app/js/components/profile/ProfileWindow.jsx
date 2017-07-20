@@ -97,21 +97,24 @@ var ProfileInfo = React.createClass({
         preferences = <div>
             <h4>Preferences</h4>
             {notificationTip}
-            <label className="switch">
-            <input type="checkbox" id="email" defaultChecked={profile.emailNotificationFlag} onChange={this.toggleFlags} />
-            <div className="slider round"></div>
+            <input type="checkbox" className="switch-checkbox" id="email" defaultChecked={profile.emailNotificationFlag} onChange={this.toggleFlags}/>
+            <label className="switch switch-label" htmlFor="email">
+                <span className="switch-inner"></span>
+                <span className="switch-slider"></span>
             </label>
             <h5 className="switch-text">Email Notifications</h5><br/>
-            <label className="switch">
-            <input type="checkbox" id="listing" defaultChecked={profile.listingNotificationFlag} onChange={this.toggleFlags} />
-            <div className="slider round"></div>
+            <input type="checkbox" className="switch-checkbox" id="listing" defaultChecked={profile.listingNotificationFlag} onChange={this.toggleFlags}/>
+            <label className=" switch switch-label" htmlFor="listing">
+                <span className="switch-inner"></span>
+                <span className="switch-slider"></span>
             </label>
             <h5 className="switch-text">Listing Notifications</h5><br/>
-            <label className="switch">
-            <input type="checkbox" id="subscription" defaultChecked={profile.subscriptionNotificationFlag} onChange={this.toggleFlags} />
-            <div className="slider round"></div>
+            <input type="checkbox" className="switch-checkbox" id="subscription" defaultChecked={profile.subscriptionNotificationFlag} onChange={this.toggleFlags}/>
+            <label className="switch switch-label" htmlFor="subscription">
+                <span className="switch-inner"></span>
+                <span className="switch-slider"></span>
             </label>
-            <h5 className="switch-text">Subscription Notifications</h5><br/>
+            <h5 className="switch-text">Subscription Notifications</h5>
         </div>;
 
         return preferences;
