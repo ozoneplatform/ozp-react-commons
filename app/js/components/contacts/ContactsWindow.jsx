@@ -100,7 +100,7 @@ var ContactsWindow = React.createClass({
 
     render: function() {
         return (
-            <Modal ref="modal"
+            <Modal modaltitle="Contact" ref="modal"
                     className="contacts-window" size="large"
                     onCancel={this.close}>
                 <ContactInfo/>
