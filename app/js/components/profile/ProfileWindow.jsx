@@ -176,7 +176,7 @@ var ProfileWindow = React.createClass({
 
     render: function() {
         return (
-            <Modal title="Profile" ref="modal"
+            <Modal ref="modal"
                     className="profile-window"
                     onCancel={this.close}>
                 <ProfileInfo profileId={this.props.profileId}
