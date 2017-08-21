@@ -14,7 +14,7 @@ var ErrorWindow = React.createClass({
 
     render: function() {
         return (
-            <Modal title="Error" ref="modal"
+            <Modal modaltitle="Error" ref="modal"
             className="error-window"
             onCancel={this.close}>
                 <div>{this.props.errorMessage}</div>
