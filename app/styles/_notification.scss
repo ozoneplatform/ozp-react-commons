@@ -12,10 +12,15 @@
     margin: 5px 15px 15px 0;
     float: right;
   }
+
+  .divider {
+      margin-top: 0;
+      margin-bottom: 0;
+  }
 }
 
 .UserNotification {
-    padding: 0px 15px;
+    padding: 5px 15px;
     background-color: $gray-darkest;
     color: $gray-light;
     word-wrap: break-word;
@@ -52,7 +57,7 @@
 
     .created-by {
         margin: 10px 0 0 0;
-        font-weight: 500;
+        font-weight: 400;
         color: $white;
     }
 
@@ -77,9 +82,16 @@
 }
 
 .unread {
+    border-left: $blue solid 4px;
+
     .created-by {
         font-weight: 700;
     }
+
+    .created-at {
+        font-weight: 400;
+    }
+
 }
 
 .NotificationBadge {

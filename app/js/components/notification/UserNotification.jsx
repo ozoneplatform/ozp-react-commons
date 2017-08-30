@@ -7,6 +7,7 @@ var Time = require('../Time.jsx');
 var $ = require('jquery');
 var { API_URL } = require('../../OzoneConfig');
 var CenterModalLink = require('../CenterModalLink.jsx');
+var NotificationContent = require('./NotificationContent.jsx');
 
 var SelfActions = require('../../actions/ProfileActions.js');
 var marked = require('marked');
@@ -75,7 +76,8 @@ var UserNotification = React.createClass({
           listingLink = 'AppsMall';
 
         return (
-            <li className={(this.props.notification.readStatus === false ? 'unread ': '') + "UserNotification clearfix"} onClick={() => {SelfActions.readNotification(this.props.notification)}}>
+            <li className={(this.props.notification.readStatus === false ? 'unread ': '') + "UserNotification clearfix"} 
+            onClick={() => { this.props.openDropdown(); SelfActions.readNotification(this.props.notification)}}>
                 <button type="button" className="close pull-right" onClick={this.onDismiss}><i className="icon-cross-16"></i></button>
                 <h5 className="created-by">
                   {listingLink}
@@ -84,33 +86,7 @@ var UserNotification = React.createClass({
                     <_Date date={createdDate} />
                     <Time date={createdDate} />
                 </div>
-                { !(this.props.notification.notificationType === "PEER.BOOKMARK") &&
-                  <p className="message small" dangerouslySetInnerHTML={createNotificationText()}></p>
-                }
-                { this.props.notification.notificationType === "PEER.BOOKMARK" &&
-                  <div>
-                    <p className="message small">{this.props.notification.author.user.username} has shared a the folder <b>{this.props.notification.peer.folderName}</b> with you.</p>
-                    <p className="message small">{this.props.notification.message}</p>
-                    <div>
-                      <button className="btn btn-default btn-sm" onClick={this.onDismiss}>Ignore</button>
-                      <button className="btn btn-success btn-sm" onClick={() => {
-                          $.ajax({
-                              type: 'POST',
-                              dataType: 'json',
-                              contentType: 'application/json',
-                              url: API_URL + '/api/self/library/import_bookmarks/',
-                              data: JSON.stringify({
-                                "bookmark_notification_id": this.props.notification.id
-                              })
-                          }).done(() => {
-                            this.props.openDropdown();
-                            SelfActions.dismissNotification(this.props.notification);
-                            this.props.updateHud();
-                          });
-                        }}>Add {this.props.notification.peer.folderName}</button>
-                    </div>
-                  </div>
-                }
+                <NotificationContent notification={this.props.notification} />
             </li>
         );
     }

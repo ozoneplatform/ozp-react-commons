@@ -93,7 +93,19 @@ var ProfileApi = {
             contentType: 'application/json',
             data: JSON.stringify(humps.decamelizeKeys(notification))
         })
-    }
+    },
+
+    addBookmarkFolder: function (notification) {
+        return $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            url: API_URL + '/api/self/library/import_bookmarks/',
+            data: JSON.stringify({
+            "bookmark_notification_id": notification.notificationId
+            })
+        });
+    }   
 };
 
 module.exports = ProfileApi;
