@@ -57,7 +57,8 @@ var ProfileApi = {
     updateProfileFlags: function(profileData) {
         var data = {"email_notification_flag": profileData.emailNotificationFlag,
                      "listing_notification_flag": profileData.listingNotificationFlag,
-                     "subscription_notification_flag": profileData.subscriptionNotificationFlag};
+                     "subscription_notification_flag": profileData.subscriptionNotificationFlag,
+                     "leaving_ozp_warning_flag": profileData.leavingOzpWarningFlag};
 
         return $.ajax({
             url: `${API_URL}/api/self/profile/`,
@@ -105,7 +106,7 @@ var ProfileApi = {
             "bookmark_notification_id": notification.notificationId
             })
         });
-    }   
+    }
 };
 
 module.exports = ProfileApi;
