@@ -123,9 +123,14 @@ var ProfileInfo = React.createClass({
     render: function() {
         var profile = this.state.profile,
             linkEl = this.props.listingLinkEl,
-            listings = this.state.ownedListings.map(
-                l => <ListingRow key={l.id} linkEl={linkEl} listing={l} />
-            );
+            listings = this.state.ownedListings.map(function(l){
+                if (CurrentProfileStore.isSelf && !l.isDeleted){
+                    return <ListingRow key={l.id} linkEl={linkEl} listing={l} />;
+                }else if (l.isEnabled && !l.isDeleted && (l.approvalStatus == "APPROVED")){
+                    return <ListingRow key={l.id} linkEl={linkEl} listing={l} />;
+                }
+                return;
+            });
 
         if (profile) {
 
