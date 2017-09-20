@@ -1,4 +1,9 @@
 
+### 1.1.45 (None)   
+
+#### Merge Pull Requests  
+* Merge pull request #94 from aml-development/welcom_to_tour_fix ([163921b5](https://github.com/aml-development/ozp-react-commons/commit/163921b5004f4ea8dc7fea0c6aa92480e73a15a9))           
+
 ### 1.1.44 (2017-09-13)           
 
 ### 1.1.43 (2017-09-13)           
@@ -9,6 +14,7 @@
 * Merge pull request #93 from aml-development/blue_tour_button ([d65a130b](https://github.com/aml-development/ozp-react-commons/commit/d65a130b3d544cf4622088de050da42787364e4e))         
 
 #### Changes  
+* added formatting to popover-header ([5df98616](https://github.com/aml-development/ozp-react-commons/commit/5df98616a6e5f3b518954b84ebe1f2a744b854ab))
 * added event listener to commons.scss for end-tour-btn which changes button to blue ([52f63a39](https://github.com/aml-development/ozp-react-commons/commit/52f63a397d5595d59aa29181e712bcfebacd94c0))     
 
 ### 1.1.41 (2017-09-06)         
