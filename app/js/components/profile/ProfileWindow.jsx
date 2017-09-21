@@ -126,7 +126,7 @@ var ProfileInfo = React.createClass({
                 <span className="switch-inner"></span>
                 <span className="switch-slider"></span>
             </label>
-            <h5 className="switch-text">Hide leaving OZP warning message</h5>
+            <h5 className="switch-text">Show leaving OZP warning message</h5>
         </div>;
 
         return preferences;
