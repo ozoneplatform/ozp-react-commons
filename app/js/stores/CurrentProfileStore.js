@@ -46,6 +46,10 @@ var CurrentProfileStore = Reflux.createStore({
             me.profile = profile;
             me.doTrigger();
         });
+    },
+
+    onUpdateProfileFlagsCompleted: function() {
+        this.doTrigger();
     }
 });
 

@@ -63,6 +63,11 @@ var SelfStore = Reflux.createStore({
             Object.assign({}, profile, {launchInWebtop: launchInWebtop})));
     },
 
+    onUpdateProfileFlagsCompleted: function() {
+        ProfileActions.fetchSelf();
+        this.doTrigger();
+    },
+
     getDefaultData: function () {
         return _.pick(this, 'currentUser', 'currentUserError', 'notifications');
     },
@@ -81,7 +86,7 @@ var SelfStore = Reflux.createStore({
         _.find(this.notifications, {'id':notification.id}).acknowledgedStatus = true;
         this.doTrigger();
     },
-    
+
     onReadNotificationCompleted: function (notification) {
         _.find(this.notifications, {'id':notification.id}).readStatus = true;
         this.doTrigger();

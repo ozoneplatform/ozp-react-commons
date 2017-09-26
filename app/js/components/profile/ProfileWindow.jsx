@@ -79,6 +79,12 @@ var ProfileInfo = React.createClass({
                     subscriptionNotificationFlag: value
                 });
                 profile.subscriptionNotificationFlag = value;
+                break;
+            case 'leaveOzpFlag':
+                this.setState({
+                    leavingOzpWarningFlag: value
+                });
+                profile.leavingOzpWarningFlag = value;
             default:
         }
 
@@ -114,7 +120,13 @@ var ProfileInfo = React.createClass({
                 <span className="switch-inner"></span>
                 <span className="switch-slider"></span>
             </label>
-            <h5 className="switch-text">Subscription Notifications</h5>
+            <h5 className="switch-text">Subscription Notifications</h5><br/>
+            <input type="checkbox" className="switch-checkbox" id="leaveOzpFlag" defaultChecked={profile.leavingOzpWarningFlag} onChange={this.toggleFlags}/>
+            <label className="switch switch-label" htmlFor="leaveOzpFlag">
+                <span className="switch-inner"></span>
+                <span className="switch-slider"></span>
+            </label>
+            <h5 className="switch-text">Show Launch Requirements Notice</h5>
         </div>;
 
         return preferences;
@@ -123,9 +135,14 @@ var ProfileInfo = React.createClass({
     render: function() {
         var profile = this.state.profile,
             linkEl = this.props.listingLinkEl,
-            listings = this.state.ownedListings.map(
-                l => <ListingRow key={l.id} linkEl={linkEl} listing={l} />
-            );
+            listings = this.state.ownedListings.map(function(l){
+                if (CurrentProfileStore.isSelf && !l.isDeleted){
+                    return <ListingRow key={l.id} linkEl={linkEl} listing={l} />;
+                }else if (l.isEnabled && !l.isDeleted && (l.approvalStatus == "APPROVED")){
+                    return <ListingRow key={l.id} linkEl={linkEl} listing={l} />;
+                }
+                return;
+            });
 
         if (profile) {
 
