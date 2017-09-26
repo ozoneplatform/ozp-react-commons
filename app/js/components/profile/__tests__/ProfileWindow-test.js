@@ -93,6 +93,9 @@ describe('ProfileWindow', function() {
                         "title": "UNCLASSIFIED"
                     }
                 },
+                isEnabled:true,
+                approvalStatus: "APPROVED",
+                isDeleted:false,
                 title: 'Listing 1'
             }, {
                 id: 2,
@@ -103,6 +106,9 @@ describe('ProfileWindow', function() {
                         "title": "UNCLASSIFIED"
                     }
                 },
+                isEnabled:true,
+                approvalStatus: "APPROVED",
+                isDeleted:true,
                 title: 'Listing 2'
             }]
         };
@@ -114,7 +120,7 @@ describe('ProfileWindow', function() {
         expect(infoText.indexOf(storeData.profile.username)).to.not.equal(-1);
 
         var links = $(element.getDOMNode()).find('.owned-listings a');
-        expect(links.length).to.equal(2);
+        expect(links.length).to.equal(1);
 
         var linkImagePaths = links.map(l => $(l).children('img').attr('src')).get();
         linkImagePaths.forEach(function(path, i) {
@@ -207,6 +213,9 @@ describe('ProfileWindow', function() {
                         "title": "UNCLASSIFIED"
                     }
                 },
+                isEnabled:true,
+                approvalStatus: "APPROVED",
+                isDeleted:false,
                 title: 'Listing 1'
             }, {
                 id: 2,
@@ -217,6 +226,9 @@ describe('ProfileWindow', function() {
                         "title": "UNCLASSIFIED"
                     }
                 },
+                isEnabled:true,
+                approvalStatus: "APPROVED",
+                isDeleted:true,
                 title: 'Listing 2'
             }]
         };
@@ -224,7 +236,7 @@ describe('ProfileWindow', function() {
         CurrentProfileStoreMock.trigger(storeData);
 
         var links = $(element.getDOMNode()).find('.owned-listings a.link-mock');
-        expect(links.length).to.equal(2);
+        expect(links.length).to.equal(1);
     });
 
     it('transitions to backRoute on close if backRoute is a string', function() {
