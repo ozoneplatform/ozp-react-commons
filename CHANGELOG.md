@@ -1,8 +1,33 @@
 
-### 1.1.45 (None)   
+### 1.1.46 (None) 
+
+#### Fixes 
+* **preferences**
+  *  change wording for requirements notice ([5436ec6f](https://github.com/aml-development/ozp-react-commons/commit/5436ec6ffe76a411cb048b5f5640c39c02a2530b))
+  *  switch false to true logic ([393f2b3a](https://github.com/aml-development/ozp-react-commons/commit/393f2b3a76e723027996cb2ac609dee1c2af2e69))      
 
 #### Merge Pull Requests  
-* Merge pull request #94 from aml-development/welcom_to_tour_fix ([163921b5](https://github.com/aml-development/ozp-react-commons/commit/163921b5004f4ea8dc7fea0c6aa92480e73a15a9))           
+* Merge pull request #95 from aml-development/leave_ozp ([6747e918](https://github.com/aml-development/ozp-react-commons/commit/6747e918667eaf88fd96b307cf069bb3cdd8320b))
+* Merge pull request #98 from aml-development/user_profile_listing_fix ([ae9db8c1](https://github.com/aml-development/ozp-react-commons/commit/ae9db8c1a7bf243ca3af7b6b0c79bda65f0f2ed9))
+* Merge pull request #96 from aml-development/tour_button_format_fix ([a585402f](https://github.com/aml-development/ozp-react-commons/commit/a585402f80038f394bdf14c059cfa5c915f75f77))           
+
+### 1.1.45 (2017-09-20)
+
+#### Feature 
+* **requirements**
+  *  add usage and system requirement constants ([24cb9f67](https://github.com/aml-development/ozp-react-commons/commit/24cb9f673fdb9a60612f1f7c2c2cb9b9da434309))
+  *  split requirements into usage and system requirements ([880788da](https://github.com/aml-development/ozp-react-commons/commit/880788da93ed0000e6343d5576721786a8a7b650))     
+* **preferences**:  allow opting in ([06565a82](https://github.com/aml-development/ozp-react-commons/commit/06565a8201d62cf3587fb282a53f7ec3fa933d90))    
+
+#### Fixes  
+* fix: Profile listings correction ([be489e58](https://github.com/aml-development/ozp-react-commons/commit/be489e5870a3882cbfd877a45037f9374108b70a))     
+
+#### Merge Pull Requests  
+* Merge branch 'requirements' of github.com:aml-development/ozp-react-commons into leave_ozp ([b356f420](https://github.com/aml-development/ozp-react-commons/commit/b356f420ce6630e5b0670f146b0500aa92814247))
+* Merge pull request #94 from aml-development/welcom_to_tour_fix ([163921b5](https://github.com/aml-development/ozp-react-commons/commit/163921b5004f4ea8dc7fea0c6aa92480e73a15a9))     
+
+#### Style  
+* style: Button Alignment in Tour ([be51f8f1](https://github.com/aml-development/ozp-react-commons/commit/be51f8f13e95ffabfdf9f7d673bdd618318115e4))         
 
 ### 1.1.44 (2017-09-13)           
 
