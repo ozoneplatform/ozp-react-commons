@@ -114,7 +114,7 @@ var listingMessages = {
     'help.contacts.organization': 'May contain letters, numbers or symbols and must be 100 characters long or less.',
     'help.contacts.email': 'Must be a valid email address and 100 characters long or less.',
     'help.contacts.securePhone': 'Must be a valid phone number.',
-    'help.contacts.unsecurePhone': 'Must be a valid phone number.',
+    'help.contacts.unsecurePhone': 'Must be a valid phone number. Add extensions with x#### or ext#### after the phone number.',
     'help.screenshots.largeImage': 'Must be a .png, .jpg, or .gif file and must be smaller than 1MB.',
     'help.screenshots.largeImageMarking': markingHelp,
     'help.screenshots.smallImage': 'Must be a .png, .jpg, or .gif file and must be smaller than 1MB.',
