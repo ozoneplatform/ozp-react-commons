@@ -6,9 +6,10 @@ var Reflux = require('reflux');
 var Modal = require('../Modal.jsx');
 
 var { Navigation } = require('react-router');
-
 var CurrentProfileStore = require('../../stores/CurrentProfileStore');
 var ProfileActions = require('../../actions/ProfileActions');
+var CategorySubscriptions = require('./CategorySubscriptions.jsx');
+var TagSubscriptions = require('./TagSubscriptions.jsx');
 var { API_URL } = require('../../OzoneConfig');
 var DEFAULT_ICON = 1  // TODO: Replace with something other than Android icon
 
@@ -127,6 +128,10 @@ var ProfileInfo = React.createClass({
                 <span className="switch-slider"></span>
             </label>
             <h5 className="switch-text">Show Launch Requirements Notice</h5>
+            <h4>Category Subscriptions</h4>
+            <CategorySubscriptions/>
+            <h4>Tag Subscriptions</h4>
+            <TagSubscriptions/>
         </div>;
 
         return preferences;
@@ -153,13 +158,17 @@ var ProfileInfo = React.createClass({
                         <h2>{profile.displayName}</h2>
                         <p><b>{profile.username}</b><br />{profile.email}</p>
                     </div>
-                    <div className="col-md-8 col-sm-6 owned-listings">
-                        {CurrentProfileStore.isSelf ? this.renderPreferences() : null}
-                        <h4>{profile.displayName}'s Listings</h4>
-                        <ul>{listings}</ul>
-                        { listings.length < 1 &&
-                        <p>You have not created any listings yet. To start, submit a listing from the global menu.</p>
-                        }
+                    <div className="col-md-8">
+                        <div className="row col-md-12 col-sm-6 owned-listings">
+                            {CurrentProfileStore.isSelf ? this.renderPreferences() : null}
+                        </div>
+                        <div className="row col-md-12 col-sm-6 owned-listings">
+                            <h4>{profile.displayName}'s Listings</h4>
+                            <ul>{listings}</ul>
+                            { listings.length < 1 &&
+                                <p>You have not created any listings yet. To start, submit a listing from the global menu.</p>
+                            }
+                        </div>
                     </div>
                 </section>
             );

@@ -15,5 +15,6 @@ module.exports = {
     map: require('lodash-amd/modern/collections/map'),
     isArray: require('lodash-amd/modern/objects/isArray'),
     filter: require('lodash-amd/modern/collections/filter'),
-    find: require('lodash-amd/modern/collections/find')
+    find: require('lodash-amd/modern/collections/find'),
+    contains: require('lodash-amd/modern/collections/contains'),
 };
