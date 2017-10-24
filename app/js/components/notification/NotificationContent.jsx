@@ -3,7 +3,15 @@ var React = require('react');
 var Reflux = require('reflux');
 var SelfActions = require('../../actions/ProfileActions.js');
 var marked = require('marked');
+var { CENTER_URL } = require('../../OzoneConfig');
 var renderer = new marked.Renderer();
+
+function getLink(listing, tabName) {
+    var id = listing.id;
+
+    var url = `${CENTER_URL}/#/home/?listing=${encodeURIComponent(id)}&action=view&tab=${encodeURIComponent(tabName)}`;
+    return url;
+};
 
 var NotificationContent = React.createClass({
     propTypes: {notification: React.PropTypes.object.isRequired},
@@ -30,6 +38,10 @@ var NotificationContent = React.createClass({
                     </div>
                     </div>
                 }
+                {notification.notificationSubtype === 'listing_review' && <p class="small right"><a href={getLink(notification.listing, 'reviews')}>View reviews</a></p>}
+                {notification.notificationSubtype === 'pending_deletion_cancellation' && <p class="small right"><a href={`${CENTER_URL}/#/user-management/my-listings`}>View my listings</a></p>}
+                {notification.notificationSubtype === 'listing_new' && <p class="small right"><a href={getLink(notification.listing, 'administration')}>View submission</a></p>}
+                {notification.notificationType === 'subscription' && <p class="small right"><a href={getLink(notification.listing, 'overview')}>View listing</a></p>}
             </div>
         )
     }
