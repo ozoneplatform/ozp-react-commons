@@ -17,13 +17,16 @@ var Category = React.createClass({
 
     render: function() {
         var {category} = this.props;
-
-        return (
-            <li className="select2-search-choice">
-                <div>{category.entity_description}</div>
-                <a className="select2-search-choice-close" tabIndex="-1" onClick={() => this.unsubscribeFromCategory()}></a>
-            </li>
-        )
+        if (category.entity_description === "OBJECT NOT FOUND"){
+            return null;
+        }else{
+            return (
+                <li className="select2-search-choice">
+                    <div>{category.entity_description}</div>
+                    <a className="select2-search-choice-close" tabIndex="-1" onClick={() => this.unsubscribeFromCategory()}></a>
+                </li>
+            )
+        }
     }
 
 });
