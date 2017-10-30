@@ -1,5 +1,19 @@
 
-### 1.1.46 (None) 
+### 1.1.47 (None)   
+
+#### Merge Pull Requests  
+* Merge pull request #101 from aml-development/phone_ext ([08910127](https://github.com/aml-development/ozp-react-commons/commit/08910127682c89f69e3973ca78b5dcaf38d7d177))
+* Merge pull request #99 from aml-development/updateNotifications ([a115e625](https://github.com/aml-development/ozp-react-commons/commit/a115e625ff56a375115dd60a51bedcf6f84f0718))         
+
+#### Changes  
+* Unsubscribe in profile (#102) ([5d1817bc](https://github.com/aml-development/ozp-react-commons/commit/5d1817bc75dbf9f09de3e033a0341308c98ccb3b))
+* Updating the help message for how to add an extension to the phone number. ([13f5035d](https://github.com/aml-development/ozp-react-commons/commit/13f5035df8c4b994f0e56dd6ab8c2fd8dcc17013))
+* Updating the regex to support variations of extensions on phone numbers. ([0eee89e2](https://github.com/aml-development/ozp-react-commons/commit/0eee89e2e29f365c990f5f7122f12acc09ef2bbd))
+* Merge remote-tracking branch 'origin/master' into updateNotifications ([3ede7e12](https://github.com/aml-development/ozp-react-commons/commit/3ede7e1251f0030c0ba45d8888e7dbe5ecf88533))
+* removed notification cancellation notification link because it did not make sense in the context ([17f7b8cf](https://github.com/aml-development/ozp-react-commons/commit/17f7b8cf3a192914da4b2499ca125fadb8f11fa4))
+* corrected issue for subscription notification types not showing link ([62dffcf1](https://github.com/aml-development/ozp-react-commons/commit/62dffcf15c1e8eb87be6b37df7fc735d2d7a811f))     
+
+### 1.1.46 (2017-09-28) 
 
 #### Fixes 
 * **preferences**
@@ -7,9 +21,13 @@
   *  switch false to true logic ([393f2b3a](https://github.com/aml-development/ozp-react-commons/commit/393f2b3a76e723027996cb2ac609dee1c2af2e69))      
 
 #### Merge Pull Requests  
+* Merge branch 'master' of github.com:aml-development/ozp-react-commons ([22c081df](https://github.com/aml-development/ozp-react-commons/commit/22c081df6491b208440768308cd7bbd677a683f4))
 * Merge pull request #95 from aml-development/leave_ozp ([6747e918](https://github.com/aml-development/ozp-react-commons/commit/6747e918667eaf88fd96b307cf069bb3cdd8320b))
 * Merge pull request #98 from aml-development/user_profile_listing_fix ([ae9db8c1](https://github.com/aml-development/ozp-react-commons/commit/ae9db8c1a7bf243ca3af7b6b0c79bda65f0f2ed9))
-* Merge pull request #96 from aml-development/tour_button_format_fix ([a585402f](https://github.com/aml-development/ozp-react-commons/commit/a585402f80038f394bdf14c059cfa5c915f75f77))           
+* Merge pull request #96 from aml-development/tour_button_format_fix ([a585402f](https://github.com/aml-development/ozp-react-commons/commit/a585402f80038f394bdf14c059cfa5c915f75f77))         
+
+#### Changes  
+* added links to notifications for subtypes ([8c7361ae](https://github.com/aml-development/ozp-react-commons/commit/8c7361aed5f75befc67179748fe5613467b31cb6))     
 
 ### 1.1.45 (2017-09-20)
 
