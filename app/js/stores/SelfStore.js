@@ -18,12 +18,11 @@ var profileFunctions = {
     isOwner: function(listing) {
         return listing.owners.some(u => u.username === this.username);
     },
-    isOrgSteward: function(org) {
-        return this.stewardedOrganizations.some(o => o.shortName == org.shortName);
-    },
+    isOrgSteward: function(orgShortName) {
+        return this.stewardedOrganizations.some(o => o === orgShortName);    },
     canEdit: function(listing) {
         return listing &&
-            (this.isAdmin() || this.isOwner(listing) || this.isOrgSteward(listing.agency));
+            (this.isAdmin() || this.isOwner(listing) || this.isOrgSteward(listing.agencyShort));
     }
 };
 
