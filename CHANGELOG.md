@@ -1,5 +1,14 @@
 
-### 1.1.47 (None)   
+### 1.1.48 (None) 
+
+#### Fixes  
+* **management**:  correct credential checking (#103) ([a7289b1c](https://github.com/aml-development/ozp-react-commons/commit/a7289b1c2bf78b5c12e98df6e2f351e14d2da933))    
+* **profile**:  remove deleted categories from profile ([1daf7441](https://github.com/aml-development/ozp-react-commons/commit/1daf74411a1e60f7e1bcd7890575871a14084c04))     
+
+#### Merge Pull Requests  
+* Merge pull request #104 from aml-development/remove_deleted_categories_profile ([62b52d6a](https://github.com/aml-development/ozp-react-commons/commit/62b52d6a1f3f0d119102fa546d3ce7f8b773bc1f))           
+
+### 1.1.47 (2017-10-30)   
 
 #### Merge Pull Requests  
 * Merge pull request #101 from aml-development/phone_ext ([08910127](https://github.com/aml-development/ozp-react-commons/commit/08910127682c89f69e3973ca78b5dcaf38d7d177))
