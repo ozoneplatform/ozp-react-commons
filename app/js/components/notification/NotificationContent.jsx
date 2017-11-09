@@ -41,6 +41,7 @@ var NotificationContent = React.createClass({
                 {notification.notificationSubtype === 'listing_review' && <p class="small right"><a href={getLink(notification.listing, 'reviews')}>View reviews</a></p>}
                 {notification.notificationSubtype === 'pending_deletion_cancellation' && <p class="small right"><a href={`${CENTER_URL}/#/user-management/my-listings`}>View my listings</a></p>}
                 {notification.notificationSubtype === 'listing_new' && <p class="small right"><a href={getLink(notification.listing, 'administration')}>View submission</a></p>}
+                {notification.notificationSubtype === 'review_request' && <p class="small right"><a href={`${CENTER_URL}/#/user-management/recent-activity`}>Go to Listing Management</a></p>}
                 {notification.notificationType === 'subscription' && <p class="small right"><a href={getLink(notification.listing, 'overview')}>View listing</a></p>}
             </div>
         )
