@@ -4,6 +4,7 @@ var React = require('react');
 var Reflux = require('reflux');
 var UserNotification = require('./UserNotification.jsx');
 var ProfileActions = require('../../actions/ProfileActions.js');
+var { CENTER_URL} = require('../../OzoneConfig');
 
 
 var UserNotifications = React.createClass({
@@ -30,6 +31,13 @@ var UserNotifications = React.createClass({
         });
     },
 
+    open: function(){
+        if(window.location.href.indexOf(CENTER_URL) != -1)
+            window.location.href = window.location.href + (window.location.href.indexOf('?') == -1 ? '?' : '&') + 'notifications=true';
+        else
+            this.props.moreNotifications();
+    },
+
     render() {
         var notifications = this.props.notifications;
         if (notifications && notifications.length > 0) {
@@ -39,7 +47,7 @@ var UserNotifications = React.createClass({
                 <ul style={{'zIndex': '10000000'}} className="dropdown-menu UserNotifications">
                     { this._renderNotifications(this.props.func) }
                     <li>
-                      <button className="btn btn-primary btn-sm" onClick={() => this.props.moreNotifications()}>See more</button>
+                      <button className="btn btn-primary btn-sm" onClick={this.open}>See more</button>
                     </li>
                 </ul>
             );
