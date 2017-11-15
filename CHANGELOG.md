@@ -1,12 +1,24 @@
 
-### 1.1.48 (None) 
+### 1.1.49 (None)   
+
+#### Merge Pull Requests  
+* Merge pull request #107 from aml-development/Metrics_URL_Change ([fcdb85e0](https://github.com/aml-development/ozp-react-commons/commit/fcdb85e05c13005e514b472aac4e6bd626ffc302))
+* Merge pull request #105 from aml-development/orgstewardNotifications ([c66da142](https://github.com/aml-development/ozp-react-commons/commit/c66da142c69121f5f5a0bf5ac98af42606c73392))        
+
+#### Chore  
+* **metrics**:  Change metrics URL to use IP ([13a6fb91](https://github.com/aml-development/ozp-react-commons/commit/13a6fb91789f9ac9282c8400a1375a98936e31db))      
+
+### 1.1.48 (2017-11-08) 
 
 #### Fixes  
 * **management**:  correct credential checking (#103) ([a7289b1c](https://github.com/aml-development/ozp-react-commons/commit/a7289b1c2bf78b5c12e98df6e2f351e14d2da933))    
 * **profile**:  remove deleted categories from profile ([1daf7441](https://github.com/aml-development/ozp-react-commons/commit/1daf74411a1e60f7e1bcd7890575871a14084c04))     
 
 #### Merge Pull Requests  
-* Merge pull request #104 from aml-development/remove_deleted_categories_profile ([62b52d6a](https://github.com/aml-development/ozp-react-commons/commit/62b52d6a1f3f0d119102fa546d3ce7f8b773bc1f))           
+* Merge pull request #104 from aml-development/remove_deleted_categories_profile ([62b52d6a](https://github.com/aml-development/ozp-react-commons/commit/62b52d6a1f3f0d119102fa546d3ce7f8b773bc1f))         
+
+#### Changes  
+* added action for org steward review requests ([b91aeddd](https://github.com/aml-development/ozp-react-commons/commit/b91aeddd560e90bb6cfb90ef70986f5bb1b4cde3))     
 
 ### 1.1.47 (2017-10-30)   
 
