@@ -55,6 +55,13 @@ var CategorySubscriptionStore = Reflux.createStore({
     },
 
     getDefaultData: function() {
+        var validCategories = []
+        this.categorySubscriptions.forEach(function(element) {
+            if (element.entity_description !== "OBJECT NOT FOUND"){
+                validCategories.push(element);
+            }
+        });
+        this.categorySubscriptions = validCategories;
         return this.categorySubscriptions;
     }
 });
