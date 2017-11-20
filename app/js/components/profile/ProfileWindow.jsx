@@ -12,6 +12,10 @@ var CategorySubscriptions = require('./CategorySubscriptions.jsx');
 var TagSubscriptions = require('./TagSubscriptions.jsx');
 var { API_URL } = require('../../OzoneConfig');
 var DEFAULT_ICON = 1  // TODO: Replace with something other than Android icon
+var TagSubscriptionActions = require('../../actions/TagSubscriptionActions');
+var TagSubscriptionStore = require('../../stores/TagSubscriptionStore');
+var CategorySubscriptionActions = require('../../actions/CategorySubscriptionActions');
+var CategorySubscriptionStore = require('../../stores/CategorySubscriptionStore');
 
 var ListingRow = React.createClass({
 
@@ -182,7 +186,7 @@ var ProfileInfo = React.createClass({
 });
 
 var ProfileWindow = React.createClass({
-    mixins: [Navigation],
+    mixins: [Reflux.connect(CategorySubscriptionStore, "categorySubscriptionStore"), Reflux.connect(TagSubscriptionStore, "tagSubscriptionStore"), Navigation],
 
     propTypes: {
         profileId: React.PropTypes.oneOfType([
@@ -209,6 +213,11 @@ var ProfileWindow = React.createClass({
                     listingLinkEl={this.props.listingLinkEl} />
             </Modal>
         );
+    },
+
+    componentDidMount: function () {
+        TagSubscriptionActions.fetchSubscriptions();
+        CategorySubscriptionActions.fetchSubscriptions();
     },
 
     close: function() {
