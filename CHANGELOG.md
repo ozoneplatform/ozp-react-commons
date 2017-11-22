@@ -1,5 +1,19 @@
 
-### 1.1.49 (None)   
+### 1.1.50 (None) 
+
+#### Fixes  
+* **subscriptions**:  category subscriptions in profile ([c8335232](https://github.com/aml-development/ozp-react-commons/commit/c8335232387f1420674735c5dd047b09b1d8c48b))    
+* **notifications**:  error checking addition for old notifications when a listing wasn't attached to the notification ([90a3c751](https://github.com/aml-development/ozp-react-commons/commit/90a3c75104706e33c6954e75769a22d12fd04a55))     
+
+#### Merge Pull Requests  
+* Merge pull request #109 from aml-development/Deleted_category_subs_fix ([ab8b4ad7](https://github.com/aml-development/ozp-react-commons/commit/ab8b4ad70a2ac29da0fc14b297b87acf7e278e1e))
+* Merge pull request #108 from aml-development/notification_link_fix ([3f9afeb5](https://github.com/aml-development/ozp-react-commons/commit/3f9afeb5862f5e8a76ca7908e94c8d43f0c1f54b))
+* Merge pull request #106 from aml-development/notifications_url ([39ded7fd](https://github.com/aml-development/ozp-react-commons/commit/39ded7fd1a273d560439884d13520891867906ed))           
+
+### 1.1.49 (2017-11-15) 
+
+#### Fixes  
+* **notifications**:  add url handler when opening See More from the notifications drop down to fix Go to Listing Management functionality. Handled differently between Center and HUD ([27c3ceb7](https://github.com/aml-development/ozp-react-commons/commit/27c3ceb71f82ac18cd611e80a4f5f741c040d512))     
 
 #### Merge Pull Requests  
 * Merge pull request #107 from aml-development/Metrics_URL_Change ([fcdb85e0](https://github.com/aml-development/ozp-react-commons/commit/fcdb85e05c13005e514b472aac4e6bd626ffc302))
