@@ -82,6 +82,7 @@ describe('ProfileWindow', function() {
             profile: {
                 displayName: 'Test User 1',
                 username: 'testUser1',
+                organizations: ['testOrg'],
                 email: 'testUser1@example.com'
             },
             ownedListings: [{
@@ -202,6 +203,7 @@ describe('ProfileWindow', function() {
             profile: {
                 displayName: 'Test User 1',
                 username: 'testUser1',
+                organizations: ['testOrg'],
                 email: 'testUser1@example.com'
             },
             ownedListings: [{
