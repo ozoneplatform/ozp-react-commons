@@ -11,6 +11,17 @@
        height: 0;
        clear: both;
     }
+
+    .company {
+        background: $gray-lightest;
+        padding: 2px 10px;
+        border-radius: 10px;
+        display: inline-block;
+        position: relative;
+        font-size: 12px;
+        left: 10px;
+        white-space: nowrap;
+    }
 }
 
 .owned-listings {

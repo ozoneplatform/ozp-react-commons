@@ -155,7 +155,7 @@ var ProfileInfo = React.createClass({
 
         if (profile) {
             var orgs = this.state.profile.organizations.map(function (org, i){
-                return <li key={i}>{org}</li>;
+                return <span className="company" key={i}>{org}</span>;
             });
 
             return (
@@ -163,7 +163,7 @@ var ProfileInfo = React.createClass({
                     <div className="col-md-4 col-sm-6">
                         <i className="icon-head-60-grayLighter" />
                         <h2>{profile.displayName}</h2>
-                        <p><b>{profile.username}</b><br/>
+                        <p><b>{profile.username}</b>
                         {orgs}<br/>
                         {profile.email}</p>
                     </div>
