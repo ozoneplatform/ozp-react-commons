@@ -154,13 +154,18 @@ var ProfileInfo = React.createClass({
             });
 
         if (profile) {
+            var orgs = this.state.profile.organizations.map(function (org, i){
+                return <span className="company" key={i}>{org}</span>;
+            });
 
             return (
                 <section>
                     <div className="col-md-4 col-sm-6">
                         <i className="icon-head-60-grayLighter" />
                         <h2>{profile.displayName}</h2>
-                        <p><b>{profile.username}</b><br />{profile.email}</p>
+                        <p><b>{profile.username}</b>
+                        {orgs}<br/>
+                        {profile.email}</p>
                     </div>
                     <div className="col-md-8">
                         <div className="row col-md-12 col-sm-6 owned-listings">
