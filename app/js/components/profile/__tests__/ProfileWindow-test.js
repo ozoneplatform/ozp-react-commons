@@ -79,6 +79,7 @@ describe('ProfileWindow', function() {
         );
 
         var storeData = {
+            loading: false,
             profile: {
                 displayName: 'Test User 1',
                 username: 'testUser1',
@@ -200,6 +201,7 @@ describe('ProfileWindow', function() {
         );
 
         var storeData = {
+            loading: false,
             profile: {
                 displayName: 'Test User 1',
                 username: 'testUser1',

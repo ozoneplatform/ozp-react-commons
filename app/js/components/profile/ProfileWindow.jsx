@@ -10,6 +10,7 @@ var CurrentProfileStore = require('../../stores/CurrentProfileStore');
 var ProfileActions = require('../../actions/ProfileActions');
 var CategorySubscriptions = require('./CategorySubscriptions.jsx');
 var TagSubscriptions = require('./TagSubscriptions.jsx');
+var LoadIndicator = require('../LoadIndicator.jsx');
 var { API_URL } = require('../../OzoneConfig');
 var DEFAULT_ICON = 1  // TODO: Replace with something other than Android icon
 var TagSubscriptionActions = require('../../actions/TagSubscriptionActions');
@@ -53,7 +54,7 @@ var ProfileInfo = React.createClass({
     },
 
     getInitialState: function() {
-        return {profile: null, ownedListings: []};
+        return {profile: null, ownedListings: [], loading: true, loadingError: false};
     },
 
     componentWillMount: function() {
@@ -173,9 +174,10 @@ var ProfileInfo = React.createClass({
                         </div>
                         <div className="row col-md-12 col-sm-6 owned-listings">
                             <h4>{profile.displayName}'s Listings</h4>
-                            <ul>{listings}</ul>
-                            { listings.length < 1 &&
-                                <p>You have not created any listings yet. To start, submit a listing from the global menu.</p>
+                            {this.state.loading ?
+                                <LoadIndicator/> :
+                                 listings.length < 1 ?
+                                    <p>You have not created any listings yet. To start, submit a listing from the global menu.</p> : <ul>{listings}</ul>
                             }
                         </div>
                     </div>
