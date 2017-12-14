@@ -1,5 +1,22 @@
 
-### 1.1.50 (None) 
+### 1.1.51 (None)
+
+#### Feature 
+* **profile**
+  *  add organizations within profile modal ([bf149e97](https://github.com/aml-development/ozp-react-commons/commit/bf149e9765e76ab59ffed2f90522f55c4350085a))
+  *  Loading indicator Profile Listings ([47a0474d](https://github.com/aml-development/ozp-react-commons/commit/47a0474d04adb8ac064a64c64712f1a6a7e97bbf))     
+
+#### Fixes  
+* **styling**:  make org styling consistent ([fce03376](https://github.com/aml-development/ozp-react-commons/commit/fce03376e9ad253f1947d6aba7b9308b5fb6c381))     
+
+#### Merge Pull Requests  
+* Merge pull request #111 from aml-development/additional_load_indicators ([25200c81](https://github.com/aml-development/ozp-react-commons/commit/25200c81bf6a7d7d89080e5f35c37aed74de9e59))
+* Merge pull request #110 from aml-development/profile_org ([449c003c](https://github.com/aml-development/ozp-react-commons/commit/449c003cf0f133e5270f51ae1a39f2a4ef92f73f))        
+
+#### Chore  
+* **load indicator**:  refactor indicator, moving it to ozp-react-commons ([befb1da2](https://github.com/aml-development/ozp-react-commons/commit/befb1da2ff9f0037678542f1b3a765d942dcdc87))      
+
+### 1.1.50 (2017-11-22) 
 
 #### Fixes  
 * **subscriptions**:  category subscriptions in profile ([c8335232](https://github.com/aml-development/ozp-react-commons/commit/c8335232387f1420674735c5dd047b09b1d8c48b))    
