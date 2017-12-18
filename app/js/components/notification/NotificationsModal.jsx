@@ -17,15 +17,15 @@ var { API_URL } = require('../../OzoneConfig');
 
 var NotificationsModal = React.createClass({
     mixins: [Navigation],
-    
+
     propTypes: {
         backRoute: React.PropTypes.oneOfType([
             React.PropTypes.string.isRequired,
             React.PropTypes.func.isRequired
         ])
     },
-    
-    render: function() { 
+
+    render: function() {
         return (
             <Modal modaltitle="Notifications" ref="modal"
             className="notification-window"
@@ -44,7 +44,7 @@ var NotificationsModal = React.createClass({
             this.transitionTo(this.props.backRoute);
         }
     }
-   
+
 });
 
 var NotificationInfo = React.createClass({
@@ -52,7 +52,7 @@ var NotificationInfo = React.createClass({
     getInitialState: function() {
         return {
             activeNotificationIndex: 0,
-            notificationList: []       
+            notificationList: []
         }
     },
     componentWillMount: function() {
@@ -71,9 +71,9 @@ var NotificationInfo = React.createClass({
         return (
             <div className="row">
             <NotificationSideBar activeNotificationIndex={this.state.activeNotificationIndex}
-            notificationList={this.state.notificationList} 
+            notificationList={this.state.notificationList}
             handleNotificationChange={this.handleNotificationChange}/>
-            <div className="col-xs-8">
+            <div className="col-xs-8 notification">
             { this.state.notificationList.length > 0 &&
                 <Notification notification={this.state.notificationList[this.state.activeNotificationIndex]} />
             }
@@ -94,8 +94,8 @@ var Notification = React.createClass({
     propTypes: {
         notification: React.PropTypes.object
     },
-    
-    render: function() { 
+
+    render: function() {
         var notification = this.props.notification;
         if(!this.props.notification)
             return <div></div>
@@ -110,7 +110,7 @@ var Notification = React.createClass({
               <div className="row" tabIndex={0}>
                 <h4>{(notification.listing) ? notification.listing.title : 'AppsMall'} <small>{formattedDate}</small></h4>
                 <div>
-    
+
                   <NotificationContent notification={notification} />
                   <br /><br />
                   <button className="btn btn-danger right" aria-label={`Remove notification from ${(notification.listing) ? notification.listing.title : 'AppsMall'}`} onClick={() => {
@@ -136,16 +136,16 @@ var NotificationSideBar = React.createClass({
     },
     render: function() {
         var notis = this.props.notificationList.slice(0);
-        
-        return ( 
-            <div className="col-xs-4">
+
+        return (
+            <div className="col-xs-4 notification-list">
             <ul className="nav nav-pills nav-inverse nav-stacked">
             {notis.map((n, i) => {
             var date = new Date(n.createdDate);
             var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
             var formattedDate = months[date.getMonth()] + ' ' + date.getDate() + ', ' +  date.getFullYear();
             return (
-                <li role="presentation" alt={`Notification ${i + 1} from ${(n.listing) ? n.listing.title : 'AppsMall'}`} tabIndex={i} 
+                <li role="presentation" alt={`Notification ${i + 1} from ${(n.listing) ? n.listing.title : 'AppsMall'}`} tabIndex={i}
                 onClick={(event) => {this.props.handleNotificationChange(event, i)}}>
                 <a href="#" onClick={(e) => {e.preventDefault()}} className={i===this.props.activeNotificationIndex?'notification-selected':''}>
                     {(n.listing) ? n.listing.title : 'AppsMall'} <small>{formattedDate}</small>
