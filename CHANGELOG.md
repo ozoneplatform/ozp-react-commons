@@ -1,5 +1,13 @@
 
-### 1.1.51 (None)
+### 1.1.52 (None) 
+
+#### Fixes  
+* **notification window**:  added scrollbar to notification list ([ddd8ce80](https://github.com/aml-development/ozp-react-commons/commit/ddd8ce80a05929b3baf9a74b523fc73bf146a837))     
+
+#### Merge Pull Requests  
+* Merge pull request #112 from aml-development/notification_window_scroll ([69124302](https://github.com/aml-development/ozp-react-commons/commit/6912430236f9c3ae46f714cbfd9f283a621b6f63))           
+
+### 1.1.51 (2017-12-14)
 
 #### Feature 
 * **profile**
