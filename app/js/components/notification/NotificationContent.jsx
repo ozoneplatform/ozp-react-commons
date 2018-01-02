@@ -28,7 +28,7 @@ var NotificationContent = React.createClass({
           };
         return (
             <div>
-                { notification.notificationType !== "peer_bookmark" &&
+                { notification.notificationType !== "peer_bookmark" && notification.notificationType !== "restore_bookmark" &&
                 <span className="message small" dangerouslySetInnerHTML={createNotificationText()}></span>
                 }
                 { notification.notificationType === "peer_bookmark" &&
@@ -39,6 +39,16 @@ var NotificationContent = React.createClass({
                         <button className="btn btn-success btn-sm" onClick={() => {
                             SelfActions.addBookmarkFolder(notification);
                         }}>Add folder {notification.peer.folderName}</button>
+                    </div>
+                    </div>
+                }
+                { notification.notificationType === "restore_bookmark" &&
+                    <div>
+                    <p className="message small">{notification.peer.folderName?'The folder '+notification.peer.folderName :'A folder'} was recently deleted.</p>
+                    <div>
+                        <button className="btn btn-success btn-sm" onClick={() => {
+                            SelfActions.addBookmarkFolder(notification);
+                        }}>Restore folder: {notification.peer.folderName}</button>
                     </div>
                     </div>
                 }
