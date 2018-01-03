@@ -1,5 +1,14 @@
 
-### 1.1.52 (None) 
+### 1.1.53 (None)   
+
+#### Merge Pull Requests  
+* Merge pull request #113 from aml-development/undo_delete_folder ([ce3662c1](https://github.com/aml-development/ozp-react-commons/commit/ce3662c1cb1a0d5de8e727a03c1b6722327a3676))         
+
+#### Changes  
+* Notification text update ([285ddc57](https://github.com/aml-development/ozp-react-commons/commit/285ddc5782831e475fb66ccacefa9f4251e3af50))
+* Adding the ability to restore a deleted bookmark folder. ([63e70608](https://github.com/aml-development/ozp-react-commons/commit/63e7060855cbbd6ff683f9884948b3b406d41db1))     
+
+### 1.1.52 (2017-12-20) 
 
 #### Fixes  
 * **notification window**:  added scrollbar to notification list ([ddd8ce80](https://github.com/aml-development/ozp-react-commons/commit/ddd8ce80a05929b3baf9a74b523fc73bf146a837))     
