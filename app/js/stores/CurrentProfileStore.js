@@ -21,7 +21,7 @@ var CurrentProfileStore = Reflux.createStore({
     listenables: ProfileActions,
 
     getDefaultData: function() {
-        return _.pick(this, 'profile', 'ownedListings', 'isSelf',       'loading', 'loadingError');
+        return _.pick(this, 'profile', 'ownedListings', 'isSelf', 'loading', 'loadingError');
     },
 
     doTrigger: function() {
