@@ -1,5 +1,16 @@
 
-### 1.1.53 (None)   
+### 1.1.54 (None) 
+
+#### Fixes  
+* **profile**:  fix bugs in HUD profile window ([49bbcf54](https://github.com/aml-development/ozp-react-commons/commit/49bbcf5451e0854add3cb6ac51e94aa148b13d3c))     
+
+#### Merge Pull Requests  
+* Merge pull request #114 from aml-development/fix_profile ([02b78b63](https://github.com/aml-development/ozp-react-commons/commit/02b78b63795d6cec09fd8514b774ac8cff10048a))         
+
+#### Changes  
+* **jenkins**:  add build script ([b6a82805](https://github.com/aml-development/ozp-react-commons/commit/b6a8280564b1757c810736961b66136ccb063563))     
+
+### 1.1.53 (2018-01-03)   
 
 #### Merge Pull Requests  
 * Merge pull request #113 from aml-development/undo_delete_folder ([ce3662c1](https://github.com/aml-development/ozp-react-commons/commit/ce3662c1cb1a0d5de8e727a03c1b6722327a3676))         
