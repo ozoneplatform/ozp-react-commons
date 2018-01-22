@@ -50,17 +50,18 @@ describe('CurrentProfileStore', function() {
             expect(getOwnedListingsSpy.calledWith()).to.be.true();
 
             apiDeferred.resolve(ownedListings);
+            setTimeout(function() {
+                expect(storeTriggerSpy.calledOnce).to.be.true();
+                expect(storeTriggerSpy.calledWithMatch({
+                    profile: null,
+                    ownedListings: ownedListings
+                })).to.be.true();
 
-            expect(storeTriggerSpy.calledOnce).to.be.true();
-            expect(storeTriggerSpy.calledWithMatch({
-                profile: null,
-                ownedListings: ownedListings
-            })).to.be.true();
+                //remove action listenens so later tests don't get messed up
+                CurrentProfileStore.stopListeningToAll();
 
-            //remove action listenens so later tests don't get messed up
-            CurrentProfileStore.stopListeningToAll();
-
-            done();
+                done();
+            });
         });
 
         ProfileActions.fetchOwnedListings();
@@ -92,17 +93,18 @@ describe('CurrentProfileStore', function() {
             expect(getProfileSpy.calledWith()).to.be.true();
 
             apiDeferred.resolve(profile);
+            setTimeout(function() {
+                expect(storeTriggerSpy.calledOnce).to.be.true();
+                expect(storeTriggerSpy.calledWithMatch({
+                    profile: profile,
+                    ownedListings: []
+                })).to.be.true();
 
-            expect(storeTriggerSpy.calledOnce).to.be.true();
-            expect(storeTriggerSpy.calledWithMatch({
-                profile: profile,
-                ownedListings: []
-            })).to.be.true();
+                //remove action listenens so later tests don't get messed up
+                CurrentProfileStore.stopListeningToAll();
 
-            //remove action listenens so later tests don't get messed up
-            CurrentProfileStore.stopListeningToAll();
-
-            done();
+                done();
+            });
         });
 
         ProfileActions.fetchProfile();
@@ -147,12 +149,13 @@ describe('CurrentProfileStore', function() {
             expect(getProfileSpy.calledWith()).to.be.true();
 
             getProfileDeferred.resolve(profile);
-
-            expect(storeTriggerSpy.calledOnce).to.be.true();
-            expect(storeTriggerSpy.calledWithMatch({
-                profile: profile,
-                ownedListings: []
-            })).to.be.true();
+            setTimeout(function() {
+                expect(storeTriggerSpy.calledOnce).to.be.true();
+                expect(storeTriggerSpy.calledWithMatch({
+                    profile: profile,
+                    ownedListings: []
+                })).to.be.true();
+            });
 
             ProfileActions.fetchOwnedListings.listen(function() {
                 expect(getOwnedListingsSpy.calledOnce).to.be.true();
@@ -161,13 +164,13 @@ describe('CurrentProfileStore', function() {
                 expect(getProfileSpy.calledWith()).to.be.true();
 
                 getOwnedListingsDeferred.resolve(ownedListings);
-
-                expect(storeTriggerSpy.calledTwice).to.be.true();
-                expect(storeTriggerSpy.calledWithMatch({
-                    profile: profile, //the important part here is that this isn't null
-                    ownedListings: ownedListings
-                })).to.be.true();
-
+                setTimeout(function() {
+                    expect(storeTriggerSpy.calledTwice).to.be.true();
+                    expect(storeTriggerSpy.calledWithMatch({
+                        profile: profile, //the important part here is that this isn't null
+                        ownedListings: ownedListings
+                    })).to.be.true();
+                });
                 //remove action listenens so later tests don't get messed up
                 CurrentProfileStore.stopListeningToAll();
 
