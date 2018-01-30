@@ -41,13 +41,10 @@ var SelfStore = Reflux.createStore({
         var me = this,
             trigger = me.doTrigger.bind(me);
 
-        promise.then(function(profile) {
+        promise.done(function(profile) {
             me.currentUserError = false;
             me.currentUser = Object.assign({}, profile, profileFunctions);
-        }, function() {
-            me.currentUserError = OzpError.apply(null, arguments);
-            me.currentUser = null;
-        }).then(trigger, trigger);
+        }).done(trigger);
     },
 
     onFetchSelf: function () {
