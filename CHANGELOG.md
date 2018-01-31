@@ -1,5 +1,17 @@
 
-### 1.1.54 (None) 
+### 1.1.55 (None) 
+
+#### Fixes  
+* **metrics**:  fix metrics url to point to udev piwik ([8c2128a0](https://github.com/aml-development/ozp-react-commons/commit/8c2128a0b38ab8076b7a777fa88ed94b7da54713))   
+* **dependencies**
+  *  Upgrade Jquery Dependency ([f6db68c3](https://github.com/aml-development/ozp-react-commons/commit/f6db68c38d31cc357282f53f9724a532823239e7))
+  *  Upgrade Jquery Dependency ([10a01c66](https://github.com/aml-development/ozp-react-commons/commit/10a01c66a4a74d68d31d44cda6121c928d0c03cd))      
+
+#### Merge Pull Requests  
+* Merge pull request #115 from aml-development/dependency_update ([ec363aea](https://github.com/aml-development/ozp-react-commons/commit/ec363aea0b3ec32ecdc26c3163b1a05f6e4ee73d))
+* Merge pull request #116 from aml-development/piwik ([2fa652af](https://github.com/aml-development/ozp-react-commons/commit/2fa652af4fe2039a119774bca0c7a1ba3b5e9c22))           
+
+### 1.1.54 (2018-01-10) 
 
 #### Fixes  
 * **profile**:  fix bugs in HUD profile window ([49bbcf54](https://github.com/aml-development/ozp-react-commons/commit/49bbcf5451e0854add3cb6ac51e94aa148b13d3c))     
