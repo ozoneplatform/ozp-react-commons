@@ -1,5 +1,17 @@
 
-### 1.1.55 (None) 
+### 1.1.56 (None)
+
+#### Feature  
+* **notifications**:  correct the reading for new notifications ([d5a2b7af](https://github.com/aml-development/ozp-react-commons/commit/d5a2b7af514aea75fd1e110e824f1c71118db6cb))    
+
+#### Fixes  
+* **notifications**:  pend for delete notifications ([2a13d08e](https://github.com/aml-development/ozp-react-commons/commit/2a13d08ed83c98beb6f95164f8480d7a3c3a8087))     
+
+#### Merge Pull Requests  
+* Merge pull request #118 from aml-development/new_notification_readout_fix ([becd6afb](https://github.com/aml-development/ozp-react-commons/commit/becd6afb98a158061956aaa4ddc92b1ae74754d5))
+* Merge pull request #117 from aml-development/pending_deletion_notification_updates ([c3da27a2](https://github.com/aml-development/ozp-react-commons/commit/c3da27a21feb2503cc8a851d9cb9ead472fa97cc))           
+
+### 1.1.55 (2018-01-31) 
 
 #### Fixes  
 * **metrics**:  fix metrics url to point to udev piwik ([8c2128a0](https://github.com/aml-development/ozp-react-commons/commit/8c2128a0b38ab8076b7a777fa88ed94b7da54713))   
