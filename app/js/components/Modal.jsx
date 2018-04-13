@@ -36,6 +36,10 @@ var BootstrapModal = React.createClass({
                 show: true
             });
     },
+    
+    componentWillUnmount: function(){
+        this.close();
+    },
 
     close: function () {
         $(this.getDOMNode()).modal('hide');
