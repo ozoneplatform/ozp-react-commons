@@ -63,6 +63,12 @@ window.OzoneConfig = {
     // @ifndef WEBTOP_URL
     "WEBTOP_URL": "http://localhost:9000/",
     // @endif
+    // @ifdef SYSTEM_HIGH_CLASSIFICATION
+    "SYSTEM_HIGH_CLASSIFICATION": '/* @echo SYSTEM_HIGH_CLASSIFICATION */',
+    // @endif
+    // @ifndef SYSTEM_HIGH_CLASSIFICATION
+    "SYSTEM_HIGH_CLASSIFICATION": "U",
+    // @endif
     // @ifdef IE_REDIRECT_URL
     "IE_REDIRECT_URL": '/* @echo IE_REDIRECT_URL */',
     // @endif
@@ -142,6 +148,7 @@ window.OzoneConfig = {
         'Favorite, Rate & Review Apps': '/path/to/document',
         'Toolbar': '/path/to/document',
         'Dashboard Set Up': '/path/to/document'
-    }
+    },
     // @endif
+    'PIWIK_ANALYTICS': false
 };
