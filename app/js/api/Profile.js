@@ -54,6 +54,21 @@ var ProfileApi = {
         });
     },
 
+    updateProfileFlags: function(profileData) {
+        var data = {"email_notification_flag": profileData.emailNotificationFlag,
+                     "listing_notification_flag": profileData.listingNotificationFlag,
+                     "subscription_notification_flag": profileData.subscriptionNotificationFlag,
+                     "leaving_ozp_warning_flag": profileData.leavingOzpWarningFlag};
+
+        return $.ajax({
+            url: `${API_URL}/api/self/profile/`,
+            type: 'put',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(data)
+        });
+    },
+
     fetchNotifications: function () {
         return $.getJSON(API_URL + '/api/self/notification/').then(function (response) {
             response = humps.camelizeKeys(response);
@@ -68,6 +83,28 @@ var ProfileApi = {
         return $.ajax({
             url: `${API_URL}/api/self/notification/${notificationId}/`,
             type: 'delete'
+        });
+    },
+
+    updateNotification: function (notification) {
+        return $.ajax({
+            url: `${API_URL}/api/self/notification/${notification.id}/`,
+            type: 'put',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(humps.decamelizeKeys(notification))
+        })
+    },
+
+    addBookmarkFolder: function (notification) {
+        return $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            url: API_URL + '/api/self/library/import_bookmarks/',
+            data: JSON.stringify({
+            "bookmark_notification_id": notification.notificationId
+            })
         });
     }
 };

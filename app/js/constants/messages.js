@@ -22,7 +22,8 @@ var listingMessages = {
     'label.contacts': 'Contacts',
     'label.whatIsNew': 'What\'s New',
     'label.isPrivate': 'Private Listing',
-    'label.requirements': 'Usage Requirements',
+    'label.usage_requirements': 'Usage Requirements',
+    'label.system_requirements': 'System Requirements',
     'label.agencyShort': 'Associated Organization',
     'label.screenshots': 'Screenshots',
     'label.owners': 'Owners',
@@ -66,8 +67,9 @@ var listingMessages = {
     'description.featuredBannerIconMarking': markingDescription,
     'description.versionName': 'Numerical identification of which release version is being submitted.',
     'description.launchUrl': 'URL where this listing can be reached by users.',
-    'description.isPrivate': 'By default, web applications/widgets are visible to all organizations using the platform. If this listing is set to private (only visible to your organization), justification for private use must be included in the Usage Requirements field. A Center Steward will contact you if the justification is not acceptable.',
-    'description.requirements': 'Details about what system, security, or other requirements must be met in order to use this listing. If none apply, write "None."',
+    'description.isPrivate': 'By default, web applications/widgets are visible to all agencies using Apps Mall. If this listing is set to private (only visible to your agency), justification for private use must be included in the Usage Requirements field. A Content Steward will contact you if the justification is not acceptable.',
+    'description.usage_requirements': 'Details about what security or other requirements must be met in order to use this listing. If none apply, write "None."',
+    'description.system_requirements': 'Details about what system requirements must be met in order to use this listing. If none apply, write "None."',
     'description.whatIsNew': 'Description of what is new or different in this latest version.',
     'description.agencyShort': 'Organization overseeing this listing.',
     'description.owners': 'Person(s) responsible for this listing.',
@@ -100,27 +102,31 @@ var listingMessages = {
     'help.featuredBannerIconMarking': markingHelp,
     'help.versionName': 'May contain letters, numbers or symbols and must be 255 characters long or less.',
     'help.whatIsNew': 'May contain letters, numbers or symbols and must be 255 characters long or less.',
-    'help.requirements': 'May contain letters, numbers or symbols and must be 1000 characters long or less.',
+    'help.usage_requirements': 'May contain letters, numbers or symbols and must be 1000 characters long or less.',
+    'help.system_requirements': 'May contain letters, numbers or symbols and must be 1000 characters long or less.',
     'help.agencyShort': 'Associated organization is required.',
     'help.screenshots': 'At least one screenshot is required. Each screenshot requires two images, a preview and a full-size screenshot.',
     'help.owners': 'At least one owner is required.',
-    'help.tags': 'May contain letters, numbers or symbols and must be 16 characters long or less.',
+    'help.tags': 'May contain letters, numbers or symbols and must be 30 characters long or less.',
     'help.launchUrl': 'Must be a valid URL.',
-    'help.categories': 'At least one is required.',
+    'help.categories': 'At least one, no more than three, required.',
     'help.contacts.name': 'May contain letters, numbers or symbols and must be 100 characters long or less.',
     'help.contacts.organization': 'May contain letters, numbers or symbols and must be 100 characters long or less.',
     'help.contacts.email': 'Must be a valid email address and 100 characters long or less.',
     'help.contacts.securePhone': 'Must be a valid phone number.',
-    'help.contacts.unsecurePhone': 'Must be a valid phone number.',
+    'help.contacts.unsecurePhone': 'Must be a valid phone number. Add extensions with x#### or ext#### after the phone number.',
     'help.screenshots.largeImage': 'Must be a .png, .jpg, or .gif file and must be smaller than 1MB.',
     'help.screenshots.largeImageMarking': markingHelp,
     'help.screenshots.smallImage': 'Must be a .png, .jpg, or .gif file and must be smaller than 1MB.',
     'help.screenshots.smallImageMarking': markingHelp,
     'help.docUrls.name': 'May contain letters, numbers or symbols and must be 255 characters long or less.',
-    'help.docUrls.url': 'Must be a valid URL.'
+    'help.docUrls.url': 'Must be a valid URL.',
+
+    'recommender.recommended': 'Recommended For You',
+    'recommender.similar': 'Similar Listings'
 };
 
 module.exports = {
     listingMessages: listingMessages,
-    systemHigh: 'Data entered must NOT be above System High!'
+    reviewWarningMessage: 'Data entered must NOT be above FOUO'
 };

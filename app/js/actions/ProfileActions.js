@@ -20,6 +20,50 @@ var ProfileActions = createActions({
             .fail(function () {
                 ProfileActions.dismissNotificationFailed(notification);
             });
+    },
+
+    acknowledgeAllNotifications(notificationList) {
+        notificationList.forEach(ProfileActions.acknowledgeNotification);
+    },
+
+    acknowledgeNotification(notification) {
+        if(notification.acknowledgedStatus === false) {
+            ProfileApi.updateNotification({id: notification.id, acknowledgedStatus:true})
+                .done(function () {
+                    ProfileActions.acknowledgeNotificationCompleted(notification);
+                })
+                .fail(function () {
+                    ProfileActions.acknowledgeNotificationFailed(notification);
+                });
+        }
+    },
+
+    readNotification(notification) {
+        if(notification.readStatus === false){
+            ProfileApi.updateNotification({id: notification.id, readStatus: true})
+                .done(function () {
+                    ProfileActions.readNotificationCompleted(notification);
+                })
+                .fail(function() {
+                    ProfileActions.readNotificationFailed(notification);
+                });
+        }
+    },
+
+    updateProfileFlags(data) {
+       ProfileApi.updateProfileFlags(data)
+           .done(ProfileActions.updateProfileFlagsCompleted);
+    },
+
+    addBookmarkFolder(notification){
+        ProfileApi.addBookmarkFolder(notification)
+        .success(function() {
+            ProfileActions.dismissNotification(notification);
+            ProfileActions.addBookmarkFolderCompleted(notification);
+        })
+        .fail(function () {
+            ProfileActions.addBookmarkFolderFailed(notification);
+        })
     }
 });
 

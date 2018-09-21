@@ -18,12 +18,11 @@ var profileFunctions = {
     isOwner: function(listing) {
         return listing.owners.some(u => u.username === this.username);
     },
-    isOrgSteward: function(org) {
-        return this.stewardedOrganizations.some(o => o.shortName == org.shortName);
-    },
+    isOrgSteward: function(orgShortName) {
+        return this.stewardedOrganizations.some(o => o === orgShortName);    },
     canEdit: function(listing) {
         return listing &&
-            (this.isAdmin() || this.isOwner(listing) || this.isOrgSteward(listing.agency));
+            (this.isAdmin() || this.isOwner(listing) || this.isOrgSteward(listing.agencyShort));
     }
 };
 
@@ -42,13 +41,10 @@ var SelfStore = Reflux.createStore({
         var me = this,
             trigger = me.doTrigger.bind(me);
 
-        promise.then(function(profile) {
+        promise.done(function(profile) {
             me.currentUserError = false;
             me.currentUser = Object.assign({}, profile, profileFunctions);
-        }, function() {
-            me.currentUserError = OzpError.apply(null, arguments);
-            me.currentUser = null;
-        }).then(trigger, trigger);
+        }).done(trigger);
     },
 
     onFetchSelf: function () {
@@ -63,6 +59,11 @@ var SelfStore = Reflux.createStore({
             Object.assign({}, profile, {launchInWebtop: launchInWebtop})));
     },
 
+    onUpdateProfileFlagsCompleted: function() {
+        ProfileActions.fetchSelf();
+        this.doTrigger();
+    },
+
     getDefaultData: function () {
         return _.pick(this, 'currentUser', 'currentUserError', 'notifications');
     },
@@ -74,6 +75,16 @@ var SelfStore = Reflux.createStore({
 
     onDismissNotificationCompleted: function (notification) {
         _.remove(this.notifications, notification);
+        this.doTrigger();
+    },
+
+    onAcknowledgeNotificationCompleted: function (notification) {
+        _.find(this.notifications, {'id':notification.id}).acknowledgedStatus = true;
+        this.doTrigger();
+    },
+
+    onReadNotificationCompleted: function (notification) {
+        _.find(this.notifications, {'id':notification.id}).readStatus = true;
         this.doTrigger();
     }
 });

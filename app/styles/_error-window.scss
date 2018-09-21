@@ -1,0 +1,14 @@
+.error-window {
+    .modal-body {
+        overflow-y: auto;
+        max-height: 400px;
+    }
+
+    .modal-body:after {
+       content: ".";
+       visibility: hidden;
+       display: block;
+       height: 0;
+       clear: both;
+    }
+}

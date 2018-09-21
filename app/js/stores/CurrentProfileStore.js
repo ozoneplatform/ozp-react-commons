@@ -14,11 +14,14 @@ var ProfileApi = require('../api/Profile');
 var CurrentProfileStore = Reflux.createStore({
     ownedListings: [],
     profile: null,
+    isSelf: false,
+    loading: true,
+    loadingError: false,
 
     listenables: ProfileActions,
 
     getDefaultData: function() {
-        return _.pick(this, 'profile', 'ownedListings');
+        return _.pick(this, 'profile', 'ownedListings', 'isSelf', 'loading', 'loadingError');
     },
 
     doTrigger: function() {
@@ -29,16 +32,28 @@ var CurrentProfileStore = Reflux.createStore({
         var me = this;
         ProfileApi.getOwnedListings(profileId).then(function(listings) {
             me.ownedListings = listings;
+            me.loading = false;
+            me.loadingError = false;
             me.doTrigger();
         });
     },
 
     onFetchProfile: function(profileId) {
         var me = this;
+
+        this.isSelf = false;
+        if(profileId == 'self') {
+            this.isSelf = true;
+        }
+
         ProfileApi.getProfile(profileId).then(function(profile) {
             me.profile = profile;
             me.doTrigger();
         });
+    },
+
+    onUpdateProfileFlagsCompleted: function() {
+        this.doTrigger();
     }
 });
 

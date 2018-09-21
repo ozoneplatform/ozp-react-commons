@@ -1,0 +1,19 @@
+.right {
+    float:right;
+}
+
+.notification-selected {
+      border-left: 4px solid #009dd3 !important;
+      padding-left: 6px !important;
+}
+
+.notification-window {
+    .notification-list {
+        overflow-y: auto;
+        max-height: 400px;
+    }
+
+    .notification {
+        padding: 0px 30px;
+    }
+}

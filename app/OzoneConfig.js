@@ -25,7 +25,7 @@ window.OzoneConfig = {
     "METRICS_URL": '/* @echo METRICS_URL */',
     // @endif
     // @ifndef METRICS_URL
-    "METRICS_URL": "https://www.owfgoss.org:10443/dev/metrics/",
+    "METRICS_URL": "http://172.16.105.48/metrics/",
     // @endif
     // @ifdef METRICS_HUD_SITE_ID
     "METRICS_HUD_SITE_ID": '/* @echo METRICS_HUD_SITE_ID */',
@@ -62,6 +62,12 @@ window.OzoneConfig = {
     // @endif
     // @ifndef WEBTOP_URL
     "WEBTOP_URL": "http://localhost:9000/",
+    // @endif
+    // @ifdef SYSTEM_HIGH_CLASSIFICATION
+    "SYSTEM_HIGH_CLASSIFICATION": '/* @echo SYSTEM_HIGH_CLASSIFICATION */',
+    // @endif
+    // @ifndef SYSTEM_HIGH_CLASSIFICATION
+    "SYSTEM_HIGH_CLASSIFICATION": "U",
     // @endif
     // @ifdef IE_REDIRECT_URL
     "IE_REDIRECT_URL": '/* @echo IE_REDIRECT_URL */',
@@ -142,6 +148,7 @@ window.OzoneConfig = {
         'Favorite, Rate & Review Apps': '/path/to/document',
         'Toolbar': '/path/to/document',
         'Dashboard Set Up': '/path/to/document'
-    }
+    },
     // @endif
+    'PIWIK_ANALYTICS': false
 };

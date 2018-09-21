@@ -1,8 +1,10 @@
 @import "variables";
 
+@import "select2";
 @import "mixins";
 @import "switches";
 @import "notification";
+@import "notification-window";
 @import "profile-window";
 @import "contacts-window";
 @import "settings-window";
@@ -107,6 +109,11 @@ button.close {
         padding: 5px 25px;
     }
 
+    .popover-header {
+      color:#3b4246;
+      font-size:28px;
+    }
+
     .popover-title {
         background: transparent;
         color: $blue-dark;
@@ -118,7 +125,7 @@ button.close {
     .popover-subtitle {
         padding-top: 0;
     }
-    
+
     .popover-content,
     .popover-navigation {
         color: $gray-darker;
@@ -126,6 +133,13 @@ button.close {
 
     .popover-navigation {
         padding-bottom: 25px;
+        width: 300px;
+    }
+
+    #end-tour-btn:hover, #end-tour-btn:focus, #end-tour-btn.focus, #end-tour-btn:active, #end-tour-btn.active {
+        color: #ffffff;
+        background-color: #087399;
+        border-color: #087399;
     }
 
     &.bottom > .arrow { border-bottom-color: $blue; }
@@ -166,3 +180,34 @@ button.close {
   filter: alpha(opacity=90);
 }
 
+.loader {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.loader-icon {
+    width: 50px;
+}
+
+.loader-animate {
+    -animation: spin .9s infinite linear;
+    -ms-animation: spin2 .9s infinite linear;
+    -moz-animation: spin2 .9s infinite linear;
+    -webkit-animation: spin2 .9s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+@keyframes spin2 {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}

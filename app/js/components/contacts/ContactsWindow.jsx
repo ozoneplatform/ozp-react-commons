@@ -12,7 +12,7 @@ var { HELP_URL,
       HELPDESK_ADDRESS,
       REQUEST_ADDRESS,
       SOCIAL_CHIRP_ADDRESS,
-      SOCIAL_PIN_ADDRESS,
+      //SOCIAL_PIN_ADDRESS,
       SOCIAL_CHAT_ADDRESS,
       SOCIAL_BLOG_ADDRESS } = require('ozp-react-commons/OzoneConfig');
 
@@ -29,7 +29,7 @@ var ContactInfo = React.createClass({
                         <div className="col-md-9">
                             <h3>Need Help?</h3>
                             <p>Check out our
-                                <a href={HELP_URL} target={this.getTarget(HELP_URL)}> Help Center </a> 
+                                <a href={HELP_URL} target={this.getTarget(HELP_URL)}> Help Center </a>
                                 for tips and instructions on using the platform, or contact
                                  the help desk for dedicated support.
                             </p>
@@ -64,10 +64,10 @@ var ContactInfo = React.createClass({
                         </div>
                         <div className="col-md-9">
                             <h3>Connect With Us</h3>
-                            <p>Want to know the latest? Stay up to date with us through any of our social networks. We'll keep you in the loop.</p>
+                            <p>Want to know the latest? Stay up to date with us through any of our social networks. We will keep you in the loop.</p>
                             <span className="btn-row">
                                 <a className="btn btn-primary" href={SOCIAL_CHIRP_ADDRESS} target={this.getTarget(SOCIAL_CHIRP_ADDRESS)}>Chirp</a>
-                                <a className="btn btn-primary" href={SOCIAL_PIN_ADDRESS} target={this.getTarget(SOCIAL_PIN_ADDRESS)}>Pin</a>
+                                {/*<a className="btn btn-primary" href={SOCIAL_PIN_ADDRESS} target={this.getTarget(SOCIAL_PIN_ADDRESS)}>Pin</a>*/}
                                 <a className="btn btn-primary" href={SOCIAL_CHAT_ADDRESS} target={this.getTarget(SOCIAL_CHAT_ADDRESS)}>Chat</a>
                                 <a className="btn btn-primary" href={SOCIAL_BLOG_ADDRESS} target={this.getTarget(SOCIAL_BLOG_ADDRESS)}>Blog</a>
                             </span>
@@ -100,7 +100,7 @@ var ContactsWindow = React.createClass({
 
     render: function() {
         return (
-            <Modal title="Contact" ref="modal"
+            <Modal modaltitle="Contact" ref="modal"
                     className="contacts-window" size="large"
                     onCancel={this.close}>
                 <ContactInfo/>
